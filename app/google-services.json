@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "1048415000509",
+    "firebase_url": "https://servx-f0d70.firebaseio.com",
+    "project_id": "servx-f0d70",
+    "storage_bucket": "servx-f0d70.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048415000509:android:43b80791a1ae53b4",
+        "android_client_info": {
+          "package_name": "pl.servx.servx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1048415000509-sthmvrerlu0lnqopr5lsjacg5a7p2717.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pl.servx.servx",
+            "certificate_hash": "6945f41dbba82928745d3515c1db6876a470cbe7"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaG0hfbP7EhCK38iO6SCo9-f_jPfK7kJ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1048415000509-af3omi2ou4079jrt66o8ha60rgbo4l55.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
