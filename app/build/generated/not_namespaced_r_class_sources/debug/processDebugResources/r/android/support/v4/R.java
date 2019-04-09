@@ -111,23 +111,23 @@ public final class R {
         public static final int left = 0x7f080066;
         public static final int line1 = 0x7f080068;
         public static final int line3 = 0x7f080069;
-        public static final int media_actions = 0x7f08006d;
-        public static final int none = 0x7f080074;
-        public static final int normal = 0x7f080075;
-        public static final int notification_background = 0x7f080076;
-        public static final int notification_main_column = 0x7f080077;
-        public static final int notification_main_column_container = 0x7f080078;
-        public static final int right = 0x7f080083;
-        public static final int right_icon = 0x7f080084;
-        public static final int right_side = 0x7f080085;
-        public static final int start = 0x7f0800aa;
-        public static final int status_bar_latest_event_content = 0x7f0800ab;
-        public static final int tag_transition_group = 0x7f0800af;
-        public static final int text = 0x7f0800b0;
-        public static final int text2 = 0x7f0800b1;
-        public static final int time = 0x7f0800b7;
-        public static final int title = 0x7f0800b8;
-        public static final int top = 0x7f0800bb;
+        public static final int media_actions = 0x7f08006e;
+        public static final int none = 0x7f080075;
+        public static final int normal = 0x7f080076;
+        public static final int notification_background = 0x7f080077;
+        public static final int notification_main_column = 0x7f080078;
+        public static final int notification_main_column_container = 0x7f080079;
+        public static final int right = 0x7f080084;
+        public static final int right_icon = 0x7f080085;
+        public static final int right_side = 0x7f080086;
+        public static final int start = 0x7f0800ab;
+        public static final int status_bar_latest_event_content = 0x7f0800ac;
+        public static final int tag_transition_group = 0x7f0800b0;
+        public static final int text = 0x7f0800b1;
+        public static final int text2 = 0x7f0800b2;
+        public static final int time = 0x7f0800b8;
+        public static final int title = 0x7f0800b9;
+        public static final int top = 0x7f0800bc;
     }
     public static final class integer {
         private integer() {}
