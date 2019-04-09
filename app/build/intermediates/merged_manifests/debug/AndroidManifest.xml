@@ -29,6 +29,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="pl.servx.servx.home" />
         <activity android:name="pl.servx.servx.SignUp" />
         <activity
             android:name="pl.servx.servx.tabbed_signin"

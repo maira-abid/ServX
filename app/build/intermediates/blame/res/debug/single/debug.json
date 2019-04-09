@@ -1176,6 +1176,10 @@
         "source": "/home/mubeen/Desktop/ServX/app/src/main/res/layout/activity_main.xml"
     },
     {
+        "merged": "/home/mubeen/Desktop/ServX/app/build/intermediates/res/merged/debug/drawable_oilchange.jpg.flat",
+        "source": "/home/mubeen/Desktop/ServX/app/src/main/res/drawable/oilchange.jpg"
+    },
+    {
         "merged": "/home/mubeen/Desktop/ServX/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "/home/mubeen/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b4e5f77e13aced1e118a37a4498bd969/res/drawable-xxxhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
     },
@@ -1258,6 +1262,10 @@
     {
         "merged": "/home/mubeen/Desktop/ServX/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_dark_focused.xml.flat",
         "source": "/home/mubeen/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/91f973f7e18f5120952691556a9c6bc7/res/drawable/common_google_signin_btn_text_dark_focused.xml"
+    },
+    {
+        "merged": "/home/mubeen/Desktop/ServX/app/build/intermediates/res/merged/debug/drawable_carwash.jpg.flat",
+        "source": "/home/mubeen/Desktop/ServX/app/src/main/res/drawable/carwash.jpg"
     },
     {
         "merged": "/home/mubeen/Desktop/ServX/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -1756,6 +1764,10 @@
         "source": "/home/mubeen/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b4e5f77e13aced1e118a37a4498bd969/res/color-v23/abc_tint_default.xml"
     },
     {
+        "merged": "/home/mubeen/Desktop/ServX/app/build/intermediates/res/merged/debug/drawable_rectangle.xml.flat",
+        "source": "/home/mubeen/Desktop/ServX/app/src/main/res/drawable/rectangle.xml"
+    },
+    {
         "merged": "/home/mubeen/Desktop/ServX/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "/home/mubeen/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b4e5f77e13aced1e118a37a4498bd969/res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_015.png"
     },
@@ -1798,6 +1810,10 @@
     {
         "merged": "/home/mubeen/Desktop/ServX/app/build/intermediates/res/merged/debug/anim_abc_fade_in.xml.flat",
         "source": "/home/mubeen/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b4e5f77e13aced1e118a37a4498bd969/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/home/mubeen/Desktop/ServX/app/build/intermediates/res/merged/debug/layout_activity_home.xml.flat",
+        "source": "/home/mubeen/Desktop/ServX/app/src/main/res/layout/activity_home.xml"
     },
     {
         "merged": "/home/mubeen/Desktop/ServX/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
