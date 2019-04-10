@@ -951,10 +951,11 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btnHistory
+id btnServices
 id btnSignIn
 id btnSignUp
 id button
-id button2
 id buttonPanel
 id cancel_action
 id center
@@ -1079,6 +1080,7 @@ id snackbar_action
 id snackbar_text
 id snap
 id spacer
+id spinner
 id split_action_bar
 id spread
 id spread_inside
@@ -1195,6 +1197,8 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout spinner_item
+layout spinner_layout
 layout support_simple_spinner_dropdown_item
 menu menu_tabbed_signin
 mipmap ic_launcher
@@ -1651,6 +1655,7 @@ style Widget_Design_Snackbar
 style Widget_Design_TabLayout
 style Widget_Design_TextInputLayout
 style Widget_Support_CoordinatorLayout
+style mySpinnerItemStyle
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

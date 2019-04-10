@@ -1,6 +1,7 @@
 package pl.servx.servx;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -58,6 +59,8 @@ public class sign_in extends AppCompatActivity {
 
                             if (user.getPassword().equals(edtpass.getText().toString())) {
                                 Toast.makeText(sign_in.this, "sign in successful", Toast.LENGTH_LONG).show();
+                                Intent home = new Intent( sign_in.this, home.class );
+                                startActivity(home);
                             } else {
                                 Toast.makeText(sign_in.this, "sign-in failed", Toast.LENGTH_LONG).show();
                             }
