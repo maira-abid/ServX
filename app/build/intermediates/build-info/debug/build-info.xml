@@ -6,7 +6,7 @@
     density="xxhdpi"
     format="10"
     plugin-version="3.3.2"
-    timestamp="1554924098534"
+    timestamp="1554925219685"
     token="-1573043206620101472"
     verifier="COMPATIBLE" >
 
@@ -29,16 +29,16 @@
 
     <build
         build-mode="FULL"
-        timestamp="1554920207888"
+        timestamp="1554924870897"
         verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/home/mubeen/Desktop/ServX/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+            type="SPLIT" />
         <artifact
             location="/home/mubeen/Desktop/ServX/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
             location="/home/mubeen/Desktop/ServX/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/mubeen/Desktop/ServX/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
             type="SPLIT" />
         <artifact
             location="/home/mubeen/Desktop/ServX/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
@@ -72,43 +72,8 @@
             type="SPLIT_MAIN" />
     </build>
     <build
-        build-mode="COLD"
-        timestamp="1554923533602"
-        verifier="R_CLASS_CHANGE" >
-        <artifact
-            location="/home/mubeen/Desktop/ServX/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/mubeen/Desktop/ServX/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/mubeen/Desktop/ServX/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/mubeen/Desktop/ServX/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/mubeen/Desktop/ServX/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/mubeen/Desktop/ServX/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/mubeen/Desktop/ServX/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/mubeen/Desktop/ServX/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/mubeen/Desktop/ServX/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/mubeen/Desktop/ServX/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
-            type="SPLIT" />
-    </build>
-    <build
         build-mode="HOT_WARM"
-        timestamp="1554924098534"
+        timestamp="1554925219685"
         verifier="COMPATIBLE" >
         <artifact
             location="/home/mubeen/Desktop/ServX/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"

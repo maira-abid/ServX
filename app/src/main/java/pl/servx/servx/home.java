@@ -57,7 +57,7 @@ public class home extends AppCompatActivity{
         cars.add("Select Car");
 
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this,
-                R.layout.spinner_layout, cars);adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                R.layout.spinner_layout, cars);adaptador.setDropDownViewResource(R.layout.spinner_item);
 
         sp.setAdapter(adaptador);
 

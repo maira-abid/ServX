@@ -53,7 +53,8 @@
                 android:layout_weight="5"
                 android:spinnerMode="dropdown"
                 android:layout_margin="4dp"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:textAlignment="center"/>
 
             <Button
                 android:id="@+id/button"
