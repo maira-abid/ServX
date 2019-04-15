@@ -6,7 +6,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="27"
+        android:minSdkVersion="23"
         android:targetSdkVersion="27" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -30,14 +30,11 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="pl.servx.servx.MainActivity" />
         <activity android:name="pl.servx.servx.home" />
         <activity android:name="pl.servx.servx.SignUp" />
-        <activity
-            android:name="pl.servx.servx.tabbed_signin"
-            android:label="@string/title_activity_tabbed_signin"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="pl.servx.servx.sign_in" />
-        <activity android:name="pl.servx.servx.MainActivity" >
+        <activity android:name="pl.servx.servx.SplashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

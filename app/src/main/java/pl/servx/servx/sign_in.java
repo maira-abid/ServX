@@ -1,6 +1,7 @@
 package pl.servx.servx;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,12 +28,12 @@ public class sign_in extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        edtpass=(MaterialEditText)findViewById(R.id.edtPassword);
-        edtphone=(MaterialEditText)findViewById(R.id.edtPhone);
-        btnSignIn= (Button)findViewById(R.id.btnSignIn);
+        edtpass = (MaterialEditText)findViewById(R.id.edtPassword);
+        edtphone = (MaterialEditText)findViewById(R.id.edtPhone);
+        btnSignIn = (Button)findViewById(R.id.btnSignIn);
 
         //init database
-        FirebaseDatabase database= FirebaseDatabase.getInstance();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +59,12 @@ public class sign_in extends AppCompatActivity {
 
                             if (user.getPassword().equals(edtpass.getText().toString())) {
                                 Toast.makeText(sign_in.this, "sign in successful", Toast.LENGTH_LONG).show();
-                            } else {
+
+                                Intent home = new Intent( sign_in.this, home.class );
+
+                                startActivity(home);
+                            }
+                            else {
                                 Toast.makeText(sign_in.this, "sign-in failed", Toast.LENGTH_LONG).show();
                             }
 
