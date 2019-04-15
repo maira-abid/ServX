@@ -90,20 +90,20 @@ public final class R {
         public static final int ghost_view = 0x7f080057;
         public static final int icon = 0x7f08005d;
         public static final int icon_group = 0x7f08005e;
-        public static final int info = 0x7f080063;
-        public static final int italic = 0x7f080065;
-        public static final int line1 = 0x7f08006a;
-        public static final int line3 = 0x7f08006b;
-        public static final int normal = 0x7f080079;
-        public static final int notification_background = 0x7f08007a;
-        public static final int notification_main_column = 0x7f08007b;
-        public static final int notification_main_column_container = 0x7f08007c;
-        public static final int parent_matrix = 0x7f080081;
-        public static final int right_icon = 0x7f080088;
-        public static final int right_side = 0x7f080089;
-        public static final int save_image_matrix = 0x7f08008a;
-        public static final int save_non_transition_alpha = 0x7f08008b;
-        public static final int save_scale_type = 0x7f08008c;
+        public static final int info = 0x7f080062;
+        public static final int italic = 0x7f080064;
+        public static final int line1 = 0x7f080069;
+        public static final int line3 = 0x7f08006a;
+        public static final int normal = 0x7f080078;
+        public static final int notification_background = 0x7f080079;
+        public static final int notification_main_column = 0x7f08007a;
+        public static final int notification_main_column_container = 0x7f08007b;
+        public static final int parent_matrix = 0x7f080080;
+        public static final int right_icon = 0x7f080087;
+        public static final int right_side = 0x7f080088;
+        public static final int save_image_matrix = 0x7f080089;
+        public static final int save_non_transition_alpha = 0x7f08008a;
+        public static final int save_scale_type = 0x7f08008b;
         public static final int tag_transition_group = 0x7f0800b4;
         public static final int text = 0x7f0800b5;
         public static final int text2 = 0x7f0800b6;
@@ -133,7 +133,7 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int status_bar_notification_info_overflow = 0x7f0c0046;
+        public static final int status_bar_notification_info_overflow = 0x7f0c0049;
     }
     public static final class style {
         private style() {}

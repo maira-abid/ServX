@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -15,20 +16,22 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import pl.servx.servx.Model.car_list;
 
-public class home extends AppCompatActivity {
-    Button btnServices, btnHistory;
+public class home extends AppCompatActivity{
+    car_list helper;
+    Button btnServices,btnHistory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Spinner carSpinner = (Spinner) findViewById(R.id.spinner);
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference db = database.getReference("User");
-
-        final ArrayList<String> cars = new ArrayList<>();
+        Spinner sp = (Spinner) findViewById(R.id.spinner);
+        FirebaseDatabase database= FirebaseDatabase.getInstance();
+        DatabaseReference db= database.getReference("User");
+        helper = new car_list(db);
+        final ArrayList<String> cars =new ArrayList<>();
 
         db.addValueEventListener(new ValueEventListener() {
             @Override
@@ -39,7 +42,6 @@ public class home extends AppCompatActivity {
                     cars.add(name);
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
@@ -47,7 +49,10 @@ public class home extends AppCompatActivity {
 
         cars.add("Select Car");
 
+        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this,
+                R.layout.simple_spinner_item, cars);
+                adaptador.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
 
+        sp.setAdapter(adaptador);
     }
 }
-

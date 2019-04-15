@@ -951,10 +951,10 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btnHistory
+id btnServices
 id btnSignIn
 id btnSignUp
-id button
-id button2
 id buttonPanel
 id cancel_action
 id center
@@ -1011,7 +1011,6 @@ id icon_group
 id icon_only
 id ifRoom
 id image
-id imageView
 id info
 id invisible
 id italic
@@ -1080,6 +1079,7 @@ id snackbar_action
 id snackbar_text
 id snap
 id spacer
+id spinner
 id split_action_bar
 id spread
 id spread_inside
@@ -1197,6 +1197,8 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout simple_spinner_dropdown_item
+layout simple_spinner_item
 layout support_simple_spinner_dropdown_item
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -1233,6 +1235,7 @@ string action_settings
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
+string car_wash
 string character_counter_pattern
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
@@ -1258,6 +1261,8 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
+string home
+string oil_change
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -1271,7 +1276,6 @@ string sign_in
 string sign_up
 string slogan
 string status_bar_notification_info_overflow
-string title_activity_tabbed_signin
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

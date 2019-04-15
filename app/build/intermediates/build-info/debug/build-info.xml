@@ -6,37 +6,25 @@
     density="xxhdpi"
     format="10"
     plugin-version="3.3.2"
-    timestamp="1555269004421"
+    timestamp="1555352266202"
     token="2791533204638401658"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="928" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="152" />
+        duration="213" />
     <task
         name="verifier"
-        duration="415" />
+        duration="864" />
 
     <artifact
         location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-        type="SPLIT" />
-    <artifact
-        location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
         type="SPLIT" />
     <artifact
         location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
@@ -45,13 +33,25 @@
         location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
         type="SPLIT" />
     <artifact
+        location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
         location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
         type="SPLIT" />
     <artifact
-        location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
         type="SPLIT" />
     <artifact
-        location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
         type="SPLIT" />
     <artifact
         location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
@@ -62,22 +62,10 @@
 
     <build
         build-mode="FULL"
-        timestamp="1555269004421"
+        timestamp="1555352266202"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
-            type="SPLIT" />
-        <artifact
-            location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
             type="SPLIT" />
         <artifact
             location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
@@ -86,13 +74,25 @@
             location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
+            location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
             location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
             location="D:\LUMS\Spring 2019\CS 360 SE\Application\app\build\intermediates\split-apk\debug\slices\slice_8.apk"

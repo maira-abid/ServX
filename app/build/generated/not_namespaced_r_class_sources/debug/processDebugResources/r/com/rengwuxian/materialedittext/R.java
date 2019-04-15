@@ -491,38 +491,38 @@ public final class R {
         public static final int icon = 0x7f08005d;
         public static final int ifRoom = 0x7f080060;
         public static final int image = 0x7f080061;
-        public static final int info = 0x7f080063;
-        public static final int line1 = 0x7f08006a;
-        public static final int line3 = 0x7f08006b;
-        public static final int listMode = 0x7f08006c;
-        public static final int list_item = 0x7f08006d;
-        public static final int media_actions = 0x7f080071;
-        public static final int middle = 0x7f080073;
-        public static final int multiply = 0x7f080075;
-        public static final int never = 0x7f080077;
-        public static final int none = 0x7f080078;
-        public static final int normal = 0x7f080079;
-        public static final int parentPanel = 0x7f080080;
-        public static final int progress_circular = 0x7f080084;
-        public static final int progress_horizontal = 0x7f080085;
-        public static final int radio = 0x7f080086;
-        public static final int screen = 0x7f08008d;
-        public static final int scrollView = 0x7f080091;
-        public static final int search_badge = 0x7f080093;
-        public static final int search_bar = 0x7f080094;
-        public static final int search_button = 0x7f080095;
-        public static final int search_close_btn = 0x7f080096;
-        public static final int search_edit_frame = 0x7f080097;
-        public static final int search_go_btn = 0x7f080098;
-        public static final int search_mag_icon = 0x7f080099;
-        public static final int search_plate = 0x7f08009a;
-        public static final int search_src_text = 0x7f08009b;
-        public static final int search_voice_btn = 0x7f08009c;
-        public static final int select_dialog_listview = 0x7f08009d;
-        public static final int shortcut = 0x7f08009e;
-        public static final int showCustom = 0x7f08009f;
-        public static final int showHome = 0x7f0800a0;
-        public static final int showTitle = 0x7f0800a1;
+        public static final int info = 0x7f080062;
+        public static final int line1 = 0x7f080069;
+        public static final int line3 = 0x7f08006a;
+        public static final int listMode = 0x7f08006b;
+        public static final int list_item = 0x7f08006c;
+        public static final int media_actions = 0x7f080070;
+        public static final int middle = 0x7f080072;
+        public static final int multiply = 0x7f080074;
+        public static final int never = 0x7f080076;
+        public static final int none = 0x7f080077;
+        public static final int normal = 0x7f080078;
+        public static final int parentPanel = 0x7f08007f;
+        public static final int progress_circular = 0x7f080083;
+        public static final int progress_horizontal = 0x7f080084;
+        public static final int radio = 0x7f080085;
+        public static final int screen = 0x7f08008c;
+        public static final int scrollView = 0x7f080090;
+        public static final int search_badge = 0x7f080092;
+        public static final int search_bar = 0x7f080093;
+        public static final int search_button = 0x7f080094;
+        public static final int search_close_btn = 0x7f080095;
+        public static final int search_edit_frame = 0x7f080096;
+        public static final int search_go_btn = 0x7f080097;
+        public static final int search_mag_icon = 0x7f080098;
+        public static final int search_plate = 0x7f080099;
+        public static final int search_src_text = 0x7f08009a;
+        public static final int search_voice_btn = 0x7f08009b;
+        public static final int select_dialog_listview = 0x7f08009c;
+        public static final int shortcut = 0x7f08009d;
+        public static final int showCustom = 0x7f08009e;
+        public static final int showHome = 0x7f08009f;
+        public static final int showTitle = 0x7f0800a0;
         public static final int split_action_bar = 0x7f0800a7;
         public static final int src_atop = 0x7f0800aa;
         public static final int src_in = 0x7f0800ab;
@@ -586,7 +586,7 @@ public final class R {
         public static final int select_dialog_item_material = 0x7f0a003d;
         public static final int select_dialog_multichoice_material = 0x7f0a003e;
         public static final int select_dialog_singlechoice_material = 0x7f0a003f;
-        public static final int support_simple_spinner_dropdown_item = 0x7f0a0040;
+        public static final int support_simple_spinner_dropdown_item = 0x7f0a0042;
     }
     public static final class string {
         private string() {}
@@ -606,7 +606,7 @@ public final class R {
         public static final int abc_shareactionprovider_share_with = 0x7f0c001a;
         public static final int abc_shareactionprovider_share_with_application = 0x7f0c001b;
         public static final int abc_toolbar_collapse_description = 0x7f0c001c;
-        public static final int status_bar_notification_info_overflow = 0x7f0c0046;
+        public static final int status_bar_notification_info_overflow = 0x7f0c0049;
     }
     public static final class style {
         private style() {}

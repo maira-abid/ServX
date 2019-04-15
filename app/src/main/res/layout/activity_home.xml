@@ -4,95 +4,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".home">
 
-
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:background="@drawable/rectangle"
-        android:orientation="vertical"
-        android:textColor="@android:color/white">
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:layout_alignParentTop="true"
+    android:layout_centerInParent="true"
+    android:background="@drawable/rectangle"
+    android:orientation="vertical"
+    android:textColor="@android:color/white">
 
-        <TextView
-            android:id="@+id/stat_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:text="Home"
-            android:textColor="@android:color/white"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/stat_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:text="Home"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     </LinearLayout>
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="50dp"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
 
-            android:layout_height="60dp"
-            android:layout_marginTop="26dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal"
             android:weightSum="6">
 
             <Spinner
                 android:id="@+id/spinner"
-                android:layout_width="0dp"
+                android:layout_width="157dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="35dp"
                 android:layout_weight="5"
+                android:elevation="10dp"
                 android:spinnerMode="dropdown"
-                android:layout_marginLeft="16dp"
-                android:textColor="@android:color/black"
-                />
+                android:textColor="@android:color/black" />
+
         </LinearLayout>
 
 
         <Button
             android:id="@+id/btnServices"
             android:layout_width="match_parent"
-            android:layout_height="183dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="40dp"
+            android:layout_height="170dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
 
-            android:layout_marginRight="16dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/carwash"
             android:backgroundTint="@color/common_google_signin_btn_text_light_focused"
             android:backgroundTintMode="src_atop"
-            android:text="Services"
             android:elevation="100dp"
+            android:text="Services"
             android:textColor="@android:color/white"
             android:textSize="30sp"
-            android:textStyle="bold"
-            android:background="@drawable/carwash" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnHistory"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
-            android:layout_height="183dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginRight="16dp"
+            android:layout_height="170dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginRight="20dp"
             android:allowUndo="false"
+            android:background="@drawable/oilchange"
             android:backgroundTint="@color/common_google_signin_btn_text_light_focused"
             android:backgroundTintMode="src_atop"
-            android:text="Service History"
             android:elevation="100dp"
-            android:textStyle="bold"
+            android:text="Service History"
             android:textColor="@android:color/white"
             android:textSize="30sp"
-            android:background="@drawable/oilchange"
+            android:textStyle="bold"
             tools:style="@style/Widget.AppCompat.Button" />
+
 
     </LinearLayout>
 
