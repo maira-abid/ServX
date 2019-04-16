@@ -39,7 +39,9 @@
         <activity android:name="pl.servx.servx.MainActivity" />
         <activity android:name="pl.servx.servx.home" />
         <activity android:name="pl.servx.servx.SignUp" />
-        <activity android:name="pl.servx.servx.sign_in" />
+        <activity
+            android:name="pl.servx.servx.sign_in"
+            android:noHistory="true" />
         <activity android:name="pl.servx.servx.SplashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -28,6 +28,7 @@ public class home extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         stat_text= (TextView) findViewById(R.id.stat_text);
@@ -68,5 +69,21 @@ public class home extends AppCompatActivity{
                 startActivity(services);
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        //Intent intent = new Intent(Intent.ACTION_MAIN);
+        //intent.addCategory(Intent.CATEGORY_HOME);
+        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        finish();
+        super.onBackPressed();
+        //startActivity(intent);
+//        Intent i = new Intent(this, SplashScreen.class);
+//        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        startActivity(i);
+//        finish();
+
     }
 }

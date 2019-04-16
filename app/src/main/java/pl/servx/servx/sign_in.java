@@ -61,7 +61,7 @@ public class sign_in extends AppCompatActivity {
 
                                 Intent home = new Intent( sign_in.this, home.class );
                                 home.putExtra("extra", edtphone.getText().toString());
-
+                                home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
                                 startActivity(home);
                             }
@@ -83,4 +83,9 @@ public class sign_in extends AppCompatActivity {
             }
         });
     }
+//    @Override
+//    public void onBackPressed() {
+//        Intent i= new Intent(sign_in.this, MainActivity.class);
+//        startActivity(i);
+//    }
 }
