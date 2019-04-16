@@ -10,4 +10,10 @@
     <string name="home">Home</string>
     <string name="oil_change">Oil Change</string>
     <string name="services">Services</string>
+    <string name="car_make">Car Make</string>
+    <string name="car_details">Car Details</string>
+    <string name="car_model">Car Model</string>
+    <string name="confirm">Confirm</string>
+    <string name="license_plate">License Plate</string>
+    <string name="year">Year</string>
 </resources>

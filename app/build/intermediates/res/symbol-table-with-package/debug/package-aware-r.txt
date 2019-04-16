@@ -562,6 +562,7 @@ color fbutton_default_color
 color fbutton_default_shadow_color
 color foreground_material_dark
 color foreground_material_light
+color grey
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color material_blue_grey_800
@@ -859,9 +860,9 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable arrow
 drawable avd_hide_password
 drawable avd_show_password
-drawable backarrow
 drawable backdrop
 drawable bg2
 drawable carwash
@@ -917,6 +918,12 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
 id CTRL
+id CarDetails
+id CarMake
+id CarModel
+id CarPlate
+id CarYear
+id ConfirmCar
 id FUNCTION
 id META
 id SHIFT
@@ -1166,6 +1173,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_car_form
 layout activity_home
 layout activity_main
 layout activity_services
@@ -1242,6 +1250,9 @@ string action_settings
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
+string car_details
+string car_make
+string car_model
 string car_wash
 string character_counter_pattern
 string common_google_play_services_enable_button
@@ -1262,6 +1273,7 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string confirm
 string firebase_database_url
 string gcm_defaultSenderId
 string google_api_key
@@ -1269,6 +1281,7 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string home
+string license_plate
 string oil_change
 string password_toggle_content_description
 string path_password_eye
@@ -1284,6 +1297,7 @@ string sign_in
 string sign_up
 string slogan
 string status_bar_notification_info_overflow
+string year
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

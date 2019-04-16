@@ -17,6 +17,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Services"></activity>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".AddCarForm"/>
         <activity android:name=".home" />
         <activity android:name=".SignUp" />
         <activity android:name=".sign_in" android:noHistory="true"/>

@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
-        android:text="Home"
+        android:text="@string/home"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -48,7 +48,7 @@
                 android:id="@+id/spinner"
                 android:layout_width="157dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:layout_weight="5"
                 android:spinnerMode="dropdown"
                 android:textColor="@android:color/black" />
@@ -58,11 +58,11 @@
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.95"
-                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 android:background="@color/colorPrimary"
                 android:text="+"
                 android:textColor="@color/white"
-                android:textSize="40dp"
+                android:textSize="40sp"
                 android:gravity="center"
                 >
 
@@ -77,13 +77,12 @@
             android:layout_height="170dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
-
             android:layout_marginRight="20dp"
             android:background="@drawable/carwash"
             android:backgroundTint="@color/common_google_signin_btn_text_light_focused"
             android:backgroundTintMode="src_atop"
             android:elevation="100dp"
-            android:text="Services"
+            android:text="@string/services"
             android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -96,16 +95,14 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="45dp"
             android:layout_marginRight="20dp"
-            android:allowUndo="false"
             android:background="@drawable/oilchange"
             android:backgroundTint="@color/common_google_signin_btn_text_light_focused"
             android:backgroundTintMode="src_atop"
             android:elevation="100dp"
-            android:text="Service History"
+            android:text="service History"
             android:textColor="@color/white"
             android:textSize="30sp"
-            android:textStyle="bold"
-            tools:style="@style/Widget.AppCompat.Button" />
+            android:textStyle="bold" />
 
 
     </LinearLayout>
