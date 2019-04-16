@@ -1,11 +1,14 @@
 package pl.servx.servx;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 
 import com.google.firebase.database.DataSnapshot;
@@ -21,12 +24,13 @@ import pl.servx.servx.Model.car_list;
 public class home extends AppCompatActivity{
     car_list helper;
     Button btnServices,btnHistory;
+    TextView stat_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        stat_text= (TextView) findViewById(R.id.stat_text);
         Spinner sp = (Spinner) findViewById(R.id.spinner);
         FirebaseDatabase database= FirebaseDatabase.getInstance();
         DatabaseReference db= database.getReference("User");
@@ -54,5 +58,15 @@ public class home extends AppCompatActivity{
                 adaptador.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
 
         sp.setAdapter(adaptador);
+
+        btnServices= (Button) findViewById(R.id.btnServices);
+        btnServices.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent services = new Intent( home.this, Services.class );
+                services.putExtra("extra", home.class);
+                startActivity(services);
+            }
+        });
     }
 }

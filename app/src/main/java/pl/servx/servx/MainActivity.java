@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         logo = (ImageView)findViewById(R.id.logo);
         btnSignIn= (Button)findViewById(R.id.btnSignIn);
 
-        btnSignUp= (Button)findViewById(R.id.btnSignUp);
+         btnSignUp= (Button)findViewById(R.id.btnSignUp);
 
 
 
