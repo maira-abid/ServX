@@ -23,7 +23,7 @@ import pl.servx.servx.Model.car_list;
 
 public class home extends AppCompatActivity{
     car_list helper;
-    Button btnServices,btnHistory;
+    Button btnServices,btnHistory,btnAddCar;
     TextView stat_text;
 
     @Override
@@ -69,21 +69,21 @@ public class home extends AppCompatActivity{
                 startActivity(services);
             }
         });
+
+        btnAddCar= (Button) findViewById(R.id.btnAddCar);
+        btnAddCar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent form = new Intent( home.this, AddCarForm.class );
+                startActivity(form);
+            }
+        });
+
+
     }
     @Override
     public void onBackPressed() {
-        //Intent intent = new Intent(Intent.ACTION_MAIN);
-        //intent.addCategory(Intent.CATEGORY_HOME);
-        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         finish();
         super.onBackPressed();
-        //startActivity(intent);
-//        Intent i = new Intent(this, SplashScreen.class);
-//        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//        startActivity(i);
-//        finish();
-
     }
 }

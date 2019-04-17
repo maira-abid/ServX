@@ -21,6 +21,7 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Services" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".AddCarForm"/>
         <activity android:name=".home" />
         <activity android:name=".SignUp" />
         <activity
