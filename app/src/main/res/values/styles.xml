@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#00A2FF</item>
         <item name="colorPrimaryDark">#00304d</item>
-        <item name="colorAccent">#FFB52F</item>
+        <item name="colorAccent">#000000</item>
         <item name = "android:windowActivityTransitions">true</item>
 
     </style>
@@ -19,9 +19,6 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
-        <item name="android:textColor">#000000</item>
-    </style>
 
 </resources>
 

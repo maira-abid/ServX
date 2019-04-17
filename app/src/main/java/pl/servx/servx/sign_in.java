@@ -2,15 +2,14 @@ package pl.servx.servx;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.signin.SignIn;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,12 +27,12 @@ public class sign_in extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        edtpass=(MaterialEditText)findViewById(R.id.edtPassword);
-        edtphone=(MaterialEditText)findViewById(R.id.edtPhone);
-        btnSignIn= (Button)findViewById(R.id.btnSignIn);
+        edtpass = (MaterialEditText)findViewById(R.id.edtPassword);
+        edtphone = (MaterialEditText)findViewById(R.id.edtPhone);
+        btnSignIn = (Button)findViewById(R.id.btnSignIn);
 
         //init database
-        FirebaseDatabase database= FirebaseDatabase.getInstance();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
@@ -59,9 +58,14 @@ public class sign_in extends AppCompatActivity {
 
                             if (user.getPassword().equals(edtpass.getText().toString())) {
                                 Toast.makeText(sign_in.this, "sign in successful", Toast.LENGTH_LONG).show();
+
                                 Intent home = new Intent( sign_in.this, home.class );
+                                home.putExtra("extra", edtphone.getText().toString());
+                                home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
                                 startActivity(home);
-                            } else {
+                            }
+                            else {
                                 Toast.makeText(sign_in.this, "sign-in failed", Toast.LENGTH_LONG).show();
                             }
 
@@ -79,4 +83,9 @@ public class sign_in extends AppCompatActivity {
             }
         });
     }
+//    @Override
+//    public void onBackPressed() {
+//        Intent i= new Intent(sign_in.this, MainActivity.class);
+//        startActivity(i);
+//    }
 }

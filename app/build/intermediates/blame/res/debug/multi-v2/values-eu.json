@@ -1,44 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/mubeen/Desktop/ServX/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-eu/values-eu.xml",
+            "outputFile": "D:\\LUMS\\Spring 2019\\CS 360 SE\\Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-eu\\values-eu.xml",
             "map": [
                 {
-                    "source": "/home/mubeen/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/a91668af1984fc2ce18a3faacfe738b5/res/values-eu/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "200",
-                        "endOffsets": "447"
-                    },
-                    "to": {
-                        "startLines": "27",
-                        "startColumns": "4",
-                        "startOffsets": "3082",
-                        "endColumns": "200",
-                        "endOffsets": "3278"
-                    }
-                },
-                {
-                    "source": "/home/mubeen/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/0b8dbaf4cfb78b389f49167bc1bcc49f/res/values-eu/values-eu.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "38",
-                        "startColumns": "4",
-                        "startOffsets": "4763",
-                        "endColumns": "100",
-                        "endOffsets": "4859"
-                    }
-                },
-                {
-                    "source": "/home/mubeen/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b4e5f77e13aced1e118a37a4498bd969/res/values-eu/values-eu.xml",
+                    "source": "C:\\Users\\Maira\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5cc402aa81f52e18ebd20cbd8b5d1297\\res\\values-eu\\values-eu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "/home/mubeen/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/91f973f7e18f5120952691556a9c6bc7/res/values-eu/values.xml",
+                    "source": "C:\\Users\\Maira\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\63a77ddb85133d33a6792dde2d813cca\\res\\values-eu\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "200",
+                        "endOffsets": "447"
+                    },
+                    "to": {
+                        "startLines": "27",
+                        "startColumns": "4",
+                        "startOffsets": "3082",
+                        "endColumns": "200",
+                        "endOffsets": "3278"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Maira\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\269317acefb40090ee1307c78a1a33cb\\res\\values-eu\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -69,6 +52,23 @@
                         "startOffsets": "1905,2011,2219,2347,2458,2664,2793,2946,3283,3526,3636,3834,3966,4193,4382,4478,4573",
                         "endColumns": "105,207,127,110,205,128,152,135,242,109,197,131,226,188,95,94,107",
                         "endOffsets": "2006,2214,2342,2453,2659,2788,2941,3077,3521,3631,3829,3961,4188,4377,4473,4568,4676"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Maira\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\7939c1ea34624854c87537f45ecf35c1\\res\\values-eu\\values-eu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "38",
+                        "startColumns": "4",
+                        "startOffsets": "4763",
+                        "endColumns": "100",
+                        "endOffsets": "4859"
                     }
                 }
             ]
