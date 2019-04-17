@@ -10,4 +10,14 @@
     <string name="home">Home</string>
     <string name="oil_change">Oil Change</string>
     <string name="services">Services</string>
+    <string name="title_activity_services_tabbed">services_tabbed</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Package_1">Package 1</string>
+    <string name="Package_2">Package 2</string>
+    <string name="Package_3">Package 3</string>
 </resources>

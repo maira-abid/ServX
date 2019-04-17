@@ -35,6 +35,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity
+            android:name="pl.servx.servx.services_tabbed"
+            android:label="@string/title_activity_services_tabbed"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="pl.servx.servx.Services" />
         <activity android:name="pl.servx.servx.MainActivity" />
         <activity android:name="pl.servx.servx.home" />

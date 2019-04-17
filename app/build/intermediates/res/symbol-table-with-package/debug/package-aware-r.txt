@@ -938,6 +938,7 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_settings
 id action_text
 id actions
 id activity_chooser_view_content
@@ -947,6 +948,7 @@ id adjust_width
 id alertTitle
 id all
 id always
+id appbar
 id async
 id auto
 id back_button
@@ -970,6 +972,7 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id constraintLayout
 id container
 id contentPanel
 id coordinator
@@ -999,6 +1002,7 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fab
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1029,6 +1033,7 @@ id listMode
 id list_item
 id listview_background_shape
 id logo
+id main_content
 id masked
 id media_actions
 id message
@@ -1043,6 +1048,9 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id oil_change
+id p_1
+id p_2
+id p_3
 id packed
 id parallax
 id parent
@@ -1075,6 +1083,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id section_label
 id select_dialog_listview
 id shortcut
 id showCustom
@@ -1098,7 +1107,10 @@ id stat_text
 id status_bar_latest_event_content
 id submenuarrow
 id submit_area
+id tabItem
+id tabItem2
 id tabMode
+id tabs
 id tag_transition_group
 id text
 id text2
@@ -1169,6 +1181,7 @@ layout abc_tooltip
 layout activity_home
 layout activity_main
 layout activity_services
+layout activity_services_tabbed
 layout activity_sign_in
 layout activity_sign_up
 layout activity_splash_screen
@@ -1186,6 +1199,8 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fragment_serv_frag1
+layout fragment_services_tabbed
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -1207,8 +1222,12 @@ layout select_dialog_singlechoice_material
 layout simple_spinner_dropdown_item
 layout simple_spinner_item
 layout support_simple_spinner_dropdown_item
+menu menu_services_tabbed
 mipmap ic_launcher
 mipmap ic_launcher_round
+string Package_1
+string Package_2
+string Package_3
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -1268,6 +1287,7 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
+string hello_blank_fragment
 string home
 string oil_change
 string password_toggle_content_description
@@ -1284,6 +1304,10 @@ string sign_in
 string sign_up
 string slogan
 string status_bar_notification_info_overflow
+string tab_text_1
+string tab_text_2
+string tab_text_3
+string title_activity_services_tabbed
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
