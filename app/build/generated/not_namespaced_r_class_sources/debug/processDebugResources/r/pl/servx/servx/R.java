@@ -2104,7 +2104,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td></td></tr>
+     * <tr><td>direct</td><td>1</td><td>direct, barriers, chains</td></tr>
      * <tr><td>groups</td><td>20</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>7</td><td></td></tr>
@@ -3993,9 +3993,10 @@ public final class R {
     public static final int notification_tile_bg=0x7f07008c;
     public static final int notify_panel_notification_icon_bg=0x7f07008d;
     public static final int oilchange=0x7f07008e;
-    public static final int rectangle=0x7f07008f;
-    public static final int tooltip_frame_dark=0x7f070090;
-    public static final int tooltip_frame_light=0x7f070091;
+    public static final int plus=0x7f07008f;
+    public static final int rectangle=0x7f070090;
+    public static final int tooltip_frame_dark=0x7f070091;
+    public static final int tooltip_frame_light=0x7f070092;
   }
   public static final class id {
     public static final int ALT=0x7f080000;
@@ -4300,7 +4301,9 @@ public final class R {
     public static final int select_dialog_singlechoice_material=0x7f0a0041;
     public static final int simple_spinner_dropdown_item=0x7f0a0042;
     public static final int simple_spinner_item=0x7f0a0043;
-    public static final int support_simple_spinner_dropdown_item=0x7f0a0044;
+    public static final int spinner_item=0x7f0a0044;
+    public static final int spinner_layout=0x7f0a0045;
+    public static final int support_simple_spinner_dropdown_item=0x7f0a0046;
   }
   public static final class mipmap {
     public static final int ic_launcher=0x7f0b0000;
@@ -9491,7 +9494,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td></td></tr>
+     * <tr><td>direct</td><td>1</td><td>direct, barriers, chains</td></tr>
      * <tr><td>groups</td><td>20</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>7</td><td></td></tr>

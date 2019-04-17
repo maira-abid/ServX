@@ -1,6 +1,7 @@
 package pl.servx.servx;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import pl.servx.servx.Model.User;
+import pl.servx.servx.Model.request;
 
 public class SignUp extends AppCompatActivity {
 
@@ -39,6 +41,7 @@ public class SignUp extends AppCompatActivity {
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");
+        final DatabaseReference table_user1 = database.getReference("requests");
 
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
@@ -69,8 +72,13 @@ public class SignUp extends AppCompatActivity {
                                 mDialog.dismiss();
                                 User user = new User(edtName.getText().toString(), edtPassword.getText().toString());
                                 table_user.child(edtPhone.getText().toString()).setValue(user);
+                                request req = new request();
+
+                                table_user1.child(edtPhone.getText().toString()).child("0").setValue(req);
                                 Toast.makeText(SignUp.this, "SignUp successul", Toast.LENGTH_LONG).show();
                                 counter = 1;
+                                Intent signin = new Intent( SignUp.this, sign_in.class );
+                                startActivity(signin);
                                 finish();
                             }
                             else{
