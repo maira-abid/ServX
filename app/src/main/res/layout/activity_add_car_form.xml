@@ -51,7 +51,7 @@
             android:id="@+id/spCarMake"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:entries="@array/Make"></Spinner>.TextInputEditText
+            ></Spinner>.TextInputEditText
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
