@@ -16,6 +16,11 @@ anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
 animator design_appbar_state_list_animator
+array Dihatsu
+array Honda
+array Make
+array Suzuki
+array Toyota
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -1092,6 +1097,9 @@ id smallLabel
 id snackbar_action
 id snackbar_text
 id snap
+id spCarMake
+id spCarModel
+id spCarYear
 id spacer
 id spinner
 id split_action_bar
@@ -1110,6 +1118,7 @@ id tabMode
 id tag_transition_group
 id text
 id text2
+id textCarPlate
 id textSpacerNoButtons
 id textSpacerNoTitle
 id text_input_password_toggle

@@ -16,4 +16,49 @@
     <string name="confirm">Confirm</string>
     <string name="license_plate">License Plate</string>
     <string name="year">Year</string>
+
+    <string-array name="Make">
+        <item>Select Make</item>
+        <item>Honda</item>
+        <item>Suzuki</item>
+        <item>Toyota</item>
+        <item>Dihatsu</item>
+    </string-array>
+
+    <string-array name="Honda">
+        <item>Select Model</item>
+        <item>Civic</item>
+        <item>Vezel</item>
+        <item>B-rv</item>
+        <item>City</item>
+        <item>City Aspire</item>
+    </string-array>
+
+    <string-array name="Suzuki">
+        <item>Select Model</item>
+        <item>Mehran</item>
+        <item>Cultus</item>
+        <item>Swift</item>
+        <item>Alto</item>
+        <item>Wagon-R</item>
+        <item>Vitara</item>
+        <item>Ciaz</item>
+    </string-array>
+
+    <string-array name="Toyota">
+        <item>Select Model</item>
+        <item>Corolla</item>
+        <item>Vitz</item>
+        <item>Prius</item>
+        <item>Camry</item>
+        <item>Prado</item>
+        <item>Fortuner</item>
+    </string-array>
+
+    <string-array name="Dihatsu">
+        <item>Select Model</item>
+        <item>Mira</item>
+    </string-array>
+
+
 </resources>
