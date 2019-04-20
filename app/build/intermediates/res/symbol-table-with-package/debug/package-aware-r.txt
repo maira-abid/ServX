@@ -868,6 +868,7 @@ drawable abc_vector_test
 drawable arrow
 drawable avd_hide_password
 drawable avd_show_password
+drawable backarrow
 drawable backdrop
 drawable bg2
 drawable carwash
@@ -951,6 +952,7 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_settings
 id action_text
 id actions
 id activity_chooser_view_content
@@ -960,6 +962,7 @@ id adjust_width
 id alertTitle
 id all
 id always
+id appbar
 id async
 id auto
 id back_button
@@ -983,6 +986,7 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id constraintLayout
 id container
 id contentPanel
 id coordinator
@@ -1042,6 +1046,7 @@ id listMode
 id list_item
 id listview_background_shape
 id logo
+id main_content
 id masked
 id media_actions
 id message
@@ -1056,6 +1061,9 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id oil_change
+id p_1
+id p_2
+id p_3
 id packed
 id parallax
 id parent
@@ -1088,6 +1096,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id section_label
 id select_dialog_listview
 id shortcut
 id showCustom
@@ -1114,7 +1123,10 @@ id stat_text
 id status_bar_latest_event_content
 id submenuarrow
 id submit_area
+id tabItem
+id tabItem2
 id tabMode
+id tabs
 id tag_transition_group
 id text
 id text2
@@ -1187,6 +1199,7 @@ layout activity_add_car_form
 layout activity_home
 layout activity_main
 layout activity_services
+layout activity_services_tabbed
 layout activity_sign_in
 layout activity_sign_up
 layout activity_splash_screen
@@ -1204,6 +1217,8 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fragment_serv_frag1
+layout fragment_services_tabbed
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -1227,6 +1242,7 @@ layout simple_spinner_item
 layout spinner_item
 layout spinner_layout
 layout support_simple_spinner_dropdown_item
+menu menu_services_tabbed
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description

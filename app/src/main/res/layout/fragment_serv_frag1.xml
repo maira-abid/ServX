@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,16 +14,16 @@
         <TextView
             android:id="@+id/p_1"
             android:layout_width="match_parent"
-            android:layout_height="136dp"
-            android:text="@string/Package_1"
+            android:layout_height="322dp"
+            android:text="Package 1"
             android:textColor="#000000"
             android:textSize="30sp" />
 
         <TextView
             android:id="@+id/p_2"
             android:layout_width="match_parent"
-            android:layout_height="136dp"
-            android:text="@string/Package_2"
+            android:layout_height="301dp"
+            android:text="Package 2"
             android:textColor="#000000"
             android:textSize="30sp" />
 
@@ -31,10 +31,10 @@
             android:id="@+id/p_3"
             android:layout_width="match_parent"
             android:layout_height="136dp"
-            android:text="@string/Package_3"
+            android:text="Package 3"
             android:textColor="#000000"
             android:textSize="30sp" />
 
     </LinearLayout>
 
-</FrameLayout>
+</ScrollView>
