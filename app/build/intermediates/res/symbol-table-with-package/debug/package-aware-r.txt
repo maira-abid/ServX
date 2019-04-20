@@ -933,8 +933,12 @@ id CarYear
 id ConfirmCar
 id FUNCTION
 id META
+id Make_txt
+id Model_txt
+id Plate_txt
 id SHIFT
 id SYM
+id Year_txt
 id action0
 id action_bar
 id action_bar_activity_content

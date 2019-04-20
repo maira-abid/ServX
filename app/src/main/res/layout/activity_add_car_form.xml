@@ -47,8 +47,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
+<<<<<<< Updated upstream
         <Spinner
             android:id="@+id/spCarMake"
+=======
+        <EditText
+            android:id="@+id/Make_txt"
+>>>>>>> Stashed changes
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             ></Spinner>.TextInputEditText
@@ -66,8 +71,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CarMake">
 
+<<<<<<< Updated upstream
         <Spinner
             android:id="@+id/spCarModel"
+=======
+        <EditText
+            android:id="@+id/Model_txt"
+>>>>>>> Stashed changes
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:spinnerMode="dropdown"
@@ -86,8 +96,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CarModel">
 
+<<<<<<< Updated upstream
         <Spinner
             android:id="@+id/spCarYear"
+=======
+        <EditText
+            android:id="@+id/Year_txt"
+>>>>>>> Stashed changes
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             ></Spinner>.TextInputEditText
@@ -105,8 +120,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CarYear">
 
+<<<<<<< Updated upstream
         <android.support.design.widget.TextInputEditText
             android:id="@+id/textCarPlate"
+=======
+        <EditText
+            android:id="@+id/Plate_txt"
+>>>>>>> Stashed changes
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
@@ -125,7 +145,7 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CarPlate"
         app:layout_constraintVertical_bias="0.029" />

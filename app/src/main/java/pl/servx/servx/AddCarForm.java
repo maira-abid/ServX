@@ -1,5 +1,6 @@
 package pl.servx.servx;
 
+<<<<<<< Updated upstream
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,10 +10,28 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+=======
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+>>>>>>> Stashed changes
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+<<<<<<< Updated upstream
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -22,12 +41,19 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
     Spinner spCarModel,spCarMake,spCarYear;
     Button ConfirmCar ;
     TextInputEditText textCarPlate;
+=======
+    int counter =0 ;
+    EditText Cmake, Cmodel, Cyear, Cplate;
+    Button btnConfirm;
+
+>>>>>>> Stashed changes
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_car_form);
 
+<<<<<<< Updated upstream
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");
         spCarMake = (Spinner)findViewById(R.id.spCarMake);
@@ -108,6 +134,57 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+=======
+        Button back = (Button) findViewById(R.id.back_button);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent go_back = new Intent(AddCarForm.this, home.class);
+                startActivity(go_back);
+            }
+        });
 
+        Cmake = (EditText) findViewById(R.id.Make_txt);
+        Cmodel = (EditText) findViewById(R.id.Model_txt);
+        Cyear = (EditText) findViewById(R.id.Year_txt);
+        Cplate = (EditText) findViewById(R.id.CarPlate);
+        btnConfirm = (Button) findViewById(R.id.ConfirmCar);
+
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference table_user = database.getReference("User");
+
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final ProgressDialog mDialog = new ProgressDialog(AddCarForm.this);
+                mDialog.setMessage("Please wait");
+                mDialog.show();
+
+                table_user.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        //check if already user phone
+                        if (dataSnapshot.child(Cplate.getText().toString()).exists())
+                        {
+                            mDialog.dismiss();
+                            if(counter == 0 )
+                            {
+                                Toast.makeText(AddCarForm.this, "Car Already Exists", Toast.LENGTH_LONG).show();
+                            }
+                        }
+>>>>>>> Stashed changes
+
+                        else
+                        {
+                                mDialog.dismiss();
+                        }
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        mDialog.dismiss();
+                    }
+                });
+            }
+        });
     }
 }
