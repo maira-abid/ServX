@@ -19,17 +19,17 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-        <TextView
-            android:id="@+id/CarDetails"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="60dp"
-            android:text="@string/car_details"
-            android:textColor="@color/white"
-            android:textSize="40sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/CarDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/car_details"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/CarMake"
@@ -47,13 +47,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-<<<<<<< Updated upstream
         <Spinner
             android:id="@+id/spCarMake"
-=======
-        <EditText
-            android:id="@+id/Make_txt"
->>>>>>> Stashed changes
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             ></Spinner>.TextInputEditText
@@ -71,13 +66,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CarMake">
 
-<<<<<<< Updated upstream
         <Spinner
             android:id="@+id/spCarModel"
-=======
-        <EditText
-            android:id="@+id/Model_txt"
->>>>>>> Stashed changes
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:spinnerMode="dropdown"
@@ -96,13 +86,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CarModel">
 
-<<<<<<< Updated upstream
         <Spinner
             android:id="@+id/spCarYear"
-=======
-        <EditText
-            android:id="@+id/Year_txt"
->>>>>>> Stashed changes
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             ></Spinner>.TextInputEditText
@@ -120,13 +105,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CarYear">
 
-<<<<<<< Updated upstream
         <android.support.design.widget.TextInputEditText
             android:id="@+id/textCarPlate"
-=======
-        <EditText
-            android:id="@+id/Plate_txt"
->>>>>>> Stashed changes
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"

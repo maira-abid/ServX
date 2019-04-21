@@ -35,6 +35,10 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
+            android:name="pl.servx.servx.Tabbed_Main"
+            android:label="@string/title_activity_tabbed__main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name="pl.servx.servx.services_tabbed"
             android:label="activity_services_tabbed"
             android:theme="@style/AppTheme.NoActionBar" />

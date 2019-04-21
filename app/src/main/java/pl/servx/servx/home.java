@@ -54,11 +54,10 @@ public class home extends AppCompatActivity{
 
         cars.add("Select Car");
 
-        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapt = new ArrayAdapter<String>(this,
                 R.layout.simple_spinner_item, cars);
-                adaptador.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
-
-        sp.setAdapter(adaptador);
+                adapt.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
+                sp.setAdapter(adapt);
 
         btnServices= (Button) findViewById(R.id.btnServices);
         btnServices.setOnClickListener(new View.OnClickListener() {

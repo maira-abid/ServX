@@ -933,12 +933,8 @@ id CarYear
 id ConfirmCar
 id FUNCTION
 id META
-id Make_txt
-id Model_txt
-id Plate_txt
 id SHIFT
 id SYM
-id Year_txt
 id action0
 id action_bar
 id action_bar_activity_content
@@ -1036,6 +1032,7 @@ id icon_group
 id icon_only
 id ifRoom
 id image
+id imageView
 id info
 id invisible
 id italic
@@ -1207,6 +1204,7 @@ layout activity_services_tabbed
 layout activity_sign_in
 layout activity_sign_up
 layout activity_splash_screen
+layout activity_tabbed__main
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1243,10 +1241,11 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout simple_spinner_dropdown_item
 layout simple_spinner_item
-layout spinner_item
-layout spinner_layout
 layout support_simple_spinner_dropdown_item
+layout tabbed_login
+layout tabbed_signup
 menu menu_services_tabbed
+menu menu_tabbed__main
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description
@@ -1312,6 +1311,7 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
+string hello_blank_fragment
 string home
 string license_plate
 string oil_change
@@ -1329,6 +1329,11 @@ string sign_in
 string sign_up
 string slogan
 string status_bar_notification_info_overflow
+string tab_text_1
+string tab_text_2
+string tab_text_3
+string title_activity_tabbed__main
+string title_activity_tabbed_main
 string year
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
