@@ -23,7 +23,7 @@ import pl.servx.servx.Model.car_list;
 
 public class home extends AppCompatActivity{
     car_list helper;
-    Button btnServices,btnHistory,btnAddCar;
+    Button btnServices,btnHistory,btnAddCar, btnmaps;
     TextView stat_text;
 
     @Override
@@ -78,6 +78,17 @@ public class home extends AppCompatActivity{
                 startActivity(form);
             }
         });
+
+        btnmaps = (Button)findViewById(R.id.btnmaps);
+
+        btnmaps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent maps = new Intent(home.this, select_location.class);
+                startActivity(maps);
+            }
+        });
+
 
 
     }

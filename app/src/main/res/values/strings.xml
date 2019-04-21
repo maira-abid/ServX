@@ -59,6 +59,7 @@
         <item>Select Model</item>
         <item>Mira</item>
     </string-array>
+    <string name="title_activity_select_location">Map</string>
 
 
 </resources>

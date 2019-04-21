@@ -62,6 +62,7 @@ attr alertDialogTheme
 attr allowStacking
 attr alpha
 attr alphabeticModifiers
+attr ambientEnabled
 attr arrowHeadLength
 attr arrowShaftLength
 attr autoCompleteTextViewStyle
@@ -101,6 +102,13 @@ attr buttonStyle
 attr buttonStyleSmall
 attr buttonTint
 attr buttonTintMode
+attr cameraBearing
+attr cameraMaxZoomPreference
+attr cameraMinZoomPreference
+attr cameraTargetLat
+attr cameraTargetLng
+attr cameraTilt
+attr cameraZoom
 attr chainUseRtl
 attr checkboxStyle
 attr checkedTextViewStyle
@@ -216,6 +224,10 @@ attr itemPadding
 attr itemTextAppearance
 attr itemTextColor
 attr keylines
+attr latLngBoundsNorthEastLatitude
+attr latLngBoundsNorthEastLongitude
+attr latLngBoundsSouthWestLatitude
+attr latLngBoundsSouthWestLongitude
 attr layout
 attr layoutManager
 attr layout_anchor
@@ -289,8 +301,10 @@ attr listPreferredItemHeightLarge
 attr listPreferredItemHeightSmall
 attr listPreferredItemPaddingLeft
 attr listPreferredItemPaddingRight
+attr liteMode
 attr logo
 attr logoDescription
+attr mapType
 attr maxActionInlineWidth
 attr maxButtonHeight
 attr measureWithLargestChild
@@ -457,7 +471,15 @@ attr tooltipText
 attr track
 attr trackTint
 attr trackTintMode
+attr uiCompass
+attr uiMapToolbar
+attr uiRotateGestures
+attr uiScrollGestures
+attr uiTiltGestures
+attr uiZoomControls
+attr uiZoomGestures
 attr useCompatPadding
+attr useViewLifecycle
 attr viewInflaterClass
 attr voiceIcon
 attr windowActionBar
@@ -470,6 +492,7 @@ attr windowFixedWidthMinor
 attr windowMinWidthMajor
 attr windowMinWidthMinor
 attr windowNoTitle
+attr zOrderOnTop
 bool abc_action_bar_embed_tabs
 bool abc_allow_stacked_button_bar
 bool abc_config_actionMenuItemAllCaps
@@ -904,6 +927,7 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable logo
 drawable logo_servx
+drawable marker
 drawable met_ic_clear
 drawable navigation_empty_icon
 drawable notification_action_background
@@ -971,10 +995,12 @@ id beginning
 id blocking
 id bottom
 id btnAddCar
+id btnConfirm
 id btnHistory
 id btnServices
 id btnSignIn
 id btnSignUp
+id btnmaps
 id buttonPanel
 id cancel_action
 id center
@@ -1003,6 +1029,7 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id dragg_result
 id edit_query
 id edtEmail
 id edtName
@@ -1027,6 +1054,7 @@ id groups
 id highlight
 id home
 id homeAsUp
+id hybrid
 id icon
 id icon_group
 id icon_only
@@ -1047,6 +1075,7 @@ id list_item
 id listview_background_shape
 id logo
 id main_content
+id map
 id masked
 id media_actions
 id message
@@ -1077,6 +1106,7 @@ id radio
 id right
 id right_icon
 id right_side
+id satellite
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1128,6 +1158,7 @@ id tabItem2
 id tabMode
 id tabs
 id tag_transition_group
+id terrain
 id text
 id text2
 id textCarPlate
@@ -1198,6 +1229,7 @@ layout abc_tooltip
 layout activity_add_car_form
 layout activity_home
 layout activity_main
+layout activity_select_location
 layout activity_services
 layout activity_services_tabbed
 layout activity_sign_in
@@ -1307,6 +1339,7 @@ string gcm_defaultSenderId
 string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
+string google_maps_key
 string google_storage_bucket
 string home
 string license_plate
@@ -1325,6 +1358,7 @@ string sign_in
 string sign_up
 string slogan
 string status_bar_notification_info_overflow
+string title_activity_select_location
 string year
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
@@ -1746,6 +1780,7 @@ styleable LinearLayoutCompat android_gravity android_orientation android_baselin
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
 styleable LoadingImageView circleCrop imageAspectRatio imageAspectRatioAdjust
+styleable MapAttrs ambientEnabled cameraBearing cameraMaxZoomPreference cameraMinZoomPreference cameraTargetLat cameraTargetLng cameraTilt cameraZoom latLngBoundsNorthEastLatitude latLngBoundsNorthEastLongitude latLngBoundsSouthWestLatitude latLngBoundsSouthWestLongitude liteMode mapType uiCompass uiMapToolbar uiRotateGestures uiScrollGestures uiTiltGestures uiZoomControls uiZoomGestures useViewLifecycle zOrderOnTop
 styleable MaterialEditText met_accentTypeface met_autoValidate met_baseColor met_bottomTextSize met_checkCharactersCountAtBeginning met_clearButton met_errorColor met_floatingLabel met_floatingLabelAlwaysShown met_floatingLabelAnimating met_floatingLabelPadding met_floatingLabelText met_floatingLabelTextColor met_floatingLabelTextSize met_helperText met_helperTextAlwaysShown met_helperTextColor met_hideUnderline met_iconLeft met_iconPadding met_iconRight met_maxCharacters met_minBottomTextLines met_minCharacters met_primaryColor met_singleLineEllipsis met_textColor met_textColorHint met_typeface met_underlineColor met_validateOnFocusLost
 styleable MenuGroup android_enabled android_id android_visible android_menuCategory android_orderInCategory android_checkableBehavior
 styleable MenuItem android_icon android_enabled android_id android_checked android_visible android_menuCategory android_orderInCategory android_title android_titleCondensed android_alphabeticShortcut android_numericShortcut android_checkable android_onClick actionLayout actionProviderClass actionViewClass alphabeticModifiers contentDescription iconTint iconTintMode numericModifiers showAsAction tooltipText
