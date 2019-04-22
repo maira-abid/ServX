@@ -1,7 +1,10 @@
 package pl.servx.servx;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,11 +29,20 @@ public class home extends AppCompatActivity{
     Button btnServices,btnHistory,btnAddCar, btnmaps;
     TextView stat_text;
 
+    private static final int REQUEST_LOCATION_PERMISSION = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        if (ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]
+                            {Manifest.permission.ACCESS_FINE_LOCATION},
+                    REQUEST_LOCATION_PERMISSION);
+        }
         stat_text= (TextView) findViewById(R.id.stat_text);
         Spinner sp = (Spinner) findViewById(R.id.spinner);
         FirebaseDatabase database= FirebaseDatabase.getInstance();

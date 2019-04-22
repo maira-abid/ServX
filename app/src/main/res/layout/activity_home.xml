@@ -70,6 +70,17 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btnmaps"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:elevation="100dp"
+            android:text="dummy button for maps"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnServices"
@@ -86,6 +97,7 @@
             android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold" />
+
 
         <Button
             android:id="@+id/btnHistory"
@@ -104,18 +116,6 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
-
-        <Button
-            android:id="@+id/btnmaps"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="50dp"
-            android:elevation="100dp"
-            android:text="dummy button for maps"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold" />
 
 
     </LinearLayout>

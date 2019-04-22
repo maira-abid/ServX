@@ -1,11 +1,15 @@
 package pl.servx.servx;
 
+import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,9 +35,11 @@ public class select_location extends FragmentActivity implements OnMapReadyCallb
     private GoogleMap.OnCameraIdleListener onCameraIdleListener;
     private TextView resutText;
     public Button btnConfirm;
-    private LocationManager locationManager;
+    public Button refresh;
+    public LocationManager locationManager;
     private static final long MIN_TIME = 400;
     private static final float MIN_DISTANCE = 1000;
+    private static final int REQUEST_LOCATION_PERMISSION = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +51,18 @@ public class select_location extends FragmentActivity implements OnMapReadyCallb
 
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
+
+
+        if (ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]
+                            {Manifest.permission.ACCESS_FINE_LOCATION},
+                    REQUEST_LOCATION_PERMISSION);
+        }
+
         mapFragment.getMapAsync(this);
-
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
 
 
 
@@ -66,6 +80,29 @@ public class select_location extends FragmentActivity implements OnMapReadyCallb
                 Toast.makeText(select_location.this,x, Toast.LENGTH_LONG).show();
 
             }
+        });
+
+        refresh = (Button)findViewById(R.id.refresh);
+        refresh.setOnClickListener(new View.OnClickListener(){
+            @Override
+           public void onClick(View view) {
+
+                Location location = getLastKnownLocation();
+                if (location != null) {
+                    LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+                    CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 17);
+                    mMap.animateCamera(cameraUpdate);
+                }
+                else{
+                    final ProgressDialog mDialog = new ProgressDialog(select_location.this);
+                    mDialog.setMessage("Please Turn on Location and refresh");
+                    mDialog.show();
+
+                }
+
+
+           }
+
         });
     }
 
@@ -108,12 +145,23 @@ public class select_location extends FragmentActivity implements OnMapReadyCallb
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+
+
+        mMap.setMyLocationEnabled(true);
         LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         Location location = getLastKnownLocation();
-        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 17);
-        mMap.animateCamera(cameraUpdate);
-        locationManager.removeUpdates(this);
+        if (location != null) {
+            LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+            CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 17);
+            mMap.animateCamera(cameraUpdate);
+            locationManager.removeUpdates(this);
+        }else{
+            final ProgressDialog mDialog = new ProgressDialog(select_location.this);
+            mDialog.setMessage("Please Turn on Location and refresh");
+            mDialog.show();
+
+        }
+
         mMap.setOnCameraIdleListener(onCameraIdleListener);
 
     }
@@ -138,10 +186,10 @@ public class select_location extends FragmentActivity implements OnMapReadyCallb
 
     @Override
     public void onLocationChanged(Location location) {
-        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 10);
+/*        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 17);
         mMap.animateCamera(cameraUpdate);
-        locationManager.removeUpdates(this);
+        locationManager.removeUpdates(this);*/
     }
 
     @Override

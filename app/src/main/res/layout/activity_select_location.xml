@@ -11,7 +11,7 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="boommba.apps.prototype.draggablemapviewandroid.MapsActivity" />
+        tools:context=".select_location" />
     <TextView
         android:id="@+id/dragg_result"
         android:layout_width="match_parent"
@@ -30,19 +30,41 @@
         android:layout_centerVertical="true"
         android:src="@drawable/marker"
         android:text="TextView" />
-    <Button
-        android:id="@+id/btnConfirm"
-        style="@style/Widget.AppCompat.Button"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="16dp"
-        android:background="@color/colorPrimary"
-        android:text="Confirm Location"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"/>
+        android:layout_marginBottom="4dp"
+        android:orientation="horizontal"
+        android:weightSum="6">
+
+        <Button
+            android:id="@+id/btnConfirm"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@color/colorPrimary"
+            android:text="Confirm Location"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/refresh"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="50dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/refresh"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
 
+    </LinearLayout>
 
 </RelativeLayout>
