@@ -34,10 +34,11 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
             @Override
             public void onClick(View view) {
                 Intent home= new Intent(AddCarForm.this, home.class);
-                finish();
                 startActivity(home);
+                finish();
             }
         });
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");
         spCarMake = (Spinner)findViewById(R.id.spCarMake);
@@ -51,7 +52,7 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
         ArrayList<String> years = new ArrayList<String>();
         int thisYear = Calendar.getInstance().get(Calendar.YEAR);
         years.add("Select Year");
-        for (int i = 1996; i <= thisYear; i++) {
+        for (int i = 1990; i <= thisYear; i++) {
             years.add(Integer.toString(i));
         }
 
@@ -77,15 +78,8 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
                 newcar.vyear = String.valueOf(spCarYear.getSelectedItem());
                 table_user.child("03361424139").child("vehicle").child(textCarPlate.getText().toString()).setValue(newcar);
 
-
-
-
             }
         });
-
-
-
-
     }
 
     @Override
@@ -111,9 +105,6 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
 
             spCarModel.setAdapter(adaptador);
         }
-
-
-
     }
 
     @Override

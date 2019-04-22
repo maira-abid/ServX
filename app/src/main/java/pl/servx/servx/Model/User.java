@@ -6,11 +6,13 @@ import java.util.Vector;
 public class User {
     private String Name;
     private String Password;
+    private String Email;
     List<vehicle> vehicles;
 
     public User(){
      Name= "";
      Password="";
+     Email="";
      vehicles =  new Vector<vehicle>();
 
     }

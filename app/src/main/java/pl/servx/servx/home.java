@@ -22,7 +22,7 @@ import pl.servx.servx.Model.car_list;
 
 public class home extends AppCompatActivity{
     car_list helper;
-    Button btnServices,btnHistory,btnAddCar;
+    Button btnServices,btnHistory,btnAddCar, btnmaps;
     TextView stat_text;
 
     @Override
@@ -53,11 +53,10 @@ public class home extends AppCompatActivity{
 
         cars.add("Select Car");
 
-        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> adapt = new ArrayAdapter<String>(this,
                 R.layout.simple_spinner_item, cars);
-                adaptador.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
-
-        sp.setAdapter(adaptador);
+                adapt.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
+                sp.setAdapter(adapt);
 
 
 
@@ -69,6 +68,17 @@ public class home extends AppCompatActivity{
                 startActivity(form);
             }
         });
+
+        btnmaps = (Button)findViewById(R.id.btnmaps);
+
+        btnmaps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent maps = new Intent(home.this, select_location.class);
+                startActivity(maps);
+            }
+        });
+
 
 
         btnServices= (Button) findViewById(R.id.btnServices);
