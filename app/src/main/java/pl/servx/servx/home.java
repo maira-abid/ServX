@@ -1,15 +1,14 @@
 package pl.servx.servx;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -60,15 +59,7 @@ public class home extends AppCompatActivity{
 
         sp.setAdapter(adaptador);
 
-        btnServices= (Button) findViewById(R.id.btnServices);
-        btnServices.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent services = new Intent( home.this, services_tabbed.class );
-                services.putExtra("extra", home.class);
-                startActivity(services);
-            }
-        });
+
 
         btnAddCar= (Button) findViewById(R.id.btnAddCar);
         btnAddCar.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +67,17 @@ public class home extends AppCompatActivity{
             public void onClick(View view) {
                 Intent form = new Intent( home.this, AddCarForm.class );
                 startActivity(form);
+            }
+        });
+
+
+        btnServices= (Button) findViewById(R.id.btnServices);
+        btnServices.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent services = new Intent( home.this, services_tabbed.class );
+
+                startActivity(services);
             }
         });
 
