@@ -1,4 +1,0 @@
-#Mon Apr 22 17:03:47 PKT 2019
-base.0=/home/mubeen/Desktop/ServX/app/build/intermediates/transforms/dexMerger/debug/4
-path.0=classes.dex
-renamed.0=classes.dex

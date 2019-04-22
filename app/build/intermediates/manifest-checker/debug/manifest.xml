@@ -62,6 +62,10 @@
             android:name="pl.servx.servx.select_location"
             android:label="@string/title_activity_select_location" />
         <activity
+            android:name="pl.servx.servx.Tabbed_Main"
+            android:label="@string/title_activity_tabbed__main"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name="pl.servx.servx.services_tabbed"
             android:label="activity_services_tabbed"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -69,10 +73,6 @@
         <activity android:name="pl.servx.servx.MainActivity" />
         <activity android:name="pl.servx.servx.AddCarForm" />
         <activity android:name="pl.servx.servx.home" />
-        <activity android:name="pl.servx.servx.SignUp" />
-        <activity
-            android:name="pl.servx.servx.sign_in"
-            android:noHistory="true" />
         <activity android:name="pl.servx.servx.SplashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

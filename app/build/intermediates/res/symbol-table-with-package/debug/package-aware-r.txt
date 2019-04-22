@@ -109,6 +109,13 @@ attr cameraTargetLat
 attr cameraTargetLng
 attr cameraTilt
 attr cameraZoom
+attr cardBackgroundColor
+attr cardCornerRadius
+attr cardElevation
+attr cardMaxElevation
+attr cardPreventCornerOverlap
+attr cardUseCompatPadding
+attr cardViewStyle
 attr chainUseRtl
 attr checkboxStyle
 attr checkedTextViewStyle
@@ -142,6 +149,11 @@ attr contentInsetLeft
 attr contentInsetRight
 attr contentInsetStart
 attr contentInsetStartWithNavigation
+attr contentPadding
+attr contentPaddingBottom
+attr contentPaddingLeft
+attr contentPaddingRight
+attr contentPaddingTop
 attr contentScrim
 attr controlBackground
 attr coordinatorLayoutStyle
@@ -535,6 +547,10 @@ color bright_foreground_material_dark
 color bright_foreground_material_light
 color button_material_dark
 color button_material_light
+color cardview_dark_background
+color cardview_light_background
+color cardview_shadow_end_color
+color cardview_shadow_start_color
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
@@ -708,9 +724,13 @@ dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
 dimen activity_horizontal_margin
 dimen activity_vertical_margin
+dimen app_bar_height
 dimen appbar_padding_top
 dimen bottom_ellipsis_height
 dimen bottom_text_size
+dimen cardview_compat_inset_shadow
+dimen cardview_default_elevation
+dimen cardview_default_radius
 dimen compat_button_inset_horizontal_material
 dimen compat_button_inset_vertical_material
 dimen compat_button_padding_horizontal_material
@@ -797,6 +817,7 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen text_margin
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -958,6 +979,9 @@ id CarYear
 id ConfirmCar
 id FUNCTION
 id META
+id P1
+id P2
+id P3
 id SHIFT
 id SYM
 id action0
@@ -998,9 +1022,13 @@ id bottom
 id btnAddCar
 id btnConfirm
 id btnHistory
+id btnP1
+id btnP2
+id btnP3
 id btnServices
 id btnSignIn
 id btnSignUp
+id btn_cart
 id btnmaps
 id buttonPanel
 id cancel_action
@@ -1061,6 +1089,7 @@ id icon_group
 id icon_only
 id ifRoom
 id image
+id imageView
 id info
 id invisible
 id italic
@@ -1091,9 +1120,12 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id oil_change
-id p_1
-id p_2
-id p_3
+id p_cost
+id p_cost2
+id p_cost3
+id p_info
+id p_info2
+id p_info3
 id packed
 id parallax
 id parent
@@ -1237,6 +1269,7 @@ layout activity_services_tabbed
 layout activity_sign_in
 layout activity_sign_up
 layout activity_splash_screen
+layout activity_tabbed__main
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1274,7 +1307,10 @@ layout select_dialog_singlechoice_material
 layout simple_spinner_dropdown_item
 layout simple_spinner_item
 layout support_simple_spinner_dropdown_item
+layout tabbed_login
+layout tabbed_signup
 menu menu_services_tabbed
+menu menu_tabbed__main
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description
@@ -1334,6 +1370,7 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string confirm
+string default_web_client_id
 string firebase_database_url
 string gcm_defaultSenderId
 string google_api_key
@@ -1341,6 +1378,7 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_maps_key
 string google_storage_bucket
+string hello_blank_fragment
 string home
 string license_plate
 string oil_change
@@ -1358,7 +1396,12 @@ string sign_in
 string sign_up
 string slogan
 string status_bar_notification_info_overflow
+string tab_text_1
+string tab_text_2
+string tab_text_3
 string title_activity_select_location
+string title_activity_tabbed__main
+string title_activity_tabbed_main
 string year
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
@@ -1375,6 +1418,7 @@ style Base_AlertDialog_AppCompat_Light
 style Base_Animation_AppCompat_Dialog
 style Base_Animation_AppCompat_DropDownUp
 style Base_Animation_AppCompat_Tooltip
+style Base_CardView
 style Base_DialogWindowTitle_AppCompat
 style Base_DialogWindowTitleBackground_AppCompat
 style Base_TextAppearance_AppCompat
@@ -1528,6 +1572,9 @@ style Base_Widget_AppCompat_Toolbar
 style Base_Widget_AppCompat_Toolbar_Button_Navigation
 style Base_Widget_Design_AppBarLayout
 style Base_Widget_Design_TabLayout
+style CardView
+style CardView_Dark
+style CardView_Light
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_ThemeOverlay_AppCompat
@@ -1758,6 +1805,7 @@ styleable AppCompatTheme android_windowIsFloating android_windowAnimationStyle a
 styleable BottomNavigationView elevation itemBackground itemIconTint itemTextColor menu
 styleable BottomSheetBehavior_Layout behavior_hideable behavior_peekHeight behavior_skipCollapsed
 styleable ButtonBarLayout allowStacking
+styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable CollapsingToolbarLayout collapsedTitleGravity collapsedTitleTextAppearance contentScrim expandedTitleGravity expandedTitleMargin expandedTitleMarginBottom expandedTitleMarginEnd expandedTitleMarginStart expandedTitleMarginTop expandedTitleTextAppearance scrimAnimationDuration scrimVisibleHeightTrigger statusBarScrim title titleEnabled toolbarId
 styleable CollapsingToolbarLayout_Layout layout_collapseMode layout_collapseParallaxMultiplier
 styleable ColorStateListItem android_color android_alpha alpha

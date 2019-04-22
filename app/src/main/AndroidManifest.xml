@@ -40,6 +40,10 @@
             android:name=".select_location"
             android:label="@string/title_activity_select_location"></activity>
         <activity
+            android:name=".Tabbed_Main"
+            android:label="@string/title_activity_tabbed__main"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".services_tabbed"
             android:label="activity_services_tabbed"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -47,10 +51,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".AddCarForm" />
         <activity android:name=".home" />
-        <activity android:name=".SignUp" />
-        <activity
-            android:name=".sign_in"
-            android:noHistory="true" />
+
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

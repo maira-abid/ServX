@@ -5,7 +5,6 @@
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     tools:context=".services_tabbed">
 
     <android.support.design.widget.AppBarLayout
@@ -22,7 +21,7 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="63dp"
-            app:tabIndicatorColor="@android:color/holo_red_dark">
+            app:tabIndicatorColor="@color/fbutton_color_belize_hole">
 
             <android.support.design.widget.TabItem
                 android:id="@+id/tabItem"
@@ -43,7 +42,7 @@
     <android.support.v4.view.ViewPager
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="660dp"
+        android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 </android.support.design.widget.CoordinatorLayout>

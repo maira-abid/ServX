@@ -129,13 +129,21 @@ public class services_tabbed extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             //return PlaceholderFragment.newInstance(position + 2);
             Fragment fragment= null;
+
             switch (position){
                 case 0:
                     fragment= new serv_frag1();
+                    Bundle args= new Bundle();
+
+                    args.putString("flag","OilChange");
+                    fragment.setArguments(args);
                     break;
 
                 case 1:
                     fragment= new serv_frag1();
+                    Bundle args1= new Bundle();
+                    args1.putString("flag","CarWash");
+                    fragment.setArguments(args1);
                     break;
             }
             return  fragment;
