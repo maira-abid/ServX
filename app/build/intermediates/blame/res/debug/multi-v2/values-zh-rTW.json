@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\StudioProjects\\ServX\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rTW\\values-zh-rTW.xml",
+            "outputFile": "/home/mubeen/Desktop/ServX/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\75951585e04512aef15ef262d3d3fae9\\res\\values-zh-rTW\\values.xml",
+                    "source": "/home/mubeen/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/a91668af1984fc2ce18a3faacfe738b5/res/values-zh-rTW/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\371202c819be16a3dca6b83393523466\\res\\values-zh-rTW\\values-zh-rTW.xml",
+                    "source": "/home/mubeen/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b4e5f77e13aced1e118a37a4498bd969/res/values-zh-rTW/values-zh-rTW.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,24 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\bcbdd6989028342c55d9ada27749511f\\res\\values-zh-rTW\\values-zh-rTW.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "38",
-                        "startColumns": "4",
-                        "startOffsets": "4119",
-                        "endColumns": "100",
-                        "endOffsets": "4215"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\1ef1d5b3bad807b21eb501936ad5c756\\res\\values-zh-rTW\\values.xml",
+                    "source": "/home/mubeen/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/91f973f7e18f5120952691556a9c6bc7/res/values-zh-rTW/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -69,6 +52,23 @@
                         "startOffsets": "1733,1836,1996,2113,2217,2383,2501,2631,2917,3086,3189,3349,3466,3627,3765,3851,3938",
                         "endColumns": "102,159,116,103,165,117,129,123,168,102,159,116,160,137,85,86,102",
                         "endOffsets": "1831,1991,2108,2212,2378,2496,2626,2750,3081,3184,3344,3461,3622,3760,3846,3933,4036"
+                    }
+                },
+                {
+                    "source": "/home/mubeen/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/0b8dbaf4cfb78b389f49167bc1bcc49f/res/values-zh-rTW/values-zh-rTW.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "38",
+                        "startColumns": "4",
+                        "startOffsets": "4119",
+                        "endColumns": "100",
+                        "endOffsets": "4215"
                     }
                 }
             ]
