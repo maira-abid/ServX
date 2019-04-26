@@ -4214,11 +4214,10 @@ public final class R {
     public static final int notify_panel_notification_icon_bg=0x7f08008f;
     public static final int oilchange=0x7f080090;
     public static final int plus=0x7f080091;
-    public static final int pointer=0x7f080092;
-    public static final int rectangle=0x7f080093;
-    public static final int refresh=0x7f080094;
-    public static final int tooltip_frame_dark=0x7f080095;
-    public static final int tooltip_frame_light=0x7f080096;
+    public static final int rectangle=0x7f080092;
+    public static final int refresh=0x7f080093;
+    public static final int tooltip_frame_dark=0x7f080094;
+    public static final int tooltip_frame_light=0x7f080095;
   }
   public static final class id {
     public static final int ALT=0x7f090000;

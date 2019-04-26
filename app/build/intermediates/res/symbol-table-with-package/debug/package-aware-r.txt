@@ -966,7 +966,6 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable oilchange
 drawable plus
-drawable pointer
 drawable rectangle
 drawable refresh
 drawable tooltip_frame_dark
