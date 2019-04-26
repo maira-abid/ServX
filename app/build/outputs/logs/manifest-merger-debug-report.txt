@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:1-64:12
-INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:1-64:12
-INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:1-64:12
-INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:1-64:12
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:1-59:12
 MERGED from [com.google.firebase:firebase-core:16.0.1] /home/mubeen/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.1.aar/9b0b2e0fc95f2a4e47730baf50542a1a/AndroidManifest.xml:2:1-9:12
 MERGED from [com.android.support:design:27.1.1] /home/mubeen/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/38ebd4a85ba75b547664ad34a8a22a8f/AndroidManifest.xml:17:1-22:12
 MERGED from [com.rengwuxian.materialedittext:library:2.1.4] /home/mubeen/.gradle/caches/transforms-1/files-1.1/library-2.1.4.aar/1141a119109cda6dad242fe1946b927b/AndroidManifest.xml:2:1-10:12
@@ -44,29 +44,29 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/mubeen/.gradle/ca
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/mubeen/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/c2a9ecb88c6d7a4638f83df3e1d83780/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/mubeen/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/e950f97da88d1693248f17c8d35c595c/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] /home/mubeen/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/ef0d6d8ef8b1f27f37bb1ee38a8dfada/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:1-64:12
-INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:1-64:12
-INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:1-64:12
+INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:1-59:12
+INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:1-59:12
 	package
 		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:3:5-29
 		INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml
 		INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:1-64:12
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:1-59:12
 		INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:1-64:12
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:1-59:12
 		INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:10:5-79
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:9:5-79
 	android:name
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:10:22-76
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:9:22-76
 uses-permission#android.permission.INTERNET
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:11:5-67
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:10:5-67
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/mubeen/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/3675d2b95edf36343100e52748bb808b/AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/mubeen/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/3675d2b95edf36343100e52748bb808b/AndroidManifest.xml:24:5-67
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /home/mubeen/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/83a9e2c14a01c6542759ef11f82e0703/AndroidManifest.xml:22:5-67
@@ -80,13 +80,13 @@ MERGED from [com.google.firebase:firebase-iid:16.0.0] /home/mubeen/.gradle/cache
 MERGED from [com.google.firebase:firebase-database-connection:16.0.1] /home/mubeen/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-16.0.1.aar/2dcccd3111c739e3fbd5dbe7bf03839d/AndroidManifest.xml:8:5-67
 MERGED from [com.google.firebase:firebase-database-connection:16.0.1] /home/mubeen/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-16.0.1.aar/2dcccd3111c739e3fbd5dbe7bf03839d/AndroidManifest.xml:8:5-67
 	android:name
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:11:22-64
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:10:22-64
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:12:5-80
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:11:5-81
 	android:name
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:12:22-78
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:11:22-78
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:13:5-79
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:12:5-79
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/mubeen/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/3675d2b95edf36343100e52748bb808b/AndroidManifest.xml:23:5-79
 MERGED from [com.google.android.gms:play-services-maps:15.0.1] /home/mubeen/.gradle/caches/transforms-1/files-1.1/play-services-maps-15.0.1.aar/3675d2b95edf36343100e52748bb808b/AndroidManifest.xml:23:5-79
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.1] /home/mubeen/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-impl-16.0.1.aar/83a9e2c14a01c6542759ef11f82e0703/AndroidManifest.xml:23:5-79
@@ -98,15 +98,15 @@ MERGED from [com.google.firebase:firebase-analytics-impl:16.1.1] /home/mubeen/.g
 MERGED from [com.google.firebase:firebase-iid:16.0.0] /home/mubeen/.gradle/caches/transforms-1/files-1.1/firebase-iid-16.0.0.aar/5ff3e983beba8cf8fb4e8ab63ca3f124/AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-iid:16.0.0] /home/mubeen/.gradle/caches/transforms-1/files-1.1/firebase-iid-16.0.0.aar/5ff3e983beba8cf8fb4e8ab63ca3f124/AndroidManifest.xml:22:5-79
 	android:name
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:13:22-76
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:12:22-76
 supports-screens
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:15:5-17:40
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:14:5-16:40
 	android:largeScreens
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:16:9-36
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:15:9-36
 	android:normalScreens
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:17:9-37
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:16:9-37
 application
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:19:5-62:19
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:19:5-57:19
 MERGED from [com.google.firebase:firebase-core:16.0.1] /home/mubeen/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.1.aar/9b0b2e0fc95f2a4e47730baf50542a1a/AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-core:16.0.1] /home/mubeen/.gradle/caches/transforms-1/files-1.1/firebase-core-16.0.1.aar/9b0b2e0fc95f2a4e47730baf50542a1a/AndroidManifest.xml:7:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /home/mubeen/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/a42d8069f1e4385644ba2570f2360807/AndroidManifest.xml:9:5-20
@@ -156,63 +156,71 @@ MERGED from [com.google.android.gms:play-services-measurement-base:16.0.0] /home
 	android:theme
 		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:25:9-40
 meta-data#com.google.android.geo.API_KEY
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:35:9-37:55
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:27:9-29:55
 	android:value
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:37:13-52
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:29:13-52
 	android:name
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:36:13-58
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:28:13-58
+activity#pl.servx.servx.Cart
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:31:9-34:68
+	android:label
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:33:13-56
+	android:theme
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:34:13-56
+	android:name
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:32:13-33
 activity#pl.servx.servx.select_location
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:39:9-41:79
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:35:9-37:70
 	android:label
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:41:13-67
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:37:13-67
 	android:name
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:40:13-44
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:36:13-44
 activity#pl.servx.servx.Tabbed_Main
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:42:9-45:68
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:38:9-41:59
 	android:label
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:44:13-64
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:40:13-64
+	android:theme
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:41:13-56
+	android:name
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:39:13-40
+activity#pl.servx.servx.services_tabbed
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:42:9-45:59
+	android:label
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:44:13-53
 	android:theme
 		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:45:13-56
 	android:name
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:43:13-40
-activity#pl.servx.servx.services_tabbed
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:46:9-49:59
-	android:label
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:48:13-53
-	android:theme
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:49:13-56
-	android:name
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:47:13-44
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:43:13-44
 activity#pl.servx.servx.Services
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:50:9-46
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:46:9-46
 	android:name
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:50:19-43
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:46:19-43
 activity#pl.servx.servx.MainActivity
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:51:9-50
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:47:9-50
 	android:name
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:51:19-47
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:47:19-47
 activity#pl.servx.servx.AddCarForm
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:52:9-48
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:48:9-48
 	android:name
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:52:19-45
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:48:19-45
 activity#pl.servx.servx.home
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:53:9-42
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:49:9-42
 	android:name
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:53:19-39
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:49:19-39
 activity#pl.servx.servx.SplashScreen
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:55:9-61:20
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:50:9-56:20
 	android:name
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:55:19-47
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:50:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:56:13-60:29
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:51:13-55:29
 action#android.intent.action.MAIN
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:57:17-69
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:52:17-69
 	android:name
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:57:25-66
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:52:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:59:17-77
+ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:54:17-77
 	android:name
-		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:59:27-74
+		ADDED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml:54:27-74
 uses-sdk
 INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/mubeen/Desktop/ServX/app/src/main/AndroidManifest.xml
