@@ -63,7 +63,7 @@ public class home extends AppCompatActivity{
         btnServices.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent services = new Intent( home.this, services_tabbed.class );
+                Intent services = new Intent( home.this, Cart.class );
                 services.putExtra("extra", home.class);
                 startActivity(services);
             }

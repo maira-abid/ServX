@@ -57,14 +57,13 @@
                 android:id="@+id/btnAddCar"
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.95"
                 android:layout_marginEnd="20dp"
+                android:layout_weight="0.95"
                 android:background="@color/colorPrimary"
+                android:gravity="center"
                 android:text="+"
                 android:textColor="@color/white"
-                android:textSize="40sp"
-                android:gravity="center"
-                >
+                android:textSize="35sp">
 
             </Button>
 
@@ -88,6 +87,18 @@
             android:textStyle="bold" />
 
         <Button
+            android:id="@+id/btnmaps"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="112dp"
+            android:layout_height="33dp"
+            android:layout_margin="50dp"
+            android:elevation="100dp"
+            android:text="dummy button for maps"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <Button
             android:id="@+id/btnHistory"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
@@ -100,19 +111,6 @@
             android:backgroundTintMode="src_atop"
             android:elevation="100dp"
             android:text="service History"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-
-        <Button
-            android:id="@+id/btnmaps"
-            style="@style/Widget.AppCompat.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="50dp"
-            android:elevation="100dp"
-            android:text="dummy button for maps"
             android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold" />

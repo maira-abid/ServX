@@ -48,12 +48,12 @@ public final class R {
     public static final class dimen {
         private dimen() {}
 
-        public static final int fbutton_default_conner_radius = 0x7f070083;
-        public static final int fbutton_default_padding_bottom = 0x7f070084;
-        public static final int fbutton_default_padding_left = 0x7f070085;
-        public static final int fbutton_default_padding_right = 0x7f070086;
-        public static final int fbutton_default_padding_top = 0x7f070087;
-        public static final int fbutton_default_shadow_height = 0x7f070088;
+        public static final int fbutton_default_conner_radius = 0x7f070084;
+        public static final int fbutton_default_padding_bottom = 0x7f070085;
+        public static final int fbutton_default_padding_left = 0x7f070086;
+        public static final int fbutton_default_padding_right = 0x7f070087;
+        public static final int fbutton_default_padding_top = 0x7f070088;
+        public static final int fbutton_default_shadow_height = 0x7f070089;
     }
     public static final class styleable {
         private styleable() {}

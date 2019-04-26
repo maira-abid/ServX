@@ -56,7 +56,9 @@
         android:layout_alignParentBottom="true"
         android:background="@color/colorPrimary"
         android:text="Log In"
+        android:textSize="15dp"
         android:textColor="@android:color/white"
         android:transitionName="signintrans" />
+
 
 </RelativeLayout>

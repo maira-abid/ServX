@@ -105,6 +105,7 @@
             android:background="@color/colorPrimary"
             android:text="@string/sign_up"
             android:textColor="@android:color/white"
+            android:textSize="15dp"
             android:transitionName="signuptrans" />
 
 </RelativeLayout>
