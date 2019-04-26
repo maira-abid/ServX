@@ -57,8 +57,8 @@
                 android:id="@+id/btnAddCar"
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="20dp"
                 android:layout_weight="0.95"
+                android:layout_marginEnd="20dp"
                 android:background="@color/colorPrimary"
                 android:gravity="center"
                 android:text="+"
@@ -114,7 +114,6 @@
             android:textColor="@color/white"
             android:textSize="30sp"
             android:textStyle="bold" />
-
 
     </LinearLayout>
 
