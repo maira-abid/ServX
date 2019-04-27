@@ -3,6 +3,7 @@ package pl.servx.servx;
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -70,7 +71,6 @@ public class select_location extends FragmentActivity implements OnMapReadyCallb
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 LatLng latLng = mMap.getCameraPosition().target;
                 String x = String.valueOf(latLng.latitude);
                 x= x+ " ";
@@ -79,8 +79,12 @@ public class select_location extends FragmentActivity implements OnMapReadyCallb
 
                 Toast.makeText(select_location.this,x, Toast.LENGTH_LONG).show();
 
+                Intent home= new Intent(select_location.this, Cart.class);
+                startActivity(home);
+                finish();
             }
         });
+
 
         refresh = (Button)findViewById(R.id.refresh);
         refresh.setOnClickListener(new View.OnClickListener(){
@@ -99,10 +103,7 @@ public class select_location extends FragmentActivity implements OnMapReadyCallb
                     mDialog.show();
 
                 }
-
-
            }
-
         });
     }
 
@@ -165,7 +166,6 @@ public class select_location extends FragmentActivity implements OnMapReadyCallb
         mMap.setOnCameraIdleListener(onCameraIdleListener);
 
     }
-
 
     public Location getLastKnownLocation() {
         locationManager= (LocationManager)getApplicationContext().getSystemService(LOCATION_SERVICE);

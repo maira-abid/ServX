@@ -65,7 +65,6 @@
             android:name="pl.servx.servx.services_tabbed"
             android:label="activity_services_tabbed"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="pl.servx.servx.Services" />
         <activity android:name="pl.servx.servx.MainActivity" />
         <activity android:name="pl.servx.servx.AddCarForm" />
         <activity android:name="pl.servx.servx.home" />

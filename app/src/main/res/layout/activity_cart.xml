@@ -16,7 +16,7 @@
         android:layout_alignParentStart="true"
         android:background="@drawable/rectangle">
 
-        <Button
+        <!--<Button
             android:id="@+id/back_button"
             android:layout_width="33dp"
             android:layout_height="27dp"
@@ -26,6 +26,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
+       -->
 
         <TextView
             android:id="@+id/cart"
@@ -66,7 +67,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:text="Package"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold" />
 
@@ -79,21 +80,20 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:text="Cost Rs"
-            android:textSize="15sp"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold" />
+            android:textSize="18sp"
+            android:textColor="@color/grey" />
 
         <TextView
+            android:id="@+id/cost2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/cost1"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="10dp"
             android:text="Cost Rs"
-            android:textSize="15sp"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold" />
+            android:textColor="@color/grey"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/pack2"
@@ -102,10 +102,10 @@
             android:layout_below="@+id/pack1"
             android:layout_alignParentStart="true"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="Package"
-            android:textSize="15sp"
             android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
 
@@ -119,10 +119,11 @@
             android:layout_marginBottom="15dp"
             android:text="Total Cost"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tc_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -130,8 +131,8 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="15dp"
             android:text="Cost Rs"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp"
+            android:textColor="@color/grey"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
     </RelativeLayout>
@@ -194,35 +195,46 @@
 
         <Button
             android:id="@+id/map_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="38dp"
+            android:layout_height="40dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:text="map" />
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/recenter" />
 
-        <Button
+
+        <TextView
             android:id="@+id/date_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="85dp"
+            android:layout_height="35dp"
             android:layout_below="@+id/map_btn"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="10dp"
-            android:text="dd-mm-yy" />
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="15dp"
+            android:gravity="center"
+            android:background="#d4d4d4"
+            android:hint="DD-MM-YY"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="15sp" />
 
-        <Button
+        <TextView
             android:id="@+id/time_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="85dp"
+            android:layout_height="35dp"
             android:layout_above="@+id/btnConfirm"
             android:layout_below="@+id/date_btn"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:text="00:00" />
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="20dp"
+            android:background="#d4d4d4"
+            android:gravity="center"
+            android:text="00:00"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="15sp" />
 
 
     </RelativeLayout>
@@ -240,93 +252,6 @@
         android:layout_marginBottom="10dp"
         android:text="The order shall be confirmed as soon as possible between 9am-9p" />
 
-
-
-    <!--    <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="70dp"
-            android:layout_marginEnd="16dp"
-            android:scrollbars="none"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:context=".Cart"
-            tools:showIn="@layout/activity_cart">
-
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-               &lt;!&ndash; <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:background="@color/white"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:text="Package" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="5dp"
-                        android:text="Cost"
-                        android:gravity="end" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginStart="5dp"
-                        android:text="Package1" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="40dp"
-                        android:text="Package2" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="60dp"
-                        android:text="Package3" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="150dp"
-                        android:layout_marginStart="5dp"
-                        android:text="Total"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="150dp"
-                        android:layout_marginEnd="5dp"
-                        android:gravity="end"
-                        android:text="Rs. Cost"
-                        android:textStyle="bold"/>
-
-
-                </RelativeLayout>
-
-
-
-
-            </RelativeLayout>
-
-
-        </ScrollView>-->
-
 </RelativeLayout>
 
     <!--
@@ -335,56 +260,3 @@
               android:layout_height="wrap_content"
               android:text="@string/large_text" />
   -->
-
-<!--
-
-
-<LinearLayout
-android:layout_width="wrap_content"
-android:layout_height="144dp"
-android:layout_alignParentStart="true"
-android:layout_alignParentBottom="true"
-android:layout_marginStart="20dp"
-android:layout_marginLeft="20dp"
-android:layout_marginEnd="20dp"
-android:layout_marginBottom="55dp"
-android:background="@color/white"
-android:orientation="vertical">
-
-<Button
-    android:id="@+id/btnConfirmO"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="0dp"
-    android:layout_marginEnd="0dp"
-    android:layout_marginBottom="0dp"
-    android:background="@color/colorPrimary"
-    android:text="Confirm Order"
-    android:textColor="@color/white"
-    android:textSize="15sp" />
-
-
-
-        <TextView
-            android:id="@+id/cart_PackagesT"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="Package"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/disclaimer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="10dp"
-            android:text="The order shall be confirmed as soon as possible between 9am - 9pm"
-            android:textColor="@color/grey" />
-
-</LinearLayout>-->
