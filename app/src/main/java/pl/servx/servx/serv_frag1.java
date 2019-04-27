@@ -27,6 +27,11 @@ import pl.servx.servx.Model.cart_data;
 public class serv_frag1 extends Fragment {
 
 
+
+
+
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,6 +57,10 @@ public class serv_frag1 extends Fragment {
                     cart_data.OilChange = "Gold";
                     cart_data.costOil=cart_data.OilGold;
                     cart_data.dict.put("Oil","Oil Change: Gold Package, "+cart_data.costOil+" Rs" );
+                    Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
+                    cart_data.costOil=cart_data.OilGold;
+                    cart_data.dict.put("Oil","Oil Change: Gold Package, "+cart_data.costOil+" Rs" );
+
                     Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
                 }
             });
@@ -157,6 +166,10 @@ public class serv_frag1 extends Fragment {
                     }
                 });
 
+
+
+
+
         }
 
         btn_cart.setOnClickListener(new View.OnClickListener() {
@@ -227,6 +240,7 @@ public class serv_frag1 extends Fragment {
                     p_info.setText(Html.fromHtml(to_disp));
                     p_info2.setText(Html.fromHtml(to_disp2));
                     p_info3.setText(Html.fromHtml(to_disp3));
+
                     cart_data.CarGold=Integer.parseInt(dataSnapshot.child("CarWash").child("Gold").child("Cost").getValue(String.class));
                     cart_data.CarSilver=Integer.parseInt(dataSnapshot.child("CarWash").child("Silver").child("Cost").getValue(String.class));
                     cart_data.CarBronze = Integer.parseInt(dataSnapshot.child("CarWash").child("Bronze").child("Cost").getValue(String.class));
@@ -234,6 +248,9 @@ public class serv_frag1 extends Fragment {
                     p_cost.setText(cart_data.CarGold+"");
                     p_cost2.setText(cart_data.CarSilver+"");
                     p_cost3.setText(cart_data.CarBronze+"");
+
+
+
 
                 }
                 else {
