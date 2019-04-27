@@ -36,10 +36,23 @@
 
                 <TextView
                     android:id="@+id/P1"
-                    android:layout_width="337dp"
+                    android:layout_width="275dp"
                     android:layout_height="wrap_content"
                     android:text="Gold Package"
                     android:textSize="35sp" />
+
+                <Button
+                    android:id="@+id/btnM1"
+                    android:layout_width="50dp"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="10dp"
+
+                    android:background="#474747"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="33sp" />
+
 
                 <Button
                     android:id="@+id/btnP1"
@@ -47,7 +60,7 @@
                     android:layout_height="47dp"
                     android:layout_marginTop="2dp"
                     android:layout_marginRight="10dp"
-                    android:layout_weight="0.95"
+
                     android:background="#474747"
                     android:text="+"
                     android:textColor="@color/white"
@@ -91,10 +104,22 @@
 
                 <TextView
                     android:id="@+id/P2"
-                    android:layout_width="337dp"
+                    android:layout_width="275dp"
                     android:layout_height="wrap_content"
                     android:text="Silver Package"
                     android:textSize="35sp" />
+
+                <Button
+                    android:id="@+id/btnM2"
+                    android:layout_width="50dp"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="10dp"
+
+                    android:background="#474747"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="33sp" />
 
                 <Button
                     android:id="@+id/btnP2"
@@ -148,10 +173,22 @@
 
                 <TextView
                     android:id="@+id/P3"
-                    android:layout_width="337dp"
+                    android:layout_width="275dp"
                     android:layout_height="wrap_content"
                     android:text="Bronze Package"
                     android:textSize="35sp" />
+
+                <Button
+                    android:id="@+id/btnM3"
+                    android:layout_width="50dp"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="10dp"
+
+                    android:background="#474747"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="33sp" />
 
                 <Button
                     android:id="@+id/btnP3"
@@ -159,6 +196,7 @@
                     android:layout_height="47dp"
                     android:layout_marginTop="2dp"
                     android:layout_marginRight="10dp"
+
                     android:layout_weight="0.95"
                     android:background="#474747"
                     android:text="+"

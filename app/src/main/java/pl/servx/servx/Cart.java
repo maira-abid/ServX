@@ -2,12 +2,12 @@ package pl.servx.servx;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import pl.servx.servx.Model.cart_data;
 
 public class Cart extends AppCompatActivity {
 
@@ -25,6 +25,11 @@ public class Cart extends AppCompatActivity {
                 finish();
             }
         });
+
+        TextView test= (TextView) findViewById(R.id.P1);
+        test.setText(cart_data.OilChange);
+        TextView test2= (TextView) findViewById(R.id.P2);
+        test2.setText(cart_data.CarWash);
 
     }
 }

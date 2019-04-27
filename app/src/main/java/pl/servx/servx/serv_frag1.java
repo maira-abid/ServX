@@ -21,6 +21,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import pl.servx.servx.Model.cart_data;
+
 
 public class serv_frag1 extends Fragment {
 
@@ -37,27 +39,129 @@ public class serv_frag1 extends Fragment {
         // Inflate the layout for this fragment
         View rootView=inflater.inflate(R.layout.fragment_serv_frag1, container, false);
         Button btn1= (Button) rootView.findViewById(R.id.btnP1);
-        btn1.setOnClickListener(new View.OnClickListener() {
+        Button btn2= (Button) rootView.findViewById(R.id.btnP2);
+        Button btn3= (Button) rootView.findViewById(R.id.btnP3);
+        Button btnm1= (Button) rootView.findViewById(R.id.btnM1);
+        Button btnm2= (Button) rootView.findViewById(R.id.btnM2);
+        Button btnm3= (Button) rootView.findViewById(R.id.btnM3);
+        Button btn_cart=(Button) rootView.findViewById(R.id.btn_cart);
+        ArrayList<String> orders= new ArrayList<>();
+        final int quant1,quant2,quant3;
+        quant1=quant2=quant3=0;
+
+
+        if (getArguments().getString("flag")=="OilChange") {
+            btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    cart_data.OilChange = "Gold";
+                }
+            });
+            btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    cart_data.OilChange = "Silver";
+                }
+            });
+            btn3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    cart_data.OilChange = "Bronze";
+                }
+            });
+            btnm1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    cart_data.OilChange = "";
+                }
+            });
+            btnm2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    cart_data.OilChange = "";
+                }
+            });
+            btnm3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    cart_data.OilChange = "";
+                }
+            });
+        }
+            else{
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        cart_data.CarWash="Gold";
+
+                    }
+                });
+                btn2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        cart_data.CarWash="Silver";
+                    }
+                });
+                btn3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        cart_data.CarWash="Bronze";
+                    }
+                });
+                btnm1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        cart_data.CarWash="";
+                    }
+                });
+                btnm2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        cart_data.CarWash="";
+                    }
+                });
+                btnm3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        cart_data.CarWash="";
+                    }
+                });
+
+
+
+
+
+        }
+
+        btn_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent home= new Intent(getActivity(), home.class);
-                startActivity(home);
+                Intent Cart= new Intent(getActivity(),Cart.class);
+                startActivity(Cart);
             }
         });
+
+
+
+
+
+
+
+
+        /////////////////////////////////////////////////////////
         final TextView p_info= (TextView) rootView.findViewById(R.id.p_info);
         final TextView p_info2= (TextView) rootView.findViewById(R.id.p_info2);
         final TextView p_info3= (TextView) rootView.findViewById(R.id.p_info3);
+        final TextView p_cost= (TextView) rootView.findViewById(R.id.p_cost);
+        final TextView p_cost2= (TextView) rootView.findViewById(R.id.p_cost2);
+        final TextView p_cost3= (TextView) rootView.findViewById(R.id.p_cost3);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-
-
-//        ArrayList<String> gold_list= getArguments().getStringArrayList("list1");
-//        ArrayList<String> silver_list= getArguments().getStringArrayList("list2");
-//        ArrayList<String> bronze_list= getArguments().getStringArrayList("list3");
         final ArrayList<String> gold_list= new ArrayList<>();
         final ArrayList<String> silver_list= new ArrayList<>();
         final ArrayList<String> bronze_list= new ArrayList<>();
         final DatabaseReference ref= database.getReference("Packages");
+
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -70,6 +174,7 @@ public class serv_frag1 extends Fragment {
                     }
                     //int siz=gold_list.size();
                     String to_disp=prepare_string(gold_list);
+
 //                    for (int i=0; i<siz-1; i++) { to_disp= to_disp+ gold_list.get(i)+" <br/>"; }
 //                    if (siz>0){to_disp+=gold_list.get(siz-1);}
 
@@ -90,13 +195,16 @@ public class serv_frag1 extends Fragment {
                     }
                     //int siz3= bronze_list.size();
                     String to_disp3=prepare_string(bronze_list);
-//                    for (int i=0; i<siz3-1; i++) { to_disp3= to_disp3+ bronze_list.get(i)+" <br/>"; }
-//                    if (siz3>0){to_disp3+=bronze_list.get(siz3-1);}
+
 
 
                     p_info.setText(Html.fromHtml(to_disp));
                     p_info2.setText(Html.fromHtml(to_disp2));
                     p_info3.setText(Html.fromHtml(to_disp3));
+                    p_cost.setText(dataSnapshot.child("CarWash").child("Gold").child("Cost").getValue(String.class));
+                    p_cost2.setText(dataSnapshot.child("CarWash").child("Silver").child("Cost").getValue(String.class));
+                    p_cost3.setText(dataSnapshot.child("CarWash").child("Bronze").child("Cost").getValue(String.class));
+
 
 
 
@@ -122,6 +230,9 @@ public class serv_frag1 extends Fragment {
                     p_info.setText(Html.fromHtml(to_disp));
                     p_info2.setText(Html.fromHtml(to_disp2));
                     p_info3.setText(Html.fromHtml(to_disp3));
+                    p_cost.setText(dataSnapshot.child("OilChange").child("Gold").child("Cost").getValue(String.class));
+                    p_cost2.setText(dataSnapshot.child("OilChange").child("Silver").child("Cost").getValue(String.class));
+                    p_cost3.setText(dataSnapshot.child("OilChange").child("Bronze").child("Cost").getValue(String.class));
 
                 }
             }
@@ -132,32 +243,6 @@ public class serv_frag1 extends Fragment {
 
             }
         });
-
-
-
-//        int siz=gold_list.size();
-//        int siz2=silver_list.size();
-//        int siz3= bronze_list.size();
-//
-//
-//        String to_disp="";
-//        for (int i=0; i<siz-1; i++) { to_disp= to_disp+ gold_list.get(i)+" <br/>"; }
-//        if (siz>0){to_disp+=gold_list.get(siz-1);}
-//
-//        String to_disp2="";
-//        for (int i=0; i<siz2-1; i++) { to_disp2= to_disp2+ silver_list.get(i)+" <br/>"; }
-//        if (siz2>0){to_disp2+=silver_list.get(siz2-1);}
-//
-//        String to_disp3="";
-//        for (int i=0; i<siz3-1; i++) { to_disp3= to_disp3+ bronze_list.get(i)+" <br/>"; }
-//        if (siz3>0){to_disp3+=bronze_list.get(siz3-1);}
-//
-//
-//
-//        p_info.setText(Html.fromHtml(to_disp));
-//        p_info2.setText(Html.fromHtml(to_disp2));
-//        p_info3.setText(Html.fromHtml(to_disp3));
-
 
         return rootView;
         //return inflater.inflate(R.layout.fragment_serv_frag1, container, false);
