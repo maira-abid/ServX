@@ -71,7 +71,9 @@ attr autoSizeMinTextSize
 attr autoSizePresetSizes
 attr autoSizeStepGranularity
 attr autoSizeTextType
+attr backGroundColor
 attr background
+attr backgroundDrawable
 attr backgroundSplit
 attr backgroundStacked
 attr backgroundTint
@@ -198,6 +200,7 @@ attr fastScrollHorizontalThumbDrawable
 attr fastScrollHorizontalTrackDrawable
 attr fastScrollVerticalThumbDrawable
 attr fastScrollVerticalTrackDrawable
+attr finalNumber
 attr font
 attr fontFamily
 attr fontProviderAuthority
@@ -228,6 +231,7 @@ attr imageAspectRatioAdjust
 attr imageButtonStyle
 attr indeterminateProgressStyle
 attr initialActivityCount
+attr initialNumber
 attr insetForeground
 attr isLightTheme
 attr itemBackground
@@ -450,9 +454,11 @@ attr textAppearancePopupMenuHeader
 attr textAppearanceSearchResultSubtitle
 attr textAppearanceSearchResultTitle
 attr textAppearanceSmallPopupMenu
+attr textColor
 attr textColorAlertDialogListItem
 attr textColorError
 attr textColorSearchUrl
+attr textSize
 attr theme
 attr thickness
 attr thumbTextPadding
@@ -554,6 +560,7 @@ color cardview_shadow_start_color
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
+color colorText
 color common_google_signin_btn_text_dark
 color common_google_signin_btn_text_dark_default
 color common_google_signin_btn_text_dark_disabled
@@ -915,6 +922,7 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable backarrow
 drawable backdrop
+drawable background
 drawable bg2
 drawable carwash
 drawable common_full_open_on_phone
@@ -966,12 +974,12 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable oilchange
 drawable plus
-drawable pointer
 drawable rectangle
 drawable refresh
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
+id C1
 id CTRL
 id CarDetails
 id CarMake
@@ -1008,9 +1016,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
-id added_cost
-id added_package
-id address
+id add_btn
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1027,6 +1033,9 @@ id bottom
 id btnAddCar
 id btnConfirm
 id btnHistory
+id btnM1
+id btnM2
+id btnM3
 id btnP1
 id btnP2
 id btnP3
@@ -1037,8 +1046,7 @@ id btn_cart
 id btnmaps
 id buttonPanel
 id cancel_action
-id cart
-id cart_bar
+id cart_head
 id center
 id center_horizontal
 id center_vertical
@@ -1048,17 +1056,13 @@ id chronometer
 id clip_horizontal
 id clip_vertical
 id collapseActionView
-id confirm_setting
 id constraintLayout
 id container
 id contentPanel
 id coordinator
-id cost1
 id custom
 id customPanel
 id dark
-id date
-id date_btn
 id decor_content_parent
 id default_activity_button
 id design_bottom_sheet
@@ -1106,6 +1110,7 @@ id invisible
 id italic
 id item_touch_helper_previous_elevation
 id largeLabel
+id layout
 id left
 id light
 id line1
@@ -1117,7 +1122,6 @@ id listview_background_shape
 id logo
 id main_content
 id map
-id map_btn
 id masked
 id media_actions
 id message
@@ -1131,15 +1135,15 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id number_counter
 id oil_change
+id p3
 id p_cost
 id p_cost2
 id p_cost3
 id p_info
 id p_info2
 id p_info3
-id pack1
-id pack2
 id packed
 id parallax
 id parent
@@ -1151,7 +1155,6 @@ id progress_circular
 id progress_horizontal
 id radio
 id refresh
-id reply_text
 id right
 id right_icon
 id right_side
@@ -1202,6 +1205,7 @@ id stat_text
 id status_bar_latest_event_content
 id submenuarrow
 id submit_area
+id subtract_btn
 id tabItem
 id tabItem2
 id tabMode
@@ -1217,14 +1221,11 @@ id text_input_password_toggle
 id textinput_counter
 id textinput_error
 id time
-id time_btn
 id title
 id titleDividerNoCustom
 id title_template
 id top
 id topPanel
-id total_PC
-id total_cost
 id touch_outside
 id transition_current_scene
 id transition_layout_save
@@ -1289,7 +1290,6 @@ layout activity_sign_in
 layout activity_sign_up
 layout activity_splash_screen
 layout activity_tabbed__main
-layout card_item_layout
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1306,6 +1306,7 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_serv_frag1
 layout fragment_services_tabbed
+layout layout
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -1837,6 +1838,7 @@ styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
 styleable DesignTheme bottomSheetDialogTheme bottomSheetStyle textColorError
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
+styleable ElegantNumberButton backGroundColor backgroundDrawable finalNumber initialNumber textColor textSize
 styleable FButton buttonColor cornerRadius shadowColor shadowEnabled shadowHeight
 styleable FloatingActionButton backgroundTint backgroundTintMode borderWidth elevation fabCustomSize fabSize pressedTranslationZ rippleColor useCompatPadding
 styleable FloatingActionButton_Behavior_Layout behavior_autoHide
