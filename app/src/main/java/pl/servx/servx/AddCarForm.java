@@ -2,7 +2,6 @@ package pl.servx.servx;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,6 +12,7 @@ import android.widget.Spinner;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -23,7 +23,7 @@ import pl.servx.servx.Model.vehicle;
 public class AddCarForm extends AppCompatActivity implements OnItemSelectedListener{
     Spinner spCarModel,spCarMake,spCarYear;
     Button ConfirmCar ;
-    TextInputEditText textCarPlate;
+    MaterialEditText textCarPlate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -49,7 +49,7 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
         spCarModel = (Spinner)findViewById(R.id.spCarModel);
         spCarYear = (Spinner)findViewById(R.id.spCarYear);
         ConfirmCar = (Button)findViewById(R.id.ConfirmCar);
-        textCarPlate = (TextInputEditText)findViewById(R.id.textCarPlate);
+        textCarPlate = (MaterialEditText)findViewById(R.id.textCarPlate);
 
         spCarMake.setOnItemSelectedListener(this);
 
