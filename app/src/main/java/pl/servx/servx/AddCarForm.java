@@ -17,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import pl.servx.servx.Model.SharePref;
 import pl.servx.servx.Model.vehicle;
 
 public class AddCarForm extends AppCompatActivity implements OnItemSelectedListener{
@@ -38,6 +39,9 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
                 finish();
             }
         });
+
+        SharePref sharePref = new SharePref();
+        final String UserName = sharePref.getData(this);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");
@@ -76,7 +80,7 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
                 newcar.vmake = String.valueOf(spCarMake.getSelectedItem());
                 newcar.vmodel = String.valueOf(spCarModel.getSelectedItem());
                 newcar.vyear = String.valueOf(spCarYear.getSelectedItem());
-                table_user.child("03361424139").child("vehicle").child(textCarPlate.getText().toString()).setValue(newcar);
+                table_user.child(UserName).child("vehicle").child(textCarPlate.getText().toString()).setValue(newcar);
 
             }
         });

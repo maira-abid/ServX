@@ -1,6 +1,8 @@
 package pl.servx.servx;
 
 //import android.app.Fragment;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -22,6 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import pl.servx.servx.Model.SharePref;
 import pl.servx.servx.Model.User;
 
 public class sign_in extends Fragment{
@@ -41,7 +44,6 @@ public class sign_in extends Fragment{
         //init database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");
-
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
