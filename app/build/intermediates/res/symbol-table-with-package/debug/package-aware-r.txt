@@ -1018,8 +1018,6 @@ id actions
 id activity_chooser_view_content
 id add
 id add_btn
-id added_cost
-id added_package
 id address
 id adjust_height
 id adjust_width
@@ -1047,7 +1045,6 @@ id btnServices
 id btnSignIn
 id btnSignUp
 id btn_cart
-id btnmaps
 id buttonPanel
 id cancel_action
 id cart
@@ -1125,7 +1122,6 @@ id left
 id light
 id line1
 id line3
-id linearLayout
 id listMode
 id list_item
 id listview_background_shape
@@ -1147,7 +1143,6 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id number_counter
-id oil_change
 id p_cost
 id p_cost2
 id p_cost3
@@ -1301,13 +1296,11 @@ layout activity_cart
 layout activity_home
 layout activity_main
 layout activity_select_location
-layout activity_services
 layout activity_services_tabbed
 layout activity_sign_in
 layout activity_sign_up
 layout activity_splash_screen
 layout activity_tabbed__main
-layout card_item_layout
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
