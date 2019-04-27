@@ -86,7 +86,7 @@
             android:textSize="30sp"
             android:textStyle="bold" />
 
-        <Button
+<!--        <Button
             android:id="@+id/btnmaps"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="112dp"
@@ -96,7 +96,7 @@
             android:text="dummy button for maps"
             android:textColor="@color/white"
             android:textSize="30sp"
-            android:textStyle="bold" />
+            android:textStyle="bold" />-->
 
         <Button
             android:id="@+id/btnHistory"

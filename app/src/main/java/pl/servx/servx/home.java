@@ -90,7 +90,7 @@ public class home extends AppCompatActivity{
             }
         });
 
-        btnmaps = (Button)findViewById(R.id.btnmaps);
+/*        btnmaps = (Button)findViewById(R.id.btnmaps);
 
         btnmaps.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,7 +98,7 @@ public class home extends AppCompatActivity{
                 Intent maps = new Intent(home.this, select_location.class);
                 startActivity(maps);
             }
-        });
+        });*/
 
 
 

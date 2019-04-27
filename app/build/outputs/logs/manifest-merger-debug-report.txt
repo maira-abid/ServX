@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:1-59:12
+ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:1-58:12
 MERGED from [com.google.firebase:firebase-core:16.0.1] C:\Users\Maira\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.1.aar\d4c9ecd95c232ccc1e1140af04a45e2a\AndroidManifest.xml:2:1-9:12
 MERGED from [com.android.support:design:27.1.1] C:\Users\Maira\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\f9389b3fd4768262dc1528a0e426a8a0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.cepheuen.elegant-number-button:lib:1.0.2] C:\Users\Maira\.gradle\caches\transforms-1\files-1.1\lib-1.0.2.aar\bfda562776687748b60aaec8c7aa922b\AndroidManifest.xml:2:1-19:12
@@ -45,20 +45,20 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Maira\.gradle\
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Maira\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\4b7585f8cbc770016e083c576f46f4cf\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Maira\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\46b3f3f8f932319f727f299bdfe3c032\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Maira\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\523ebbd8204dcea3af3b7ff7c08405f6\AndroidManifest.xml:17:1-22:12
-INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:1-59:12
-INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:1-59:12
+INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:1-58:12
 	package
 		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:3:5-29
 		INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml
 		INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml
-		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:1-59:12
+		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:1-58:12
 		INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml
-		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:1-59:12
+		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:1-58:12
 		INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:2:11-69
@@ -107,7 +107,7 @@ ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifes
 	android:normalScreens
 		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:16:9-37
 application
-ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:19:5-57:19
+ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:19:5-56:19
 MERGED from [com.google.firebase:firebase-core:16.0.1] C:\Users\Maira\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.1.aar\d4c9ecd95c232ccc1e1140af04a45e2a\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-core:16.0.1] C:\Users\Maira\.gradle\caches\transforms-1\files-1.1\firebase-core-16.0.1.aar\d4c9ecd95c232ccc1e1140af04a45e2a\AndroidManifest.xml:7:5-20
 MERGED from [com.cepheuen.elegant-number-button:lib:1.0.2] C:\Users\Maira\.gradle\caches\transforms-1\files-1.1\lib-1.0.2.aar\bfda562776687748b60aaec8c7aa922b\AndroidManifest.xml:11:5-17:19
@@ -194,36 +194,32 @@ ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifes
 		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:45:13-56
 	android:name
 		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:43:13-44
-activity#pl.servx.servx.Services
-ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:46:9-46
-	android:name
-		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:46:19-43
 activity#pl.servx.servx.MainActivity
-ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:47:9-50
+ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:46:9-50
 	android:name
-		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:47:19-47
+		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:46:19-47
 activity#pl.servx.servx.AddCarForm
-ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:48:9-48
+ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:47:9-48
 	android:name
-		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:48:19-45
+		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:47:19-45
 activity#pl.servx.servx.home
-ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:49:9-42
+ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:48:9-42
 	android:name
-		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:49:19-39
+		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:48:19-39
 activity#pl.servx.servx.SplashScreen
-ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:50:9-56:20
+ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:49:9-55:20
 	android:name
-		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:50:19-47
+		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:49:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:51:13-55:29
+ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:50:13-54:29
 action#android.intent.action.MAIN
-ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:52:17-69
+ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:51:17-69
 	android:name
-		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:52:25-66
+		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:51:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:54:17-77
+ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:53:17-77
 	android:name
-		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:54:27-74
+		ADDED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml:53:27-74
 uses-sdk
 INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\LUMS\Spring 2019\CS 360 SE\Application\app\src\main\AndroidManifest.xml

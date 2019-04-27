@@ -34,7 +34,7 @@ public class Cart extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
-        Button back_button= (Button) findViewById(R.id.back_button);
+/*        Button back_button= (Button) findViewById(R.id.back_button);
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,7 +42,7 @@ public class Cart extends AppCompatActivity {
                 startActivity(services);
                 finish();
             }
-        });
+        });*/
 
         Button gotomap= (Button) findViewById(R.id.map_btn);
         gotomap.setOnClickListener(new View.OnClickListener() {

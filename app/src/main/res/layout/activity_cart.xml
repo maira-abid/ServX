@@ -16,7 +16,7 @@
         android:layout_alignParentStart="true"
         android:background="@drawable/rectangle">
 
-        <Button
+        <!--<Button
             android:id="@+id/back_button"
             android:layout_width="33dp"
             android:layout_height="27dp"
@@ -26,6 +26,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
+       -->
 
         <TextView
             android:id="@+id/cart"
@@ -66,7 +67,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:text="Package"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold" />
 
@@ -79,9 +80,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:text="Cost Rs"
-            android:textSize="15sp"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold" />
+            android:textSize="18sp"
+            android:textColor="@color/grey" />
 
         <TextView
             android:id="@+id/cost2"
@@ -89,12 +89,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/cost1"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="10dp"
             android:text="Cost Rs"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            android:textColor="@color/grey"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/pack2"
@@ -103,10 +102,10 @@
             android:layout_below="@+id/pack1"
             android:layout_alignParentStart="true"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="15dp"
             android:text="Package"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="15sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
 
@@ -120,7 +119,7 @@
             android:layout_marginBottom="15dp"
             android:text="Total Cost"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
         <TextView
@@ -132,8 +131,8 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="15dp"
             android:text="Cost Rs"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp"
+            android:textColor="@color/grey"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
     </RelativeLayout>
