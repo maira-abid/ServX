@@ -10,182 +10,177 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/btn_cart">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-
-
+        android:layout_above="@id/btn_cart"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="9dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginLeft="20dp"
-            >
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/P1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Gold Package"
+                        android:textSize="35sp" />
+
+                    <Button
+                        android:id="@+id/btnP1"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="#474747"
+                        android:text="+"
+                        android:textColor="@color/white"
+                        android:textSize="30sp" />
+
+                </LinearLayout>
 
                 <TextView
-                    android:id="@+id/P1"
-                    android:layout_width="337dp"
+                    android:id="@+id/p_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:text="Package Info"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/p_cost"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Gold Package"
-                    android:textSize="35sp" />
-
-                <Button
-                    android:id="@+id/btnP1"
-                    android:layout_width="50dp"
-                    android:layout_height="47dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.95"
-                    android:background="#474747"
-                    android:text="+"
-                    android:textColor="@color/white"
-                    android:textSize="33sp" />
-
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    android:text="Cost"
+                    android:textSize="24sp" />
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/p_info"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:text="Package Info"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/p_cost"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginEnd="10dp"
-                android:text="Cost"
-                android:textSize="24sp" />
-        </LinearLayout>
-
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/P2"
+                        android:layout_width="337dp"
+                        android:layout_height="wrap_content"
+                        android:text="Silver Package"
+                        android:textSize="35sp" />
+
+                    <Button
+                        android:id="@+id/btnP2"
+                        android:layout_width="50dp"
+                        android:layout_height="47dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="0.95"
+                        android:background="#474747"
+                        android:text="+"
+                        android:textColor="@color/white"
+                        android:textSize="33sp" />
+
+                </LinearLayout>
 
 
                 <TextView
-                    android:id="@+id/P2"
-                    android:layout_width="337dp"
+                    android:id="@+id/p_info2"
+                    android:layout_width="match_parent"
+                    android:layout_height="89dp"
+                    android:text="Package Info"
+                    android:textSize="24sp" />
+
+
+                <TextView
+                    android:id="@+id/p_cost2"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Silver Package"
-                    android:textSize="35sp" />
-
-                <Button
-                    android:id="@+id/btnP2"
-                    android:layout_width="50dp"
-                    android:layout_height="47dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.95"
-                    android:background="#474747"
-                    android:text="+"
-                    android:textColor="@color/white"
-                    android:textSize="33sp" />
-
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    android:text="Cost"
+                    android:textSize="24sp" />
             </LinearLayout>
 
-
-            <TextView
-                android:id="@+id/p_info2"
-                android:layout_width="match_parent"
-                android:layout_height="89dp"
-                android:text="Package Info"
-                android:textSize="24sp" />
-
-
-            <TextView
-                android:id="@+id/p_cost2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginEnd="10dp"
-                android:text="Cost"
-                android:textSize="24sp" />
-        </LinearLayout>
-
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/P3"
+                        android:layout_width="337dp"
+                        android:layout_height="wrap_content"
+                        android:text="Bronze Package"
+                        android:textSize="35sp" />
+
+                    <Button
+                        android:id="@+id/btnP3"
+                        android:layout_width="50dp"
+                        android:layout_height="47dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="0.95"
+                        android:background="#474747"
+                        android:text="+"
+                        android:textColor="@color/white"
+                        android:textSize="33sp" />
+
+                </LinearLayout>
 
                 <TextView
-                    android:id="@+id/P3"
-                    android:layout_width="337dp"
+                    android:id="@+id/p_info3"
+                    android:layout_width="match_parent"
+                    android:layout_height="89dp"
+                    android:text="Package Info"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/p_cost3"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bronze Package"
-                    android:textSize="35sp" />
-
-                <Button
-                    android:id="@+id/btnP3"
-                    android:layout_width="50dp"
-                    android:layout_height="47dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.95"
-                    android:background="#474747"
-                    android:text="+"
-                    android:textColor="@color/white"
-                    android:textSize="33sp" />
-
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    android:text="Cost"
+                    android:textSize="24sp" />
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/p_info3"
-                android:layout_width="match_parent"
-                android:layout_height="89dp"
-                android:text="Package Info"
-                android:textSize="24sp" />
 
-            <TextView
-                android:id="@+id/p_cost3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginEnd="10dp"
-                android:text="Cost"
-                android:textSize="24sp" />
         </LinearLayout>
-
-
-    </LinearLayout>
     </ScrollView>
     <Button
         android:id="@+id/btn_cart"

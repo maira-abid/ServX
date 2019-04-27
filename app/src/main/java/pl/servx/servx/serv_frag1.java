@@ -44,6 +44,16 @@ public class serv_frag1 extends Fragment {
                 startActivity(home);
             }
         });
+
+        Button gotocart = (Button) rootView.findViewById(R.id.btn_cart);
+        gotocart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cart= new Intent(getActivity(), Cart.class);
+                startActivity(cart);
+            }
+        });
+
         final TextView p_info= (TextView) rootView.findViewById(R.id.p_info);
         final TextView p_info2= (TextView) rootView.findViewById(R.id.p_info2);
         final TextView p_info3= (TextView) rootView.findViewById(R.id.p_info3);
