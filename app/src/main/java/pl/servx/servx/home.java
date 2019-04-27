@@ -21,6 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import pl.servx.servx.Model.SharePref;
 import pl.servx.servx.Model.car_list;
 
 public class home extends AppCompatActivity{
@@ -35,6 +36,13 @@ public class home extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+
+        Intent intent = getIntent();
+        final String user_name = intent.getStringExtra("extra");
+        SharePref sharePref = new SharePref();
+
+
+        sharePref.save(this,user_name);
 
         if (ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
@@ -53,7 +61,7 @@ public class home extends AppCompatActivity{
         db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot ds:dataSnapshot.child("03361424139").child("vehicle").getChildren())
+                for (DataSnapshot ds:dataSnapshot.child(user_name).child("vehicle").getChildren())
                 {
                     String name= String.valueOf(ds.getKey());
                     cars.add(name);
