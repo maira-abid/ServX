@@ -112,6 +112,16 @@ public class home extends AppCompatActivity{
             }
         });
 
+        btnHistory= (Button) findViewById(R.id.btnHistory);
+        btnHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent services = new Intent( home.this, service_history.class );
+
+                startActivity(services);
+            }
+        });
+
 
     }
     @Override

@@ -26,9 +26,9 @@ public class Cart extends AppCompatActivity {
             }
         });
 
-        TextView test= (TextView) findViewById(R.id.P1);
+        TextView test= (TextView) findViewById(R.id.pack1);
         test.setText(cart_data.OilChange);
-        TextView test2= (TextView) findViewById(R.id.P2);
+        TextView test2= (TextView) findViewById(R.id.pack2);
         test2.setText(cart_data.CarWash);
 
     }
