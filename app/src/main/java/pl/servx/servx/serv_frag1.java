@@ -55,36 +55,56 @@ public class serv_frag1 extends Fragment {
                 @Override
                 public void onClick(View view) {
                     cart_data.OilChange = "Gold";
+                    cart_data.costOil=cart_data.OilGold;
+                    cart_data.dict.put("Oil","Oil Change: Gold Package, "+cart_data.costOil+" Rs" );
+
+                    Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
                 }
             });
             btn2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     cart_data.OilChange = "Silver";
+                    cart_data.costOil=cart_data.OilSilver;
+                    cart_data.dict.put("Oil","Oil Change: Silver Package, "+cart_data.costOil+" Rs" );
+                    Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
                 }
             });
             btn3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     cart_data.OilChange = "Bronze";
+                    cart_data.costOil=cart_data.OilBronze;
+                    cart_data.dict.put("Oil","Oil Change: Bronze Package, "+cart_data.costOil+" Rs" );
+                    Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
                 }
             });
             btnm1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     cart_data.OilChange = "";
+                    cart_data.costOil=0;
+                    cart_data.dict.remove("Oil");
+
+                    Toast.makeText(getActivity(), "Removed from cart", Toast.LENGTH_SHORT).show();
                 }
             });
             btnm2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     cart_data.OilChange = "";
+                    cart_data.costOil=0;
+                    cart_data.dict.remove("Oil");
+                    Toast.makeText(getActivity(), "Removed from cart", Toast.LENGTH_SHORT).show();
                 }
             });
             btnm3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     cart_data.OilChange = "";
+                    cart_data.costOil=0;
+                    cart_data.dict.remove("Oil");
+                    Toast.makeText(getActivity(), "Removed from cart", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -93,37 +113,56 @@ public class serv_frag1 extends Fragment {
                     @Override
                     public void onClick(View view) {
                         cart_data.CarWash="Gold";
+                        cart_data.costWash=cart_data.CarGold;
+                        cart_data.dict.put("Wash","Car Wash: Gold Package, "+cart_data.costWash+" Rs" );
 
+                        Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
                     }
                 });
                 btn2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         cart_data.CarWash="Silver";
+                        cart_data.costWash=cart_data.CarSilver;
+                        cart_data.dict.put("Wash","Car Wash: Silver Package, "+cart_data.costWash+" Rs" );
+                        Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
                     }
                 });
                 btn3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         cart_data.CarWash="Bronze";
+                        cart_data.costWash=cart_data.CarBronze;
+                        cart_data.dict.put("Wash","Car Wash: Bronze Package, "+cart_data.costWash+" Rs" );
+
+                        Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
                     }
                 });
                 btnm1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         cart_data.CarWash="";
+                        cart_data.costWash=0;
+                        cart_data.dict.remove("Wash");
+                        Toast.makeText(getActivity(), "Removed from cart", Toast.LENGTH_SHORT).show();
                     }
                 });
                 btnm2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         cart_data.CarWash="";
+                        cart_data.costWash=0;
+                        cart_data.dict.remove("Wash");
+                        Toast.makeText(getActivity(), "Removed from cart", Toast.LENGTH_SHORT).show();
                     }
                 });
                 btnm3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         cart_data.CarWash="";
+                        cart_data.costWash=0;
+                        cart_data.dict.remove("Wash");
+                        Toast.makeText(getActivity(), "Removed from cart", Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -201,9 +240,12 @@ public class serv_frag1 extends Fragment {
                     p_info.setText(Html.fromHtml(to_disp));
                     p_info2.setText(Html.fromHtml(to_disp2));
                     p_info3.setText(Html.fromHtml(to_disp3));
-                    p_cost.setText(dataSnapshot.child("CarWash").child("Gold").child("Cost").getValue(String.class));
-                    p_cost2.setText(dataSnapshot.child("CarWash").child("Silver").child("Cost").getValue(String.class));
-                    p_cost3.setText(dataSnapshot.child("CarWash").child("Bronze").child("Cost").getValue(String.class));
+                    cart_data.CarGold=Integer.parseInt(dataSnapshot.child("CarWash").child("Gold").child("Cost").getValue(String.class));
+                    cart_data.CarSilver=Integer.parseInt(dataSnapshot.child("CarWash").child("Silver").child("Cost").getValue(String.class));
+                    cart_data.CarBronze = Integer.parseInt(dataSnapshot.child("CarWash").child("Bronze").child("Cost").getValue(String.class));
+                    p_cost.setText(cart_data.CarGold+"");
+                    p_cost2.setText(cart_data.CarSilver+"");
+                    p_cost3.setText(cart_data.CarBronze+"");
 
 
 
@@ -230,10 +272,12 @@ public class serv_frag1 extends Fragment {
                     p_info.setText(Html.fromHtml(to_disp));
                     p_info2.setText(Html.fromHtml(to_disp2));
                     p_info3.setText(Html.fromHtml(to_disp3));
-                    p_cost.setText(dataSnapshot.child("OilChange").child("Gold").child("Cost").getValue(String.class));
-                    p_cost2.setText(dataSnapshot.child("OilChange").child("Silver").child("Cost").getValue(String.class));
-                    p_cost3.setText(dataSnapshot.child("OilChange").child("Bronze").child("Cost").getValue(String.class));
-
+                    cart_data.OilGold= Integer.parseInt(dataSnapshot.child("OilChange").child("Gold").child("Cost").getValue(String.class));
+                    cart_data.OilSilver=Integer.parseInt(dataSnapshot.child("OilChange").child("Silver").child("Cost").getValue(String.class));
+                    cart_data.OilBronze= Integer.parseInt(dataSnapshot.child("OilChange").child("Bronze").child("Cost").getValue(String.class));
+                    p_cost.setText(cart_data.OilGold+"");
+                    p_cost2.setText(cart_data.OilSilver+"");
+                    p_cost3.setText(cart_data.OilBronze+"");
                 }
             }
 
