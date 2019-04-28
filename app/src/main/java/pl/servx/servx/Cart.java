@@ -102,6 +102,9 @@ public class Cart extends AppCompatActivity {
                 newreq = newreq+1;
                 lol = String.valueOf(newreq);
                 requestID.setValue(lol);
+
+                Intent gohome = new Intent(Cart.this, home.class);
+                startActivity(gohome);
             }
         });
 
@@ -159,7 +162,6 @@ public class Cart extends AppCompatActivity {
                                 }
                                 time.setText(selectedHour + ":" + selectedMinute + " " + am_pm);
                                 cart_data.time = selectedHour + ":" + selectedMinute + " " + am_pm ;
-
                             }
                 }, hour, minute,false);
                 timePickerDialog.show();

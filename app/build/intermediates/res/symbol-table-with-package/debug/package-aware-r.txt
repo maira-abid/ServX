@@ -974,6 +974,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable oilchange
 drawable plus
+drawable pointer
 drawable recenter
 drawable rectangle
 drawable refresh
@@ -988,7 +989,9 @@ id CarPlate
 id CarYear
 id ConfirmCar
 id FUNCTION
+id History
 id META
+id OP
 id P1
 id P2
 id P3
@@ -1046,7 +1049,6 @@ id btnSignUp
 id btn_cart
 id buttonPanel
 id cancel_action
-id card_view
 id cart
 id cart_bar
 id center
@@ -1103,6 +1105,7 @@ id ghost_view
 id gone
 id groups
 id highlight
+id hist_bar
 id home
 id homeAsUp
 id hybrid
