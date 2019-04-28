@@ -74,8 +74,10 @@ public class SignUp extends Fragment {
                                     User user = new User(edtName.getText().toString(), edtPassword.getText().toString());
                                     table_user.child(edtPhone.getText().toString()).setValue(user);
                                     request req = new request();
+                                    String x = "0";
+                                    x= '"'+x+'"';
 
-                                    table_user1.child(edtPhone.getText().toString()).child("0").setValue(req);
+                                    table_user1.child(edtPhone.getText().toString()).child(x).setValue(req);
                                     Toast.makeText(getActivity(), "SignUp successul", Toast.LENGTH_LONG).show();
                                     counter = 1;
                                     Intent signin = new Intent(getActivity(), Tabbed_Main.class );

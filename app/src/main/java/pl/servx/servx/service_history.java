@@ -48,8 +48,17 @@ public class service_history extends AppCompatActivity {
                 for (DataSnapshot ds:dataSnapshot.child(UserName).getChildren()){
 
                     service_item s = ds.getValue(service_item.class);
-                    s.status = s.status + "ed";
-                    list.add(s);
+                    if (!s.status.equals("pending")){
+                        s.status = s.status + "ed";
+                    }
+
+                    String compare = "0";
+                    compare = '"'+compare+'"';
+
+                    if (!compare.equals(ds.getKey())){
+                        list.add(s);
+                    }
+
                 }
 
                 adaptor = new MyAdaptor(service_history.this, list);

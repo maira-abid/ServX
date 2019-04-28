@@ -25,6 +25,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import pl.servx.servx.Model.cart_data;
 
 import java.io.IOException;
 import java.util.List;
@@ -134,6 +135,8 @@ public class select_location extends FragmentActivity implements OnMapReadyCallb
                         String country = addressList.get(0).getCountryName();
                         if (!locality.isEmpty() && !country.isEmpty())
                             resutText.setText(locality + "  " + country);
+                            cart_data.location = locality;
+
                     }
 
                 } catch (IOException e) {

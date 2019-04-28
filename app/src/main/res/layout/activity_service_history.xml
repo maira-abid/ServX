@@ -10,11 +10,18 @@
     android:background="@color/white"
     >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/reqs"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
         />
+
+    </LinearLayout>
 
 </RelativeLayout>

@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -13,15 +14,25 @@ import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.time.Year;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Map;
 
+import pl.servx.servx.Model.SharePref;
+import pl.servx.servx.Model.cart_data;
+
 import java.util.ArrayList;
 import java.util.Map;
 
 import pl.servx.servx.Model.cart_data;
+import pl.servx.servx.Model.request;
 
 public class Cart extends AppCompatActivity {
     TextView date, time;
@@ -33,6 +44,25 @@ public class Cart extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference table_user1 = database.getReference("requests");
+        final DatabaseReference requestID = database.getReference("requestID");
+
+        requestID.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                cart_data.reqid =dataSnapshot.getValue(String.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+        SharePref sharePref = new SharePref();
+        final String UserName = sharePref.getData(this);
 
 /*        Button back_button= (Button) findViewById(R.id.back_button);
         back_button.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +83,28 @@ public class Cart extends AppCompatActivity {
                 finish();
             }
         });
+
+        Button btnConfirm = (Button)findViewById(R.id.btnConfirm);
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                request req = new request();
+                req.location = cart_data.location;
+                req.wash = cart_data.CarWash;
+                req.oil = cart_data.OilChange;
+                req.status="pending";
+                req.date = cart_data.date;
+                req.time = cart_data.time;
+                Toast.makeText(Cart.this,cart_data.reqid, Toast.LENGTH_LONG).show();
+                String lol = '"'+cart_data.reqid+'"';
+                table_user1.child(UserName).child(lol).setValue(req);
+                Integer newreq = Integer.parseInt(cart_data.reqid);
+                newreq = newreq+1;
+                lol = String.valueOf(newreq);
+                requestID.setValue(lol);
+            }
+        });
+
 
         date = (TextView) findViewById(R.id.date_btn);
         // perform click event on edit text
@@ -75,6 +127,11 @@ public class Cart extends AppCompatActivity {
                                 date.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
                             }
                         }, mYear, mMonth, mDay);
+                        String syear = String.valueOf(mYear);
+                        String smonth= String.valueOf(mMonth +1 );
+                        String sday = String.valueOf(mDay);
+
+                        cart_data.date = sday+ "-" + smonth+ "-" + syear;
                 datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 10000);
                 datePickerDialog.show();
             }
@@ -101,6 +158,8 @@ public class Cart extends AppCompatActivity {
                                     am_pm = "am";
                                 }
                                 time.setText(selectedHour + ":" + selectedMinute + " " + am_pm);
+                                cart_data.time = selectedHour + ":" + selectedMinute + " " + am_pm ;
+
                             }
                 }, hour, minute,false);
                 timePickerDialog.show();

@@ -974,7 +974,6 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable oilchange
 drawable plus
-drawable pointer
 drawable recenter
 drawable rectangle
 drawable refresh
@@ -1047,6 +1046,7 @@ id btnSignUp
 id btn_cart
 id buttonPanel
 id cancel_action
+id card_view
 id cart
 id cart_bar
 id center
@@ -1151,6 +1151,8 @@ id p_info2
 id p_info3
 id pack1
 id pack2
+id package_car_wash
+id package_oil
 id packed
 id parallax
 id parent
@@ -1163,6 +1165,7 @@ id progress_horizontal
 id radio
 id refresh
 id reply_text
+id reqs
 id right
 id right_icon
 id right_side
@@ -1210,6 +1213,7 @@ id src_over
 id standard
 id start
 id stat_text
+id status
 id status_bar_latest_event_content
 id submenuarrow
 id submit_area
@@ -1296,11 +1300,13 @@ layout activity_cart
 layout activity_home
 layout activity_main
 layout activity_select_location
+layout activity_service_history
 layout activity_services_tabbed
 layout activity_sign_in
 layout activity_sign_up
 layout activity_splash_screen
 layout activity_tabbed__main
+layout cards_layout
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar

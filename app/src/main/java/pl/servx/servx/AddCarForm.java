@@ -45,6 +45,7 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");
+
         spCarMake = (Spinner)findViewById(R.id.spCarMake);
         spCarModel = (Spinner)findViewById(R.id.spCarModel);
         spCarYear = (Spinner)findViewById(R.id.spCarYear);

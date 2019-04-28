@@ -1,14 +1,14 @@
 package pl.servx.servx.Model;
 
 public class request {
-    public String date , status, time;
+    public String date ,  status ,time ,wash , oil, location;
 
-    public request(){
-        date = "today";
-        status="complete";
-        time = "now";
+    public request() {
+        date = "";
+        status = "";
+        time = "";
+        wash = "";
+        oil = "";
+        location = "";
     }
-
-
-
 }
