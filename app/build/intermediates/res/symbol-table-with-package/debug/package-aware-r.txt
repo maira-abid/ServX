@@ -974,7 +974,6 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable oilchange
 drawable plus
-drawable pointer
 drawable recenter
 drawable rectangle
 drawable refresh
@@ -1301,7 +1300,6 @@ layout abc_tooltip
 layout activity_add_car_form
 layout activity_cart
 layout activity_home
-layout activity_main
 layout activity_select_location
 layout activity_service_history
 layout activity_services_tabbed

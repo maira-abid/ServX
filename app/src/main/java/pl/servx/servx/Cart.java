@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
-import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -20,17 +19,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.time.Year;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Map;
 
 import pl.servx.servx.Model.SharePref;
-import pl.servx.servx.Model.cart_data;
-
-import java.util.ArrayList;
-import java.util.Map;
-
 import pl.servx.servx.Model.cart_data;
 import pl.servx.servx.Model.request;
 
@@ -80,7 +73,7 @@ public class Cart extends AppCompatActivity {
             public void onClick(View view) {
                 Intent maps= new Intent(Cart.this, select_location.class);
                 startActivity(maps);
-                finish();
+                //finish();
             }
         });
 
@@ -104,6 +97,7 @@ public class Cart extends AppCompatActivity {
                 requestID.setValue(lol);
 
                 Intent gohome = new Intent(Cart.this, home.class);
+                gohome.putExtra("extra",UserName);
                 startActivity(gohome);
             }
         });
