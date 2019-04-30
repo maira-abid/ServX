@@ -76,8 +76,8 @@ public class home extends AppCompatActivity{
 
         ArrayAdapter<String> adapt = new ArrayAdapter<String>(this,
                 R.layout.simple_spinner_item, cars);
-                adapt.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
-                sp.setAdapter(adapt);
+        adapt.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
+        sp.setAdapter(adapt);
 
 
 
@@ -91,7 +91,6 @@ public class home extends AppCompatActivity{
         });
 
 /*        btnmaps = (Button)findViewById(R.id.btnmaps);
-
         btnmaps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

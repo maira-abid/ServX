@@ -44,7 +44,7 @@ public class Cart extends AppCompatActivity {
         requestID.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                cart_data.reqid =dataSnapshot.getValue(String.class);
+                cart_data.reqid = dataSnapshot.getValue(String.class);
             }
 
             @Override
@@ -67,17 +67,17 @@ public class Cart extends AppCompatActivity {
             }
         });*/
 
-        Button gotomap= (Button) findViewById(R.id.map_btn);
+        Button gotomap = (Button) findViewById(R.id.map_btn);
         gotomap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent maps= new Intent(Cart.this, select_location.class);
+                Intent maps = new Intent(Cart.this, select_location.class);
                 startActivity(maps);
                 //finish();
             }
         });
 
-        Button btnConfirm = (Button)findViewById(R.id.btnConfirm);
+        Button btnConfirm = (Button) findViewById(R.id.btnConfirm);
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,19 +85,19 @@ public class Cart extends AppCompatActivity {
                 req.location = cart_data.location;
                 req.wash = cart_data.CarWash;
                 req.oil = cart_data.OilChange;
-                req.status="pending";
+                req.status = "pending";
                 req.date = cart_data.date;
                 req.time = cart_data.time;
-                Toast.makeText(Cart.this,cart_data.reqid, Toast.LENGTH_LONG).show();
-                String lol = '"'+cart_data.reqid+'"';
+                Toast.makeText(Cart.this, cart_data.reqid, Toast.LENGTH_LONG).show();
+                String lol = '"' + cart_data.reqid + '"';
                 table_user1.child(UserName).child(lol).setValue(req);
                 Integer newreq = Integer.parseInt(cart_data.reqid);
-                newreq = newreq+1;
+                newreq = newreq + 1;
                 lol = String.valueOf(newreq);
                 requestID.setValue(lol);
 
                 Intent gohome = new Intent(Cart.this, home.class);
-                gohome.putExtra("extra",UserName);
+                gohome.putExtra("extra", UserName);
                 startActivity(gohome);
             }
         });
@@ -122,13 +122,14 @@ public class Cart extends AppCompatActivity {
                                                   int monthOfYear, int dayOfMonth) {
                                 // set day of month , month and year value in the edit text
                                 date.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                                cart_data.date = dayOfMonth + "-" + (monthOfYear + 1) + "-" + year;
                             }
                         }, mYear, mMonth, mDay);
-                        String syear = String.valueOf(mYear);
-                        String smonth= String.valueOf(mMonth +1 );
-                        String sday = String.valueOf(mDay);
+/*                String syear = String.valueOf(mYear);
+                String smonth = String.valueOf(mMonth + 1);
+                String sday = String.valueOf(mDay);
 
-                        cart_data.date = sday+ "-" + smonth+ "-" + syear;
+                cart_data.date = sday + "-" + smonth + "-" + syear;*/
                 datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 10000);
                 datePickerDialog.show();
             }
@@ -147,7 +148,7 @@ public class Cart extends AppCompatActivity {
                         new TimePickerDialog.OnTimeSetListener() {
                             @Override
                             public void onTimeSet(TimePicker view, int selectedHour, int selectedMinute) {
-                                if(selectedHour >= 12) {
+                                if (selectedHour >= 12) {
                                     am_pm = "pm";
                                 }
 
@@ -155,27 +156,32 @@ public class Cart extends AppCompatActivity {
                                     am_pm = "am";
                                 }
                                 time.setText(selectedHour + ":" + selectedMinute + " " + am_pm);
-                                cart_data.time = selectedHour + ":" + selectedMinute + " " + am_pm ;
+                                cart_data.time = selectedHour + ":" + selectedMinute + " " + am_pm;
                             }
-                }, hour, minute,false);
+                        }, hour, minute, false);
                 timePickerDialog.show();
 
             }
         });
 
-        TextView cost1= (TextView) findViewById(R.id.cost1);
-        TextView cost2= (TextView) findViewById(R.id.cost2);
-        TextView total_cost= (TextView) findViewById(R.id.total_cost);
-        TextView tc_num= (TextView) findViewById(R.id.tc_num);
+        TextView cost1 = (TextView) findViewById(R.id.cost1);
+        TextView cost2 = (TextView) findViewById(R.id.cost2);
+        TextView total_cost = (TextView) findViewById(R.id.total_cost);
+        TextView tc_num = (TextView) findViewById(R.id.tc_num);
 
-        TextView OC= (TextView) findViewById(R.id.pack1);
-        TextView CW= (TextView) findViewById(R.id.pack2);
-        OC.setText(""); CW.setText(""); cost1.setText(""); cost2.setText("");
-        ArrayList<TextView> texts= new ArrayList<>();
-        ArrayList<TextView> costs= new ArrayList<>();
-        texts.add(OC); texts.add(CW);
-        costs.add(cost1); costs.add(cost2);
-        int i=0;
+        TextView OC = (TextView) findViewById(R.id.pack1);
+        TextView CW = (TextView) findViewById(R.id.pack2);
+        OC.setText("");
+        CW.setText("");
+        cost1.setText("");
+        cost2.setText("");
+        ArrayList<TextView> texts = new ArrayList<>();
+        ArrayList<TextView> costs = new ArrayList<>();
+        texts.add(OC);
+        texts.add(CW);
+        costs.add(cost1);
+        costs.add(cost2);
+        int i = 0;
         for (Map.Entry mapElement : cart_data.dict.entrySet()) {
             String key = (String) mapElement.getKey();
 
@@ -189,7 +195,7 @@ public class Cart extends AppCompatActivity {
             i++;
         }
 
-        tc_num.setText((cart_data.costWash+cart_data.costOil)+" Rs");
+        tc_num.setText((cart_data.costWash + cart_data.costOil) + " Rs");
 
     }
 }

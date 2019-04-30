@@ -86,7 +86,6 @@ public class select_location extends FragmentActivity implements OnMapReadyCallb
             }
         });
 
-
         refresh = (Button)findViewById(R.id.refresh);
         refresh.setOnClickListener(new View.OnClickListener(){
             @Override

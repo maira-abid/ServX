@@ -953,11 +953,13 @@ drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable gradient
+drawable hist6
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable logo
 drawable logo_servx
 drawable marker
+drawable marker1
 drawable met_ic_clear
 drawable navigation_empty_icon
 drawable notification_action_background
@@ -972,9 +974,12 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable occw1
 drawable oilchange
 drawable plus
+drawable pointer
 drawable recenter
+drawable recenter1
 drawable rectangle
 drawable refresh
 drawable tooltip_frame_dark

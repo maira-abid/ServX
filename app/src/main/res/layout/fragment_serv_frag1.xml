@@ -24,8 +24,7 @@
             android:orientation="vertical"
             android:layout_marginStart="16dp"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="16dp"
-            >
+            android:layout_marginEnd="16dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -91,14 +90,20 @@
                 android:textSize="20sp" />
         </LinearLayout>
 
-
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorPrimaryDark" />
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp">
 
@@ -161,14 +166,19 @@
                 android:textSize="20sp" />
         </LinearLayout>
 
-
-
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorPrimaryDark" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp">
 
@@ -232,6 +242,7 @@
 
 
     </LinearLayout>
+
     </ScrollView>
     <Button
         android:id="@+id/btn_cart"

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,8 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 
 import pl.servx.servx.Model.User;
 import pl.servx.servx.Model.request;
+
+import static android.util.Patterns.*;
 
 public class SignUp extends Fragment {
     int counter = 0;
@@ -42,6 +45,8 @@ public class SignUp extends Fragment {
             edtPasswordconf =  rootView.findViewById(R.id.edtPasswordconf);
             btnSignUp = rootView.findViewById(R.id.btnSignUp);
 
+
+
             final FirebaseDatabase database = FirebaseDatabase.getInstance();
             final DatabaseReference table_user = database.getReference("User");
             final DatabaseReference table_user1 = database.getReference("requests");
@@ -53,6 +58,16 @@ public class SignUp extends Fragment {
                     mDialog.setMessage("Please wait");
                     mDialog.show();
 
+/*                    String emailInput = edtEmail.getText().toString().trim();
+
+                    if(emailInput.isEmpty())
+                    {
+                        edtEmail.setError("Field is empty");
+                    }
+
+                    else if (!Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()){
+                        edtEmail.setError("Email Address not valid");
+                    }*/
 
                     table_user.addValueEventListener(new ValueEventListener() {
                         @Override

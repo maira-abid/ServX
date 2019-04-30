@@ -27,6 +27,8 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        SharePref sharePref = new SharePref();
+        final String UserName = sharePref.getData(this);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_car_form);
@@ -35,13 +37,11 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
             @Override
             public void onClick(View view) {
                 Intent home= new Intent(AddCarForm.this, home.class);
+                home.putExtra("extra", UserName);
                 startActivity(home);
                 finish();
             }
         });
-
-        SharePref sharePref = new SharePref();
-        final String UserName = sharePref.getData(this);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");
@@ -83,6 +83,11 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
                 newcar.vyear = String.valueOf(spCarYear.getSelectedItem());
                 table_user.child(UserName).child("vehicle").child(textCarPlate.getText().toString()).setValue(newcar);
 
+                Intent home= new Intent(AddCarForm.this, home.class);
+                home.putExtra("extra", UserName);
+                startActivity(home);
+                finish();
+                
             }
         });
     }
