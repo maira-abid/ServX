@@ -98,6 +98,9 @@ public class Cart extends AppCompatActivity {
 
                 Intent gohome = new Intent(Cart.this, home.class);
                 gohome.putExtra("extra", UserName);
+                cart_data.dict.clear();
+                gohome.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
                 startActivity(gohome);
             }
         });
@@ -122,7 +125,8 @@ public class Cart extends AppCompatActivity {
                                                   int monthOfYear, int dayOfMonth) {
                                 // set day of month , month and year value in the edit text
                                 date.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
-                                cart_data.date = dayOfMonth + "-" + (monthOfYear + 1) + "-" + year;
+                                //cart_data.date = dayOfMonth + "-" + (monthOfYear + 1) + "-" + year;
+                                cart_data.date= dayOfMonth+"-"+monthOfYear+"-"+year;
                             }
                         }, mYear, mMonth, mDay);
 /*                String syear = String.valueOf(mYear);

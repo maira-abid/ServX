@@ -27,21 +27,26 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        SharePref sharePref = new SharePref();
-        final String UserName = sharePref.getData(this);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_car_form);
+        SharePref sharePref = new SharePref();
+        final String UserName = sharePref.getData(this);
         Button back_button= (Button) findViewById(R.id.back_button);
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent home= new Intent(AddCarForm.this, home.class);
+
                 home.putExtra("extra", UserName);
+                home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                //home.putExtra("extra", UserName);
                 startActivity(home);
-                finish();
             }
         });
+
+        //SharePref sharePref = new SharePref();
+        //final String UserName = sharePref.getData(this);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");
@@ -81,13 +86,20 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
                 newcar.vmake = String.valueOf(spCarMake.getSelectedItem());
                 newcar.vmodel = String.valueOf(spCarModel.getSelectedItem());
                 newcar.vyear = String.valueOf(spCarYear.getSelectedItem());
-                table_user.child(UserName).child("vehicle").child(textCarPlate.getText().toString()).setValue(newcar);
+                //final ProgressDialog mDialog = new ProgressDialog(AddCarForm.this);
 
+                //mDialog.setMessage("Please wait");
+                //mDialog.show();
+                table_user.child(UserName).child("vehicle").child(textCarPlate.getText().toString()).setValue(newcar);
+                //mDialog.dismiss();
                 Intent home= new Intent(AddCarForm.this, home.class);
                 home.putExtra("extra", UserName);
+                home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+
                 startActivity(home);
-                finish();
-                
+
+
             }
         });
     }

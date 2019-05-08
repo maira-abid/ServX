@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -130,6 +129,8 @@ public class SignUp extends Fragment {
                                         Toast.makeText(getActivity(), "SignUp Successful", Toast.LENGTH_LONG).show();
                                         counter = 1;
                                         Intent signin = new Intent(getActivity(), Tabbed_Main.class );
+                                        signin.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
                                         startActivity(signin);
                                         getActivity().finish();
                                     }
@@ -139,7 +140,6 @@ public class SignUp extends Fragment {
                                     }
                                 }
                             }
-
                         }
                         @Override
                         public void onCancelled(@NonNull  DatabaseError databaseError) {
