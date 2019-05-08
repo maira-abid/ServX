@@ -16,9 +16,10 @@ public class User {
      vehicles =  new Vector<vehicle>();
 
     }
-    public User(String name, String pass){
+    public User(String name, String pass, String email){
         Name = name;
         Password = pass;
+        Email = email;
         vehicles =  new Vector<vehicle>();
         vehicle vehi= new vehicle();
         vehi.vmake="";
@@ -36,11 +37,19 @@ public class User {
         return Password;
     }
 
+    public String getEmail() {
+        return Email;
+    }
+
     public void setName(String name) {
         Name = name;
     }
 
     public void setPassword(String password) {
         Password = password;
+    }
+
+    public void setEmail(String email){
+        Email = email;
     }
 }

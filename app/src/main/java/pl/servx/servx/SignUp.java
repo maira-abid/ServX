@@ -21,6 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import java.util.regex.Pattern;
+
 import pl.servx.servx.Model.User;
 import pl.servx.servx.Model.request;
 
@@ -45,6 +47,10 @@ public class SignUp extends Fragment {
             edtPasswordconf =  rootView.findViewById(R.id.edtPasswordconf);
             btnSignUp = rootView.findViewById(R.id.btnSignUp);
 
+        final Pattern Pass_Pat = Pattern.compile("^" + "(?=\\S+$)" + ".{6,}" + "$");
+        final Pattern Name_Pat = Pattern.compile("^[\\p{L} .'-]+$");
+        final Pattern Num_Pat = Pattern.compile("^((\\+92)|(0092))-{0,1}\\d{3}-{0,1}$|^\\d{11}$|^\\d{4}-\\d{7}$");
+
 
 
             final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -55,55 +61,85 @@ public class SignUp extends Fragment {
                 @Override
                 public void onClick(View v) {
                     final ProgressDialog mDialog = new ProgressDialog(getActivity());
-                    mDialog.setMessage("Please wait");
-                    mDialog.show();
 
-/*                    String emailInput = edtEmail.getText().toString().trim();
+                    final String emailInput = edtEmail.getText().toString().trim();
+                    final String passs = edtPassword.getText().toString().trim();
+                    final String num = edtPhone.getText().toString().trim();
+                    final String name = edtName.getText().toString().trim();
 
-                    if(emailInput.isEmpty())
-                    {
+                    if(emailInput.isEmpty()) {
                         edtEmail.setError("Field is empty");
                     }
-
                     else if (!Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()){
                         edtEmail.setError("Email Address not valid");
-                    }*/
+                    }
+
+                    if(num.isEmpty()) {
+                        edtPhone.setError("Field is empty");
+                    }
+                    else if (!Num_Pat.matcher(num).matches()){
+                        edtPhone.setError("Mobile Number Not of Pakistan");
+                    }
+
+                    if(name.isEmpty()) {
+                        edtName.setError("Field is empty");
+                    }
+                    else if (!Name_Pat.matcher(name).matches()){
+                        edtName.setError("Recheck Name");
+                    }
+
+                    if(passs.isEmpty()) {
+                        edtPassword.setError("Field is empty");
+                    }
+                    else if (!Pass_Pat.matcher(passs).matches()){
+                        edtPassword.setError("Password Should be At Least 6 character");
+                    }
 
                     table_user.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull  DataSnapshot dataSnapshot) {
                             //check if already user phone
-                            if (dataSnapshot.child(edtPhone.getText().toString()).exists())
-                            {
-                                mDialog.dismiss();
-                                if(counter == 0 )
+                            if(num.isEmpty() || name.isEmpty() || emailInput.isEmpty() || passs.isEmpty() ) {
+                                Toast.makeText(getActivity(), "Can Not Sign-up With Empty Field", Toast.LENGTH_LONG).show();
+                            }
+
+                            else {
+                                mDialog.setMessage("Please Wait");
+                                mDialog.show();
+
+                                if (dataSnapshot.child(edtPhone.getText().toString()).exists())
                                 {
-                                    Toast.makeText(getActivity(), "User Already exists", Toast.LENGTH_LONG).show();
+                                    mDialog.dismiss();
+                                    if(counter == 0 )
+                                    {
+                                        Toast.makeText(getActivity(), "User Already Exists", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+
+                                else
+                                {
+                                    if(edtPassword.getText().toString().equals(edtPasswordconf.getText().toString())) {
+                                        mDialog.dismiss();
+                                        User user = new User(edtName.getText().toString(), edtPassword.getText().toString(), edtEmail.getText().toString());
+                                        table_user.child(edtPhone.getText().toString()).setValue(user);
+                                        request req = new request();
+                                        String x = "0";
+                                        x= '"'+x+'"';
+
+                                        table_user1.child(edtPhone.getText().toString()).child(x).setValue(req);
+                                        Toast.makeText(getActivity(), "SignUp Successful", Toast.LENGTH_LONG).show();
+                                        counter = 1;
+                                        Intent signin = new Intent(getActivity(), Tabbed_Main.class );
+                                        startActivity(signin);
+                                        getActivity().finish();
+                                    }
+                                    else{
+                                        mDialog.dismiss();
+                                        Toast.makeText(getActivity(),"Passwords Do Not Match", Toast.LENGTH_LONG).show();
+                                    }
                                 }
                             }
 
-                            else
-                            {
-                                if(edtPassword.getText().toString().equals(edtPasswordconf.getText().toString())) {
-                                    mDialog.dismiss();
-                                    User user = new User(edtName.getText().toString(), edtPassword.getText().toString());
-                                    table_user.child(edtPhone.getText().toString()).setValue(user);
-                                    request req = new request();
-                                    String x = "0";
-                                    x= '"'+x+'"';
-
-                                    table_user1.child(edtPhone.getText().toString()).child(x).setValue(req);
-                                    Toast.makeText(getActivity(), "SignUp successul", Toast.LENGTH_LONG).show();
-                                    counter = 1;
-                                    Intent signin = new Intent(getActivity(), Tabbed_Main.class );
-                                    startActivity(signin);
-                                    getActivity().finish();
-                                }
-                                else{
-                                    mDialog.dismiss();
-                                    Toast.makeText(getActivity(),"make sure your passwords match", Toast.LENGTH_LONG).show();
-                                }
-                            }
                         }
                         @Override
                         public void onCancelled(@NonNull  DatabaseError databaseError) {

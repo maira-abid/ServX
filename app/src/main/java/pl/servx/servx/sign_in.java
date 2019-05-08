@@ -48,8 +48,17 @@ public class sign_in extends Fragment{
             @Override
             public void onClick(View view) {
                 final ProgressDialog mDialog = new ProgressDialog(getActivity());
-                mDialog.setMessage("Please Wait");
-                mDialog.show();
+
+                final String passs = edtpass.getText().toString().trim();
+                final String num = edtphone.getText().toString().trim();
+
+                if(num.isEmpty()) {
+                    edtphone.setError("Field is empty");
+                }
+
+                if(passs.isEmpty()) {
+                    edtpass.setError("Field is empty");
+                }
 
                 table_user.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -59,27 +68,33 @@ public class sign_in extends Fragment{
                         //user info
                         mDialog.dismiss();
 
-                        if (dataSnapshot.child((edtphone.getText().toString())).exists()) {
-
-
-                            User user = dataSnapshot.child(edtphone.getText().toString()).getValue(User.class);
-
-                            if (user.getPassword().equals(edtpass.getText().toString())) {
-                                Toast.makeText(getActivity(), "Sign In Successful", Toast.LENGTH_LONG).show();
-
-                                Intent home = new Intent( getActivity(), home.class );
-                                home.putExtra("extra", edtphone.getText().toString());
-                                home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
-                                startActivity(home);
-                            }
-                            else {
-                                Toast.makeText(getActivity(), "sign-in failed", Toast.LENGTH_LONG).show();
-                            }
-
+                        if (num.isEmpty() || passs.isEmpty()) {
+                            Toast.makeText(getActivity(), "Can Not Log-in With Empty Field", Toast.LENGTH_LONG).show();
                         }
-                        else{
-                            Toast.makeText(getActivity(),"user does not exist", Toast.LENGTH_SHORT).show();
+                        else {
+                            mDialog.setMessage("Please Wait");
+                            mDialog.show();
+
+                            if (dataSnapshot.child((edtphone.getText().toString())).exists()) {
+
+
+                                User user = dataSnapshot.child(edtphone.getText().toString()).getValue(User.class);
+
+                                if (user.getPassword().equals(edtpass.getText().toString())) {
+                                    Toast.makeText(getActivity(), "Sign In Successful", Toast.LENGTH_LONG).show();
+
+                                    Intent home = new Intent(getActivity(), home.class);
+                                    home.putExtra("extra", edtphone.getText().toString());
+                                    home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+                                    startActivity(home);
+                                } else {
+                                    Toast.makeText(getActivity(), "Sign-in Failed", Toast.LENGTH_LONG).show();
+                                }
+
+                            } else {
+                                Toast.makeText(getActivity(), "This user Does Not Exist", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
 
