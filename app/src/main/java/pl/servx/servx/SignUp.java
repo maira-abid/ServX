@@ -1,13 +1,11 @@
 package pl.servx.servx;
 
-import android.support.v4.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Patterns;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,8 +21,6 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 
 import pl.servx.servx.Model.User;
 import pl.servx.servx.Model.request;
-
-import static android.util.Patterns.*;
 
 public class SignUp extends Fragment {
     int counter = 0;
@@ -96,6 +92,8 @@ public class SignUp extends Fragment {
                                     Toast.makeText(getActivity(), "SignUp successul", Toast.LENGTH_LONG).show();
                                     counter = 1;
                                     Intent signin = new Intent(getActivity(), Tabbed_Main.class );
+                                    signin.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
                                     startActivity(signin);
                                     getActivity().finish();
                                 }

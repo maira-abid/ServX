@@ -1,5 +1,7 @@
 package pl.servx.servx;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -55,120 +57,81 @@ public class serv_frag1 extends Fragment {
                 @Override
                 public void onClick(View view) {
                     cart_data.OilChange = "Gold";
-                    cart_data.costOil=cart_data.OilGold;
-                    cart_data.dict.put("Oil","Oil Change: Gold Package, "+cart_data.costOil+" Rs" );
-                    Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
-                    cart_data.costOil=cart_data.OilGold;
-                    cart_data.dict.put("Oil","Oil Change: Gold Package, "+cart_data.costOil+" Rs" );
-
-                    Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
+                    //cart_data.costOil=cart_data.OilGold;
+                    int cost= cart_data.OilGold;
+                    add_to_cart("Oil","Oil Change: Gold Package, "+cost+" Rs", cost);
                 }
             });
             btn2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     cart_data.OilChange = "Silver";
-                    cart_data.costOil=cart_data.OilSilver;
-                    cart_data.dict.put("Oil","Oil Change: Silver Package, "+cart_data.costOil+" Rs" );
-                    Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
+                    int cost=cart_data.OilSilver;
+                    add_to_cart("Oil","Oil Change: Silver Package, "+cost+" Rs", cost);
                 }
             });
             btn3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     cart_data.OilChange = "Bronze";
-                    cart_data.costOil=cart_data.OilBronze;
-                    cart_data.dict.put("Oil","Oil Change: Bronze Package, "+cart_data.costOil+" Rs" );
-                    Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
+                    int cost=cart_data.OilBronze;
+                    add_to_cart("Oil","Oil Change: Bronze Package, "+cost+" Rs", cost);
                 }
             });
             btnm1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    cart_data.OilChange = "";
-                    cart_data.costOil=0;
-                    cart_data.dict.remove("Oil");
-                    Toast.makeText(getActivity(), "Removed from cart", Toast.LENGTH_SHORT).show();
-                }
+                    remove_from_cart("Oil"); }
             });
             btnm2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    cart_data.OilChange = "";
-                    cart_data.costOil=0;
-                    cart_data.dict.remove("Oil");
-                    Toast.makeText(getActivity(), "Removed from cart", Toast.LENGTH_SHORT).show();
-                }
+                    remove_from_cart("Oil"); }
             });
             btnm3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    cart_data.OilChange = "";
-                    cart_data.costOil=0;
-                    cart_data.dict.remove("Oil");
-                    Toast.makeText(getActivity(), "Removed from cart", Toast.LENGTH_SHORT).show();
-                }
+                    remove_from_cart("Oil"); }
             });
         }
             else{
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        cart_data.CarWash="Gold";
-                        cart_data.costWash=cart_data.CarGold;
-                        cart_data.dict.put("Wash","Car Wash: Gold Package, "+cart_data.costWash+" Rs" );
-                        Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
+                        int cost=cart_data.CarGold;
+                        add_to_cart("Wash","Car Wash: Gold Package,"+cost+ " Rs",cost);
+
                     }
                 });
                 btn2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        cart_data.CarWash="Silver";
-                        cart_data.costWash=cart_data.CarSilver;
-                        cart_data.dict.put("Wash","Car Wash: Silver Package, "+cart_data.costWash+" Rs" );
-                        Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
+                        int cost=cart_data.CarSilver;
+                        add_to_cart("Wash","Car Wash: Silver Package, "+cost+" Rs", cost);
                     }
                 });
                 btn3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        cart_data.CarWash="Bronze";
-                        cart_data.costWash=cart_data.CarBronze;
-                        cart_data.dict.put("Wash","Car Wash: Bronze Package, "+cart_data.costWash+" Rs" );
-                        Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
+                        int cost=cart_data.CarBronze;
+                        add_to_cart("Wash", "Car Wash: Bronze Package, "+cost+" Rs", cost);
                     }
                 });
                 btnm1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        cart_data.CarWash="";
-                        cart_data.costWash=0;
-                        cart_data.dict.remove("Wash");
-                        Toast.makeText(getActivity(), "Removed from cart", Toast.LENGTH_SHORT).show();
-                    }
+                        remove_from_cart("Wash"); }
                 });
                 btnm2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        cart_data.CarWash="";
-                        cart_data.costWash=0;
-                        cart_data.dict.remove("Wash");
-                        Toast.makeText(getActivity(), "Removed from cart", Toast.LENGTH_SHORT).show();
-                    }
+                        remove_from_cart("Wash");}
                 });
                 btnm3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        cart_data.CarWash="";
-                        cart_data.costWash=0;
-                        cart_data.dict.remove("Wash");
-                        Toast.makeText(getActivity(), "Removed from cart", Toast.LENGTH_SHORT).show();
-                    }
+                        remove_from_cart("Wash");}
                 });
-
-
-
-
 
         }
 
@@ -179,11 +142,6 @@ public class serv_frag1 extends Fragment {
                 startActivity(Cart);
             }
         });
-
-
-
-
-
 
 
 
@@ -211,28 +169,20 @@ public class serv_frag1 extends Fragment {
                         String txt = servSnapshot.getValue(String.class);
                         gold_list.add(txt);
                     }
-                    //int siz=gold_list.size();
                     String to_disp=prepare_string(gold_list);
 
-//                    for (int i=0; i<siz-1; i++) { to_disp= to_disp+ gold_list.get(i)+" <br/>"; }
-//                    if (siz>0){to_disp+=gold_list.get(siz-1);}
 
 
                     for (DataSnapshot servSnapshot : dataSnapshot.child("CarWash").child("Silver").child("Services").getChildren()) {
                         String txt = servSnapshot.getValue(String.class);
                         silver_list.add(txt);
                     }
-                    //int siz2= silver_list.size();
                     String to_disp2=prepare_string(silver_list);
-//                    for (int i=0; i<siz2-1; i++) { to_disp2= to_disp2+ silver_list.get(i)+" <br/>"; }
-//                    if (siz2>0){to_disp2+=silver_list.get(siz2-1);}
-
 
                     for (DataSnapshot servSnapshot : dataSnapshot.child("CarWash").child("Bronze").child("Services").getChildren()) {
                         String txt = servSnapshot.getValue(String.class);
                         bronze_list.add(txt);
                     }
-                    //int siz3= bronze_list.size();
                     String to_disp3=prepare_string(bronze_list);
 
 
@@ -304,6 +254,54 @@ public class serv_frag1 extends Fragment {
         if (siz>0){to_disp+=list.get(siz-1);}
 
         return to_disp;
+    }
+
+    private void add_to_cart(final String key, final String value, final int cost){
+        if (cart_data.dict.get(key)!=null) {
+            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+            alert.setMessage("This will overwrite the current Package you already have in cart! Proceed?");
+            alert.setCancelable(true);
+            alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    cart_data.dict.put(key, value);
+                    if (key=="Oil"){cart_data.costOil=cost;}
+                    else {cart_data.costWash=cost;}
+                    Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
+
+                }
+            });
+            alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) { }
+            });
+            alert.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                @Override
+                public void onCancel(DialogInterface dialogInterface) { }
+            });
+            alert.create().show();
+        }
+
+        else {
+            if (key=="Oil"){cart_data.costOil=cost;}
+            else {cart_data.costWash=cost;}
+            cart_data.dict.put(key, value);
+            Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void remove_from_cart(final String key){
+        if (key=="Wash"){
+            cart_data.CarWash="";
+            cart_data.costWash=0;
+        }
+        else{
+            cart_data.OilChange="";
+            cart_data.costOil=0;
+        }
+        cart_data.dict.remove(key);
+        Toast.makeText(getActivity(), "Removed from cart", Toast.LENGTH_SHORT).show();
+
     }
     @Override
     public  void onViewCreated(View view , Bundle savedInstanceState) {

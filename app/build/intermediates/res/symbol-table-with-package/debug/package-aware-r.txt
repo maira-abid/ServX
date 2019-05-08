@@ -977,7 +977,6 @@ drawable notify_panel_notification_icon_bg
 drawable occw1
 drawable oilchange
 drawable plus
-drawable pointer
 drawable recenter
 drawable recenter1
 drawable rectangle
