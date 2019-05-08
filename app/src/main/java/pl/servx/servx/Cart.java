@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -98,7 +99,8 @@ public class Cart extends AppCompatActivity {
 
                 Intent gohome = new Intent(Cart.this, home.class);
                 gohome.putExtra("extra", UserName);
-                cart_data.dict.clear();
+                //cart_data.dict.clear();
+                cart_data.clear();
                 gohome.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
                 startActivity(gohome);
@@ -194,8 +196,13 @@ public class Cart extends AppCompatActivity {
             int comma = value.indexOf(",");
             msg = value.substring(0, comma);
             cost = value.substring(comma + 1, value.length());
-            texts.get(i).setText(msg);
-            costs.get(i).setText(cost);
+            if (i==cart_data.dict.size()-1) {
+                msg+= " <br/> <br/>"+"Car: "+cart_data.car;
+                texts.get(i).setText(Html.fromHtml(msg));}
+
+            else { texts.get(i).setText(msg); }
+
+        costs.get(i).setText(cost);
             i++;
         }
 

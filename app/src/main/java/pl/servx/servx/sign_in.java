@@ -1,6 +1,7 @@
 package pl.servx.servx;
 
 //import android.app.Fragment;
+
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,13 +15,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import pl.servx.servx.Model.User;
 
 public class sign_in extends Fragment{
     @Nullable
@@ -31,10 +36,33 @@ public class sign_in extends Fragment{
 
         final EditText edtphone, edtpass;
         Button btnSignIn;
-
         edtpass = rootView.findViewById(R.id.edtPassword);
         edtphone = rootView.findViewById(R.id.edtPhone);
         btnSignIn = rootView.findViewById(R.id.btnSignIn);
+        final FirebaseAuth mAuth= FirebaseAuth.getInstance();
+        final FirebaseUser check= mAuth.getCurrentUser();
+        if (check!=null){
+//            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+//                    .setDisplayName("03369696969").build();
+//
+//            check.updateProfile(profileUpdates);
+            String email= check.getEmail();
+            Intent home = new Intent(getActivity(), home.class);
+            String number= check.getDisplayName();
+
+            home.putExtra("extra", number);
+            //edtphone.setText(number);
+            //FirebaseUser user = mAuth.getCurrentUser();
+
+
+            home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+            startActivity(home);
+        }
+
+
+
+
 
         //init database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -72,20 +100,30 @@ public class sign_in extends Fragment{
 
                             if (dataSnapshot.child((edtphone.getText().toString())).exists()) {
 
+                                String email= dataSnapshot.child(edtphone.getText().toString()).child("email").getValue(String.class);
 
-                                User user = dataSnapshot.child(edtphone.getText().toString()).getValue(User.class);
+                                //User user = dataSnapshot.child(edtphone.getText().toString()).getValue(User.class);
+                                mAuth.signInWithEmailAndPassword(email, edtpass.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(getActivity(), "Sign In Successful", Toast.LENGTH_LONG).show();
+                                            FirebaseUser user= mAuth.getCurrentUser();
+                                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                                    .setDisplayName(edtphone.getText().toString()).build();
 
-                                if (user.getPassword().equals(edtpass.getText().toString())) {
-                                    Toast.makeText(getActivity(), "Sign In Successful", Toast.LENGTH_LONG).show();
+                                            user.updateProfile(profileUpdates);
+                                            Intent home = new Intent(getActivity(), home.class);
+                                            home.putExtra("extra", edtphone.getText().toString());
+                                            home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-                                    Intent home = new Intent(getActivity(), home.class);
-                                    home.putExtra("extra", edtphone.getText().toString());
-                                    home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                            startActivity(home);
+                                        } else {
+                                            Toast.makeText(getActivity(), "Sign-in Failed", Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                });
 
-                                    startActivity(home);
-                                } else {
-                                    Toast.makeText(getActivity(), "Sign-in Failed", Toast.LENGTH_LONG).show();
-                                }
 
                             } else {
                                 Toast.makeText(getActivity(), "This user Does Not Exist", Toast.LENGTH_SHORT).show();

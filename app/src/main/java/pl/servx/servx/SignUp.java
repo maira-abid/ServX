@@ -1,11 +1,12 @@
 package pl.servx.servx;
 
-import android.support.v4.app.Fragment;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,19 +14,20 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.util.regex.Pattern;
 
 import pl.servx.servx.Model.User;
-import pl.servx.servx.Model.request;
-
-import static android.util.Patterns.*;
 
 public class SignUp extends Fragment {
     int counter = 0;
@@ -57,102 +59,93 @@ public class SignUp extends Fragment {
             final DatabaseReference table_user1 = database.getReference("requests");
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    final ProgressDialog mDialog = new ProgressDialog(getActivity());
+            @Override
+            public void onClick(View v) {
+                final ProgressDialog mDialog = new ProgressDialog(getActivity());
 
-                    final String emailInput = edtEmail.getText().toString().trim();
-                    final String passs = edtPassword.getText().toString().trim();
-                    final String num = edtPhone.getText().toString().trim();
-                    final String name = edtName.getText().toString().trim();
+                final String emailInput = edtEmail.getText().toString().trim();
+                final String passs = edtPassword.getText().toString().trim();
+                final String num = edtPhone.getText().toString().trim();
+                final String name = edtName.getText().toString().trim();
 
-                    if(emailInput.isEmpty()) {
-                        edtEmail.setError("Field is empty");
-                    }
-                    else if (!Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()){
-                        edtEmail.setError("Email Address not valid");
-                    }
-
-                    if(num.isEmpty()) {
-                        edtPhone.setError("Field is empty");
-                    }
-                    else if (!Num_Pat.matcher(num).matches()){
-                        edtPhone.setError("Mobile Number Not of Pakistan");
-                    }
-
-                    if(name.isEmpty()) {
-                        edtName.setError("Field is empty");
-                    }
-                    else if (!Name_Pat.matcher(name).matches()){
-                        edtName.setError("Recheck Name");
-                    }
-
-                    if(passs.isEmpty()) {
-                        edtPassword.setError("Field is empty");
-                    }
-                    else if (!Pass_Pat.matcher(passs).matches()){
-                        edtPassword.setError("Password Should be At Least 6 character");
-                    }
-
-                    table_user.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull  DataSnapshot dataSnapshot) {
-                            //check if already user phone
-                            if(num.isEmpty() || name.isEmpty() || emailInput.isEmpty() || passs.isEmpty() ) {
-                                Toast.makeText(getActivity(), "Can Not Sign-up With Empty Field", Toast.LENGTH_LONG).show();
-                            }
-
-                            else {
-                                mDialog.setMessage("Please Wait");
-                                mDialog.show();
-
-                                if (dataSnapshot.child(edtPhone.getText().toString()).exists())
-                                {
-                                    mDialog.dismiss();
-                                    if(counter == 0 )
-                                    {
-                                        Toast.makeText(getActivity(), "User Already Exists", Toast.LENGTH_LONG).show();
-                                    }
-                                }
-
-                                else
-                                {
-                                    if(edtPassword.getText().toString().equals(edtPasswordconf.getText().toString())) {
-                                        mDialog.dismiss();
-                                        User user = new User(edtName.getText().toString(), edtPassword.getText().toString(), edtEmail.getText().toString());
-                                        table_user.child(edtPhone.getText().toString()).setValue(user);
-                                        request req = new request();
-                                        String x = "0";
-                                        x= '"'+x+'"';
-
-                                        table_user1.child(edtPhone.getText().toString()).child(x).setValue(req);
-                                        Toast.makeText(getActivity(), "SignUp Successful", Toast.LENGTH_LONG).show();
-                                        counter = 1;
-                                        Intent signin = new Intent(getActivity(), Tabbed_Main.class );
-                                        signin.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
-                                        startActivity(signin);
-                                        getActivity().finish();
-                                    }
-                                    else{
-                                        mDialog.dismiss();
-                                        Toast.makeText(getActivity(),"Passwords Do Not Match", Toast.LENGTH_LONG).show();
-                                    }
-                                }
-                            }
-                        }
-                        @Override
-                        public void onCancelled(@NonNull  DatabaseError databaseError) {
-                            mDialog.dismiss();
-
-
-                        }
-                    });
-
+                if (emailInput.isEmpty()) {
+                    edtEmail.setError("Field is empty");
+                } else if (!Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()) {
+                    edtEmail.setError("Email Address not valid");
                 }
-            });
+
+                if (num.isEmpty()) {
+                    edtPhone.setError("Field is empty");
+                } else if (!Num_Pat.matcher(num).matches()) {
+                    edtPhone.setError("Mobile Number Not of Pakistan");
+                }
+
+                if (name.isEmpty()) {
+                    edtName.setError("Field is empty");
+                } else if (!Name_Pat.matcher(name).matches()) {
+                    edtName.setError("Recheck Name");
+                }
+
+                if (passs.isEmpty()) {
+                    edtPassword.setError("Field is empty");
+                } else if (!Pass_Pat.matcher(passs).matches()) {
+                    edtPassword.setError("Password Should be At Least 6 character");
+                }
+
+                if (num.isEmpty() || name.isEmpty() || emailInput.isEmpty() || passs.isEmpty()) {
+                    Toast.makeText(getActivity(), "Can Not Sign-up With Empty Field", Toast.LENGTH_LONG).show();
+                } else {
+                    mDialog.setMessage("Please Wait");
+                    mDialog.show();
+
+                    if (edtPassword.getText().toString().equals(edtPasswordconf.getText().toString())) {
+
+                        String x = "0";
+                        x = '"' + x + '"';
+                       final FirebaseAuth mAuth;
+                        x = '"' + x + '"';
+                        final Activity activity = getActivity();
+                        mAuth = FirebaseAuth.getInstance();
+                        mAuth.createUserWithEmailAndPassword(edtEmail.getText().toString(), edtPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                mDialog.dismiss();
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(getActivity(), "SignUp Successful", Toast.LENGTH_LONG).show();
+                                    final User user = new User(edtName.getText().toString(), edtEmail.getText().toString());
+
+                                    table_user.child(edtPhone.getText().toString()).setValue(user);
+                                    FirebaseUser userr = mAuth.getCurrentUser();
+
+                                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                            .setDisplayName(edtPhone.getText().toString()).build();
+
+                                    userr.updateProfile(profileUpdates);
+
+                                    Intent signin = new Intent(getActivity(), Tabbed_Main.class);
+                                    signin.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+                                    startActivity(signin);
+                                    getActivity().finish();
+
+                                } else {
+                                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                        Toast.makeText(getActivity(), "User already exists", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+
+                            }
+                        });
 
 
+                    } else {
+                        mDialog.dismiss();
+                        Toast.makeText(getActivity(), "Passwords Do Not Match", Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+
+        });
         return rootView;
     }
 }

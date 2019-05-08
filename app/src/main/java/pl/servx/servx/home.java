@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 
 import pl.servx.servx.Model.SharePref;
 import pl.servx.servx.Model.car_list;
+import pl.servx.servx.Model.cart_data;
 
 public class home extends AppCompatActivity{
     car_list helper;
@@ -39,6 +41,7 @@ public class home extends AppCompatActivity{
 
         Intent intent = getIntent();
         final String user_name = intent.getStringExtra("extra");
+        //User.Number=user_name;
         SharePref sharePref = new SharePref();
 
 
@@ -52,7 +55,7 @@ public class home extends AppCompatActivity{
                     REQUEST_LOCATION_PERMISSION);
         }
         stat_text= (TextView) findViewById(R.id.stat_text);
-        Spinner sp = (Spinner) findViewById(R.id.spinner);
+        final Spinner sp = (Spinner) findViewById(R.id.spinner);
         FirebaseDatabase database= FirebaseDatabase.getInstance();
         DatabaseReference db= database.getReference("User");
         helper = new car_list(db);
@@ -86,6 +89,7 @@ public class home extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 Intent form = new Intent( home.this, AddCarForm.class );
+
                 startActivity(form);
             }
         });
@@ -106,8 +110,13 @@ public class home extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 Intent services = new Intent( home.this, services_tabbed.class );
-
-                startActivity(services);
+                String car= sp.getSelectedItem().toString();
+                if (car!="Select Car"){
+                    cart_data.car=car;
+                startActivity(services);}
+                else {
+                    Toast.makeText(home.this, "Select a car first!", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
