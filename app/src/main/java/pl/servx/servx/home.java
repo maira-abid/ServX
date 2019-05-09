@@ -7,21 +7,23 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
-
 import pl.servx.servx.Model.SharePref;
 import pl.servx.servx.Model.car_list;
 import pl.servx.servx.Model.cart_data;
@@ -29,7 +31,7 @@ import pl.servx.servx.Model.cart_data;
 public class home extends AppCompatActivity{
     car_list helper;
     Button btnServices,btnHistory,btnAddCar, btnmaps;
-    TextView stat_text;
+    //TextView stat_text;
     private static final int REQUEST_LOCATION_PERMISSION = 1;
 
     @Override
@@ -37,6 +39,11 @@ public class home extends AppCompatActivity{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        TextView toolbarTitle = (TextView) toolbar.findViewById(R.id.stat_text);
+        toolbarTitle.setText("Home");
+        this.setSupportActionBar(toolbar);
 
 
         Intent intent = getIntent();
@@ -54,7 +61,8 @@ public class home extends AppCompatActivity{
                             {Manifest.permission.ACCESS_FINE_LOCATION},
                     REQUEST_LOCATION_PERMISSION);
         }
-        stat_text= (TextView) findViewById(R.id.stat_text);
+
+        //stat_text= (TextView) findViewById(R.id.stat_text);
         final Spinner sp = (Spinner) findViewById(R.id.spinner);
         FirebaseDatabase database= FirebaseDatabase.getInstance();
         DatabaseReference db= database.getReference("User");
@@ -129,9 +137,25 @@ public class home extends AppCompatActivity{
                 startActivity(services);
             }
         });
-
-
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        FirebaseAuth.getInstance().signOut();
+        finish();
+
+        Intent out = new Intent( home.this, Tabbed_Main.class );
+        startActivity(out);
+
+        return true;
+    }
+
     @Override
     public void onBackPressed() {
         finish();

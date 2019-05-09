@@ -41,7 +41,7 @@ public class sign_in extends Fragment{
         btnSignIn = rootView.findViewById(R.id.btnSignIn);
         final FirebaseAuth mAuth= FirebaseAuth.getInstance();
         final FirebaseUser check= mAuth.getCurrentUser();
-        if (check!=null){
+/*        if (check!=null){
 //            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
 //                    .setDisplayName("03369696969").build();
 //
@@ -58,7 +58,7 @@ public class sign_in extends Fragment{
             home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
             startActivity(home);
-        }
+        }*/
 
 
 
@@ -107,6 +107,7 @@ public class sign_in extends Fragment{
                                     @Override
                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                         if (task.isSuccessful()) {
+                                            mDialog.dismiss();
                                             Toast.makeText(getActivity(), "Sign In Successful", Toast.LENGTH_LONG).show();
                                             FirebaseUser user= mAuth.getCurrentUser();
                                             UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
@@ -120,12 +121,14 @@ public class sign_in extends Fragment{
                                             startActivity(home);
                                         } else {
                                             Toast.makeText(getActivity(), "Sign-in Failed", Toast.LENGTH_LONG).show();
+                                            mDialog.dismiss();
                                         }
                                     }
                                 });
 
 
                             } else {
+                                mDialog.dismiss();
                                 Toast.makeText(getActivity(), "This user Does Not Exist", Toast.LENGTH_SHORT).show();
                             }
                         }

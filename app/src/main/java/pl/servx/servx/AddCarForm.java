@@ -16,6 +16,7 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.regex.Pattern;
 
 import pl.servx.servx.Model.SharePref;
 import pl.servx.servx.Model.vehicle;
@@ -27,11 +28,14 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_car_form);
+
         SharePref sharePref = new SharePref();
         final String UserName = sharePref.getData(this);
+
+        final Pattern Regi_Pat = Pattern.compile("^[A-Za-z]{3,4}[0-9]{1,3}$");
+
         Button back_button= (Button) findViewById(R.id.back_button);
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,24 +86,33 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
         ConfirmCar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                vehicle newcar = new vehicle();
-                newcar.vmake = String.valueOf(spCarMake.getSelectedItem());
-                newcar.vmodel = String.valueOf(spCarModel.getSelectedItem());
-                newcar.vyear = String.valueOf(spCarYear.getSelectedItem());
-                //final ProgressDialog mDialog = new ProgressDialog(AddCarForm.this);
+                final String plate = textCarPlate.getText().toString().trim();
 
-                //mDialog.setMessage("Please wait");
-                //mDialog.show();
-                table_user.child(UserName).child("vehicle").child(textCarPlate.getText().toString()).setValue(newcar);
-                //mDialog.dismiss();
-                Intent home= new Intent(AddCarForm.this, home.class);
-                home.putExtra("extra", UserName);
-                home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                if (plate.isEmpty()) {
+                    textCarPlate.setError("Field is empty");
+                }
 
+                else if (!Regi_Pat.matcher(plate).matches()) {
+                    textCarPlate.setError("Invalid Registration Plate");
+                }
 
-                startActivity(home);
+                else{
+                    vehicle newcar = new vehicle();
+                    newcar.vmake = String.valueOf(spCarMake.getSelectedItem());
+                    newcar.vmodel = String.valueOf(spCarModel.getSelectedItem());
+                    newcar.vyear = String.valueOf(spCarYear.getSelectedItem());
+                    //final ProgressDialog mDialog = new ProgressDialog(AddCarForm.this);
+                    //mDialog.setMessage("Please wait");
+                    //mDialog.show();
+                    table_user.child(UserName).child("vehicle").child(textCarPlate.getText().toString()).setValue(newcar);
+                    //mDialog.dismiss();
+                    Intent home= new Intent(AddCarForm.this, home.class);
+                    home.putExtra("extra", UserName);
+                    home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-
+                    startActivity(home);
+                    finish();
+                }
             }
         });
     }

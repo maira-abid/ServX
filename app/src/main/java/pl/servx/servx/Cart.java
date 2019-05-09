@@ -74,7 +74,7 @@ public class Cart extends AppCompatActivity {
             public void onClick(View view) {
                 Intent maps = new Intent(Cart.this, select_location.class);
                 startActivity(maps);
-                //finish();
+                finish();
             }
         });
 
@@ -131,11 +131,7 @@ public class Cart extends AppCompatActivity {
                                 cart_data.date= dayOfMonth+"-"+monthOfYear+"-"+year;
                             }
                         }, mYear, mMonth, mDay);
-/*                String syear = String.valueOf(mYear);
-                String smonth = String.valueOf(mMonth + 1);
-                String sday = String.valueOf(mDay);
 
-                cart_data.date = sday + "-" + smonth + "-" + syear;*/
                 datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 10000);
                 datePickerDialog.show();
             }
