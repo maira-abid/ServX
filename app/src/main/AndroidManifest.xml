@@ -37,14 +37,16 @@
             android:label="@string/title_activity_select_location" />
         <activity
             android:name=".Tabbed_Main"
-            android:label="@string/title_activity_tabbed__main"
+            android:label=" "
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".services_tabbed"
-            android:label="activity_services_tabbed"
+            android:label=" "
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AddCarForm" />
-        <activity android:name=".home" />
+        <activity android:name=".home"
+            android:label=" "
+            android:theme="@style/AppTheme" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

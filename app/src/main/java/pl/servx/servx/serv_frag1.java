@@ -28,12 +28,6 @@ import pl.servx.servx.Model.cart_data;
 
 public class serv_frag1 extends Fragment {
 
-
-
-
-
-
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

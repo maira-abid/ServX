@@ -48,7 +48,7 @@ public class SignUp extends Fragment {
 
         final Pattern Pass_Pat = Pattern.compile("^" + "(?=\\S+$)" + ".{6,}" + "$");
         final Pattern Name_Pat = Pattern.compile("^[\\p{L} .'-]+$");
-        final Pattern Num_Pat = Pattern.compile("^((\\+92)|(0092))-{0,1}\\d{3}-{0,1}$|^\\d{11}$|^\\d{4}-\\d{7}$");
+        final Pattern Num_Pat = Pattern.compile("^(?:(([+]|00)92)|0)((3[0-6][0-9]))(\\d{7})$");
 
 
 
@@ -66,56 +66,65 @@ public class SignUp extends Fragment {
                 final String num = edtPhone.getText().toString().trim();
                 final String name = edtName.getText().toString().trim();
 
+                boolean flag = false;
+
                 if (emailInput.isEmpty()) {
                     edtEmail.setError("Field is empty");
                 } else if (!Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()) {
                     edtEmail.setError("Email Address not valid");
+                    flag = true;
                 }
 
                 if (num.isEmpty()) {
                     edtPhone.setError("Field is empty");
                 } else if (!Num_Pat.matcher(num).matches()) {
                     edtPhone.setError("Mobile Number Not of Pakistan");
+                    flag = true;
                 }
 
                 if (name.isEmpty()) {
                     edtName.setError("Field is empty");
                 } else if (!Name_Pat.matcher(name).matches()) {
                     edtName.setError("Recheck Name");
+                    flag = true;
                 }
 
                 if (passs.isEmpty()) {
                     edtPassword.setError("Field is empty");
                 } else if (!Pass_Pat.matcher(passs).matches()) {
                     edtPassword.setError("Password Should be At Least 6 character");
+                    flag = true;
                 }
 
                 if (num.isEmpty() || name.isEmpty() || emailInput.isEmpty() || passs.isEmpty()) {
                     Toast.makeText(getActivity(), "Can Not Sign-up With Empty Field", Toast.LENGTH_LONG).show();
-                } else {
-                    mDialog.setMessage("Please Wait");
-                    mDialog.show();
+                }
+                else {
+                    if (!flag){
+                        mDialog.setMessage("Please Wait");
+                        mDialog.show();
 
-                    if (edtPassword.getText().toString().equals(edtPasswordconf.getText().toString())) {
-
-                        String x = "0";
-                        x = '"' + x + '"';
-                       final FirebaseAuth mAuth;
-                        x = '"' + x + '"';
-                        final Activity activity = getActivity();
-                        mAuth = FirebaseAuth.getInstance();
-                        mAuth.createUserWithEmailAndPassword(edtEmail.getText().toString(), edtPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                mDialog.dismiss();
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(getActivity(), "SignUp Successful", Toast.LENGTH_LONG).show();
-                                    final User user = new User(edtName.getText().toString(), edtEmail.getText().toString());
+                        if (edtPassword.getText().toString().equals(edtPasswordconf.getText().toString())) {
+                            String x = "0";
+                            x = '"' + x + '"';
+                            final FirebaseAuth mAuth;
+                            x = '"' + x + '"';
+                            final Activity activity = getActivity();
+                            mAuth = FirebaseAuth.getInstance();
+                            mAuth.createUserWithEmailAndPassword(edtEmail.getText().toString(), edtPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    mDialog.dismiss();
+                                    if (task.isSuccessful()) {
+                                        mDialog.dismiss();
+                                        Toast.makeText(getActivity(), "SignUp Successful", Toast.LENGTH_LONG).show();
+                                        final User user = new User(edtName.getText().toString(), edtEmail.getText().toString());
 
                                     table_user.child(edtPhone.getText().toString()).setValue(user);
 
                                     mAuth.signOut();
 
+                                     //   userr.updateProfile(profileUpdates);*/
 
 //                                    FirebaseUser userr= mAuth.getCurrentUser();
 //                                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
@@ -125,25 +134,27 @@ public class SignUp extends Fragment {
 //                                    //edtName.setText(userr.getDisplayName());
 //                                    //edtEmail.setText(userr.getEmail());
                                     Intent signin = new Intent(getActivity(), Tabbed_Main.class);
-
                                     signin.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-                                    startActivity(signin);
-                                    getActivity().finish();
+                                        startActivity(signin);
+                                        getActivity().finish();
 
-                                } else {
-                                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
-                                        Toast.makeText(getActivity(), "User already exists", Toast.LENGTH_LONG).show();
+                                    } else {
+                                        if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                            mDialog.dismiss();
+                                            Toast.makeText(getActivity(), "User already exists", Toast.LENGTH_LONG).show();
+                                        }
                                     }
                                 }
+                            });
 
-                            }
-                        });
-
-
-                    } else {
+                        } else {
+                            mDialog.dismiss();
+                            Toast.makeText(getActivity(), "Passwords Do Not Match", Toast.LENGTH_LONG).show();
+                        }
+                    }else {
                         mDialog.dismiss();
-                        Toast.makeText(getActivity(), "Passwords Do Not Match", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Cannot Sign-up With Incorrect Field", Toast.LENGTH_LONG).show();
                     }
                 }
             }

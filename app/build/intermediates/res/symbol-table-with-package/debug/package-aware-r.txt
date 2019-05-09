@@ -974,9 +974,11 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable occw
 drawable occw1
 drawable oilchange
 drawable plus
+drawable pointer
 drawable recenter
 drawable recenter1
 drawable rectangle
@@ -1132,6 +1134,7 @@ id listMode
 id list_item
 id listview_background_shape
 id logo
+id logout
 id main_content
 id map
 id map_btn
@@ -1244,6 +1247,7 @@ id time_btn
 id title
 id titleDividerNoCustom
 id title_template
+id toolbar
 id top
 id topPanel
 id total_PC
@@ -1352,6 +1356,8 @@ layout simple_spinner_item
 layout support_simple_spinner_dropdown_item
 layout tabbed_login
 layout tabbed_signup
+layout toolbar
+menu menu
 menu menu_cart
 menu menu_services_tabbed
 menu menu_tabbed__main
