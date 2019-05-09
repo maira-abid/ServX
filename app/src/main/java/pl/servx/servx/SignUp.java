@@ -19,8 +19,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.rengwuxian.materialedittext.MaterialEditText;
@@ -122,16 +120,21 @@ public class SignUp extends Fragment {
                                         Toast.makeText(getActivity(), "SignUp Successful", Toast.LENGTH_LONG).show();
                                         final User user = new User(edtName.getText().toString(), edtEmail.getText().toString());
 
-                                        table_user.child(edtPhone.getText().toString()).setValue(user);
-                  /*                      FirebaseUser userr = mAuth.getCurrentUser();
+                                    table_user.child(edtPhone.getText().toString()).setValue(user);
 
-                                        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                                                .setDisplayName(edtPhone.getText().toString()).build();
+                                    mAuth.signOut();
 
-                                        userr.updateProfile(profileUpdates);*/
+                                     //   userr.updateProfile(profileUpdates);*/
 
-                                        Intent signin = new Intent(getActivity(), Tabbed_Main.class);
-                                        signin.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                                    FirebaseUser userr= mAuth.getCurrentUser();
+//                                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+//                                            .setDisplayName(edtPhone.getText().toString()).build();
+//
+//                                    userr.updateProfile(profileUpdates);
+//                                    //edtName.setText(userr.getDisplayName());
+//                                    //edtEmail.setText(userr.getEmail());
+                                    Intent signin = new Intent(getActivity(), Tabbed_Main.class);
+                                    signin.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
                                         startActivity(signin);
                                         getActivity().finish();
@@ -155,6 +158,7 @@ public class SignUp extends Fragment {
                     }
                 }
             }
+
         });
         return rootView;
     }

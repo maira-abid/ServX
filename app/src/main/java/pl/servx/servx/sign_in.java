@@ -41,14 +41,15 @@ public class sign_in extends Fragment{
         btnSignIn = rootView.findViewById(R.id.btnSignIn);
         final FirebaseAuth mAuth= FirebaseAuth.getInstance();
         final FirebaseUser check= mAuth.getCurrentUser();
-/*        if (check!=null){
+        if (check!=null){
 //            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
 //                    .setDisplayName("03369696969").build();
 //
 //            check.updateProfile(profileUpdates);
-            String email= check.getEmail();
+            final String email= check.getEmail();
             Intent home = new Intent(getActivity(), home.class);
-            String number= check.getDisplayName();
+            final String number= check.getDisplayName();
+
 
             home.putExtra("extra", number);
             //edtphone.setText(number);
@@ -58,7 +59,9 @@ public class sign_in extends Fragment{
             home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
             startActivity(home);
-        }*/
+            //return rootView;
+
+        }
 
 
 
