@@ -53,6 +53,14 @@ public class Cart extends AppCompatActivity {
 
             }
         });
+        date = (TextView) findViewById(R.id.date_btn);
+        time = (TextView) findViewById(R.id.time_btn);
+        if (!cart_data.date.equals("")){
+            date.setText(cart_data.date);
+        }
+        if (!cart_data.time.equals("")){
+            time.setText(cart_data.time);
+        }
 
 
         SharePref sharePref = new SharePref();
@@ -82,33 +90,39 @@ public class Cart extends AppCompatActivity {
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                request req = new request();
-                req.location = cart_data.location;
-                req.wash = cart_data.CarWash;
-                req.oil = cart_data.OilChange;
-                req.status = "pending";
-                req.date = cart_data.date;
-                req.time = cart_data.time;
-                Toast.makeText(Cart.this, cart_data.reqid, Toast.LENGTH_LONG).show();
-                String lol = '"' + cart_data.reqid + '"';
-                table_user1.child(UserName).child(lol).setValue(req);
-                Integer newreq = Integer.parseInt(cart_data.reqid);
-                newreq = newreq + 1;
-                lol = String.valueOf(newreq);
-                requestID.setValue(lol);
 
-                Intent gohome = new Intent(Cart.this, home.class);
-                gohome.putExtra("extra", UserName);
-                //cart_data.dict.clear();
-                cart_data.clear();
-                gohome.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                if(!cart_data.date.equals("") && !cart_data.time.equals("")&& !cart_data.location.equals("")) {
+                    request req = new request();
+                    req.location = cart_data.location;
+                    req.wash = cart_data.CarWash;
+                    req.oil = cart_data.OilChange;
+                    req.status = "pending";
+                    req.date = cart_data.date;
+                    req.time = cart_data.time;
+                    Toast.makeText(Cart.this, cart_data.reqid, Toast.LENGTH_LONG).show();
+                    String lol = '"' + cart_data.reqid + '"';
+                    table_user1.child(UserName).child(lol).setValue(req);
+                    Integer newreq = Integer.parseInt(cart_data.reqid);
+                    newreq = newreq + 1;
+                    lol = String.valueOf(newreq);
+                    requestID.setValue(lol);
 
-                startActivity(gohome);
+                    Intent gohome = new Intent(Cart.this, home.class);
+                    gohome.putExtra("extra", UserName);
+                    //cart_data.dict.clear();
+                    cart_data.clear();
+                    gohome.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+                    startActivity(gohome);
+                }
+                else{
+                    Toast.makeText(Cart.this, "Please fill all the information", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
 
-        date = (TextView) findViewById(R.id.date_btn);
+
         // perform click event on edit text
         date.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,7 +142,7 @@ public class Cart extends AppCompatActivity {
                                 // set day of month , month and year value in the edit text
                                 date.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
                                 //cart_data.date = dayOfMonth + "-" + (monthOfYear + 1) + "-" + year;
-                                cart_data.date= dayOfMonth+"-"+monthOfYear+"-"+year;
+                                cart_data.date= dayOfMonth+"-"+(monthOfYear + 1)+"-"+year;
                             }
                         }, mYear, mMonth, mDay);
 
@@ -137,7 +151,7 @@ public class Cart extends AppCompatActivity {
             }
         });
 
-        time = (TextView) findViewById(R.id.time_btn);
+
         time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

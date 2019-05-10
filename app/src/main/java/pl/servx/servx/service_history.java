@@ -46,7 +46,13 @@ public class service_history extends AppCompatActivity {
 
                     service_item s = ds.getValue(service_item.class);
                     if (!s.status.equals("pending")){
-                        s.status = s.status + "d";
+                        if (s.status.equals("accept")) {
+                            s.status = s.status + "ed";
+                        }
+                        else{
+
+                            s.status = s.status+"d";
+                        }
                     }
 
                     String compare = "0";
