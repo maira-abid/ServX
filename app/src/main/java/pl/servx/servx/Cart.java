@@ -116,7 +116,17 @@ public class Cart extends AppCompatActivity {
                     startActivity(gohome);
                 }
                 else{
-                    Toast.makeText(Cart.this, "Please fill all the information", Toast.LENGTH_LONG).show();
+                    if(cart_data.location.equals("")){
+                        Toast.makeText(Cart.this, "Please give us a location", Toast.LENGTH_LONG).show();
+                    }
+
+                    if(cart_data.date.equals("")){
+                        Toast.makeText(Cart.this, "Please give us a date", Toast.LENGTH_LONG).show();
+                    }
+                    if(cart_data.time.equals("")){
+                        Toast.makeText(Cart.this, "Please give us a time", Toast.LENGTH_LONG).show();
+                    }
+
                 }
             }
         });
