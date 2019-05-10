@@ -27,8 +27,8 @@ public class service_history extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_history);
-
         list = new ArrayList<service_item>();
+
         recyclerView = (RecyclerView)findViewById(R.id.reqs);
 
         SharePref sharePref = new SharePref();
@@ -41,6 +41,7 @@ public class service_history extends AppCompatActivity {
         table_user.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list.clear();
                 for (DataSnapshot ds:dataSnapshot.child(UserName).getChildren()){
 
                     service_item s = ds.getValue(service_item.class);
@@ -63,6 +64,7 @@ public class service_history extends AppCompatActivity {
 
                 recyclerView.setLayoutManager(new LinearLayoutManager(service_history.this));
                 recyclerView.setAdapter(adaptor);
+                adaptor.notifyDataSetChanged();
 
             }
 

@@ -1,6 +1,8 @@
 package pl.servx.servx;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -31,6 +33,9 @@ import pl.servx.servx.Model.cart_data;
 public class home extends AppCompatActivity{
     car_list helper;
     Button btnServices,btnHistory,btnAddCar, btnmaps;
+    Spinner sp;
+    static String user;
+    ArrayList<String> cars;
     //TextView stat_text;
     private static final int REQUEST_LOCATION_PERMISSION = 1;
 
@@ -39,7 +44,7 @@ public class home extends AppCompatActivity{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        cars =new ArrayList<>();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         TextView toolbarTitle = (TextView) toolbar.findViewById(R.id.stat_text);
         toolbarTitle.setText("Home");
@@ -49,7 +54,9 @@ public class home extends AppCompatActivity{
         Intent intent = getIntent();
         final String user_name = intent.getStringExtra("extra");
         //User.Number=user_name;
+        user = user_name;
         SharePref sharePref = new SharePref();
+
 
 
         sharePref.save(this,user_name);
@@ -63,11 +70,12 @@ public class home extends AppCompatActivity{
         }
 
         //stat_text= (TextView) findViewById(R.id.stat_text);
-        final Spinner sp = (Spinner) findViewById(R.id.spinner);
+        sp = (Spinner) findViewById(R.id.spinner);
         FirebaseDatabase database= FirebaseDatabase.getInstance();
         DatabaseReference db= database.getReference("User");
+
         helper = new car_list(db);
-        final ArrayList<String> cars =new ArrayList<>();
+
 
         db.addValueEventListener(new ValueEventListener() {
             @Override
@@ -85,9 +93,10 @@ public class home extends AppCompatActivity{
 
         cars.add("Select Car");
 
-        ArrayAdapter<String> adapt = new ArrayAdapter<String>(this,
+       final ArrayAdapter<String> adapt = new ArrayAdapter<String>(this,
                 R.layout.simple_spinner_item, cars);
         adapt.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
+        adapt.notifyDataSetChanged();
         sp.setAdapter(adapt);
 
 
@@ -147,12 +156,63 @@ public class home extends AppCompatActivity{
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        FirebaseAuth.getInstance().signOut();
-        finish();
 
-        Intent out = new Intent( home.this, Tabbed_Main.class );
-        startActivity(out);
+        String[] id = getResources().getResourceName(item.getItemId()).split("\\/");
 
+        if(id[1].equals("remove_car")) {
+            final String spinner_item = sp.getSelectedItem().toString();
+            if (spinner_item.equals("Select Car")) {
+                Toast.makeText(home.this, "Please Select Car to Remove", Toast.LENGTH_LONG).show();
+            }
+            else{
+                AlertDialog.Builder alert = new AlertDialog.Builder(home.this);
+                alert.setMessage("This will overwrite the car named: "+spinner_item+ " do you want toProceed?");
+                alert.setCancelable(true);
+                alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        FirebaseDatabase database= FirebaseDatabase.getInstance();
+
+                        DatabaseReference db= database.getReference("User").child(user).child("vehicle");
+
+                        db.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                dataSnapshot.getRef().child(spinner_item).removeValue();
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+
+                        cars.clear();
+                        cars.add("Select Car");
+                        sp.setSelection(0);
+
+
+
+                    }
+                });
+                alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) { }
+                });
+                alert.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface dialogInterface) { }
+                });
+                alert.create().show();
+            }
+
+        }
+        else{
+            FirebaseAuth.getInstance().signOut();
+            finish();
+            Intent out = new Intent(home.this, Tabbed_Main.class);
+            startActivity(out);
+        }
         return true;
     }
 
@@ -161,4 +221,8 @@ public class home extends AppCompatActivity{
         finish();
         super.onBackPressed();
     }
+
+
+
+
 }

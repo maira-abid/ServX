@@ -978,7 +978,6 @@ drawable occw
 drawable occw1
 drawable oilchange
 drawable plus
-drawable pointer
 drawable recenter
 drawable recenter1
 drawable rectangle
@@ -1173,6 +1172,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id refresh
+id remove_car
 id reply_text
 id reqs
 id right
