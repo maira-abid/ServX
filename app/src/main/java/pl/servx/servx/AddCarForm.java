@@ -109,9 +109,9 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
                     Intent home= new Intent(AddCarForm.this, home.class);
                     home.putExtra("extra", UserName);
                     home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
-                    startActivity(home);
                     finish();
+                    startActivity(home);
+                    //finish();
                 }
             }
         });
