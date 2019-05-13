@@ -11,6 +11,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
+import java.util.Collections;
+
 import pl.servx.servx.Model.MyAdaptor;
 import pl.servx.servx.Model.SharePref;
 import pl.servx.servx.Model.service_item;
@@ -59,10 +61,14 @@ public class service_history extends AppCompatActivity {
                     compare = '"'+compare+'"';
 
                     if (!compare.equals(ds.getKey())){
+                        String req = ds.getKey().substring(1,ds.getKey().length()-1);
+                        Integer x = Integer.parseInt(req);
+                        s.reqid = x;
                         list.add(s);
                     }
 
                 }
+                Collections.sort(list, Collections.reverseOrder());
 
                 adaptor = new MyAdaptor(service_history.this, list);
                 LinearLayoutManager manager = new LinearLayoutManager(service_history.this);
