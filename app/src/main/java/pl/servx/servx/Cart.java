@@ -28,6 +28,8 @@ import pl.servx.servx.Model.SharePref;
 import pl.servx.servx.Model.cart_data;
 import pl.servx.servx.Model.request;
 
+import static java.lang.String.*;
+
 public class Cart extends AppCompatActivity {
     TextView date, time;
     String am_pm;
@@ -104,7 +106,7 @@ public class Cart extends AppCompatActivity {
                     table_user1.child(UserName).child(lol).setValue(req);
                     Integer newreq = Integer.parseInt(cart_data.reqid);
                     newreq = newreq + 1;
-                    lol = String.valueOf(newreq);
+                    lol = valueOf(newreq);
                     requestID.setValue(lol);
 
                     Intent gohome = new Intent(Cart.this, home.class);
@@ -181,12 +183,11 @@ public class Cart extends AppCompatActivity {
                                 if (selectedHour < 12) {
                                     am_pm = "am";
                                 }
-                                time.setText(selectedHour + ":" + selectedMinute + " " + am_pm);
+                                time.setText(String.format("%02d:%02d", selectedHour, selectedMinute) + am_pm);
                                 cart_data.time = selectedHour + ":" + selectedMinute + " " + am_pm;
                             }
                         }, hour, minute, false);
                 timePickerDialog.show();
-
             }
         });
 
