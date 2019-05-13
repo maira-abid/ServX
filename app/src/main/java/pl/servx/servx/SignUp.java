@@ -78,7 +78,7 @@ public class SignUp extends Fragment {
                 if (num.isEmpty()) {
                     edtPhone.setError("Field is empty");
                 } else if (!Num_Pat.matcher(num).matches()) {
-                    edtPhone.setError("Mobile Number Not of Pakistan");
+                    edtPhone.setError("Incorrect format (03*********)");
                     flag = true;
                 }
 
