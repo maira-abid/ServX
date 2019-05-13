@@ -114,7 +114,7 @@ public class Cart extends AppCompatActivity {
                     //cart_data.dict.clear();
                     cart_data.clear();
                     gohome.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
+                    finish();
                     startActivity(gohome);
                 }
                 else{

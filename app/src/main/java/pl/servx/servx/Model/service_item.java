@@ -1,12 +1,15 @@
 package pl.servx.servx.Model;
 
-public class service_item {
+import android.support.annotation.NonNull;
+
+public class service_item implements Comparable<service_item> {
     public String oil;
     public String wash;
     public String location;
     public String date;
     public String time;
     public String status;
+    public Integer reqid;
 
 
     public service_item() {
@@ -67,5 +70,10 @@ public class service_item {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public int compareTo(@NonNull service_item o) {
+        return this.reqid.compareTo(o.reqid);
     }
 }

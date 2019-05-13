@@ -57,7 +57,7 @@ public class sign_in extends Fragment{
 
 
             home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
+            getActivity().finish();
             startActivity(home);
             //return rootView;
 
