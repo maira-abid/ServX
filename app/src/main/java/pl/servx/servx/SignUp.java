@@ -48,7 +48,7 @@ public class SignUp extends Fragment {
 
         final Pattern Pass_Pat = Pattern.compile("^" + "(?=\\S+$)" + ".{6,}" + "$");
         final Pattern Name_Pat = Pattern.compile("^[\\p{L} .'-]+$");
-        final Pattern Num_Pat = Pattern.compile("^(?:(([+]|00)92)|0)((3[0-6][0-9]))(\\d{7})$");
+        final Pattern Num_Pat = Pattern.compile("^[0]{1}[3]{1}[0-9]{9}$");
 
 
 
@@ -78,7 +78,7 @@ public class SignUp extends Fragment {
                 if (num.isEmpty()) {
                     edtPhone.setError("Field is empty");
                 } else if (!Num_Pat.matcher(num).matches()) {
-                    edtPhone.setError("Mobile Number Not of Pakistan");
+                    edtPhone.setError("Incorrect format (03*********)");
                     flag = true;
                 }
 

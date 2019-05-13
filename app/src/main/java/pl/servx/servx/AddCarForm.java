@@ -34,7 +34,7 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
         SharePref sharePref = new SharePref();
         final String UserName = sharePref.getData(this);
 
-        final Pattern Regi_Pat = Pattern.compile("^[A-Za-z]{3,4}[0-9]{1,3}$");
+        final Pattern Regi_Pat = Pattern.compile("^[A-Za-z]{3,4}[0-9]{1,4}$");
 
         Button back_button= (Button) findViewById(R.id.back_button);
         back_button.setOnClickListener(new View.OnClickListener() {

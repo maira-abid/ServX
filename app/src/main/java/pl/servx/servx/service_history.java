@@ -11,6 +11,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
+import java.util.Collections;
+
 import pl.servx.servx.Model.MyAdaptor;
 import pl.servx.servx.Model.SharePref;
 import pl.servx.servx.Model.service_item;
@@ -27,8 +29,8 @@ public class service_history extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_history);
-
         list = new ArrayList<service_item>();
+
         recyclerView = (RecyclerView)findViewById(R.id.reqs);
 
         SharePref sharePref = new SharePref();
@@ -41,21 +43,32 @@ public class service_history extends AppCompatActivity {
         table_user.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list.clear();
                 for (DataSnapshot ds:dataSnapshot.child(UserName).getChildren()){
 
                     service_item s = ds.getValue(service_item.class);
                     if (!s.status.equals("pending")){
-                        s.status = s.status + "d";
+                        if (s.status.equals("accept")) {
+                            s.status = s.status + "ed";
+                        }
+                        else{
+
+                            s.status = s.status+"d";
+                        }
                     }
 
                     String compare = "0";
                     compare = '"'+compare+'"';
 
                     if (!compare.equals(ds.getKey())){
+                        String req = ds.getKey().substring(1,ds.getKey().length()-1);
+                        Integer x = Integer.parseInt(req);
+                        s.reqid = x;
                         list.add(s);
                     }
 
                 }
+                Collections.sort(list, Collections.reverseOrder());
 
                 adaptor = new MyAdaptor(service_history.this, list);
                 LinearLayoutManager manager = new LinearLayoutManager(service_history.this);
@@ -63,6 +76,7 @@ public class service_history extends AppCompatActivity {
 
                 recyclerView.setLayoutManager(new LinearLayoutManager(service_history.this));
                 recyclerView.setAdapter(adaptor);
+                adaptor.notifyDataSetChanged();
 
             }
 
