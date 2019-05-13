@@ -10,6 +10,8 @@ public class car_list {
     DatabaseReference db;
     Boolean saved=null;
 
+   public static ArrayList<String> cars= new ArrayList<>();
+
     public car_list(DatabaseReference db) {
         this.db = db;
     }

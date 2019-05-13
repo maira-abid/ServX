@@ -104,6 +104,17 @@ public class sign_in extends Fragment{
                             if (dataSnapshot.child((edtphone.getText().toString())).exists()) {
 
                                 String email= dataSnapshot.child(edtphone.getText().toString()).child("email").getValue(String.class);
+//                                final ArrayList<String> cars= new ArrayList<>();
+//                                cars.add("Select Car");
+//                                if (dataSnapshot.child(edtphone.getText().toString()).child("vehicle").exists())
+//                                {
+//                                    for (DataSnapshot ds:dataSnapshot.child(edtphone.getText().toString()).child("vehicle").getChildren())
+//                                    {
+//                                        String name= String.valueOf(ds.getKey());
+//                                        cars.add(name);
+//                                    }
+//
+//                                }
 
                                 //User user = dataSnapshot.child(edtphone.getText().toString()).getValue(User.class);
                                 mAuth.signInWithEmailAndPassword(email, edtpass.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -117,6 +128,7 @@ public class sign_in extends Fragment{
                                                     .setDisplayName(edtphone.getText().toString()).build();
 
                                             user.updateProfile(profileUpdates);
+                                            //car_list.cars=cars;
                                             Intent home = new Intent(getActivity(), home.class);
                                             home.putExtra("extra", edtphone.getText().toString());
                                             home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

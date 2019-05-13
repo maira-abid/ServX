@@ -106,6 +106,7 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
                     //mDialog.show();
                     table_user.child(UserName).child("vehicle").child(textCarPlate.getText().toString()).setValue(newcar);
                     //mDialog.dismiss();
+                    //car_list.cars.add(textCarPlate.getText().toString());
                     Intent home= new Intent(AddCarForm.this, home.class);
                     home.putExtra("extra", UserName);
                     home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

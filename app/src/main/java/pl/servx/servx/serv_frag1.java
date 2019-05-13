@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import pl.servx.servx.Model.cart_data;
 
@@ -132,6 +133,17 @@ public class serv_frag1 extends Fragment {
         btn_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                for (Map.Entry mapElement : cart_data.dict.entrySet()) {
+                    String key = (String) mapElement.getKey();
+
+                    String value = (String) mapElement.getValue();
+                    int colon= value.indexOf(":")+2;
+                    int comma = value.indexOf(",");
+                    value = value.substring(colon, comma).replaceAll(" Package","");
+                    if (key=="Oil"){cart_data.OilChange=value;}
+                    else{cart_data.CarWash=value;}
+
+                }
                 Intent Cart= new Intent(getActivity(),Cart.class);
                 startActivity(Cart);
             }
