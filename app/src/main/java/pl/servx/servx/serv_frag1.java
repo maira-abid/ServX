@@ -76,17 +76,17 @@ public class serv_frag1 extends Fragment {
             btnm1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    remove_from_cart("Oil"); }
+                    remove_from_cart("Oil","Gold"); }
             });
             btnm2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    remove_from_cart("Oil"); }
+                    remove_from_cart("Oil","Silver"); }
             });
             btnm3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    remove_from_cart("Oil"); }
+                    remove_from_cart("Oil","Bronze"); }
             });
         }
             else{
@@ -115,17 +115,18 @@ public class serv_frag1 extends Fragment {
                 btnm1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        remove_from_cart("Wash"); }
+
+                        remove_from_cart("Wash","Gold"); }
                 });
                 btnm2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        remove_from_cart("Wash");}
+                        remove_from_cart("Wash","Silver");}
                 });
                 btnm3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        remove_from_cart("Wash");}
+                        remove_from_cart("Wash","Bronze");}
                 });
 
         }
@@ -290,17 +291,56 @@ public class serv_frag1 extends Fragment {
         }
     }
 
-    private void remove_from_cart(final String key){
-        if (key=="Wash"){
-            cart_data.CarWash="";
-            cart_data.costWash=0;
+    private void remove_from_cart(final String key, String type){
+        if (cart_data.dict.get(key)!=null) {
+            if (key == "Wash") {
+                String val= cart_data.dict.get(key);
+                int colon= val.indexOf(":")+2;
+                int comma = val.indexOf(",");
+                val = val.substring(colon, comma).replaceAll(" Package","");
+//                Log.i("val", val.length()+"");
+//                Log.i("type", type.length()+"");
+//                Log.i("val1", val);
+//                Log.i("type1", type);
+
+                if (type.equals(val) ){
+                    cart_data.CarWash = "";
+                    cart_data.costWash = 0;
+                    cart_data.dict.remove(key);
+                    Toast.makeText(getActivity(),
+                        "Removed from cart", Toast.LENGTH_SHORT).show();
+
+                }
+
+                else{
+                    Toast.makeText(getActivity(), "Package not in cart!", Toast.LENGTH_SHORT).show();
+
+                }
+
+
+            } else {
+                String val= cart_data.dict.get(key);
+                int colon= val.indexOf(":")+2;
+                int comma = val.indexOf(",");
+                val = val.substring(colon, comma).replaceAll(" Package","");
+                if (type.equals( val) ){
+                    cart_data.OilChange = "";
+                    cart_data.costOil = 0;
+                    cart_data.dict.remove(key);
+                    Toast.makeText(getActivity(),
+                            "Removed from cart", Toast.LENGTH_SHORT).show();
+
+                }
+
+                else{
+                    Toast.makeText(getActivity(), "Package not in cart!", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+
         }
-        else{
-            cart_data.OilChange="";
-            cart_data.costOil=0;
+        else{                    Toast.makeText(getActivity(), "Package not in cart!", Toast.LENGTH_SHORT).show();
         }
-        cart_data.dict.remove(key);
-        Toast.makeText(getActivity(), "Removed from cart", Toast.LENGTH_SHORT).show();
 
     }
     @Override

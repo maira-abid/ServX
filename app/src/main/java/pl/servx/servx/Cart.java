@@ -242,13 +242,17 @@ public class Cart extends AppCompatActivity {
             int comma = value.indexOf(",");
             msg = value.substring(0, comma);
             cost = value.substring(comma + 1, value.length());
-            if (i==cart_data.dict.size()-1) {
-                msg+= " <br/> <br/>"+"Car: "+cart_data.car;
-                texts.get(i).setText(Html.fromHtml(msg));}
+            if (i==0) {
+                msg= "Car: "+cart_data.car+" <br/> <br/>"+msg;
+                texts.get(i).setText(Html.fromHtml(msg));
+                cost= " <br/> <br/>"+cost;
+                costs.get(i).setText(Html.fromHtml(cost));
+            }
 
-            else { texts.get(i).setText(msg); }
+            else { texts.get(i).setText(msg);
+                costs.get(i).setText(cost);}
 
-        costs.get(i).setText(cost);
+
             i++;
         }
 
