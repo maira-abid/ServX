@@ -88,7 +88,6 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
             @Override
             public void onClick(View view) {
                 final String plate = textCarPlate.getText().toString().trim();
-                //car_list.Addcar=textCarPlate.getText().toString();
 
 
                 boolean flag = false;
@@ -100,7 +99,6 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
                 if ((make == "Select Make")  || (year == "Select Year") || (mod == null || mod.toString() == "Select Model")) {
                     Toast.makeText(AddCarForm.this, "Add All Fields", Toast.LENGTH_LONG).show();
                     flag = true;
-                    //car_list.Addcar="";
                 }
                 /*
                 if((make != "Select Make")){
@@ -110,11 +108,9 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
                 if (plate.isEmpty()) {
                     textCarPlate.setError("Field is empty");
                     flag = true;
-                    //car_list.Addcar="";
                 }else if (!Regi_Pat.matcher(plate).matches()) {
                     textCarPlate.setError("Invalid Registration Plate");
                     flag = true;
-                    //car_list.Addcar="";
                 }
 
                 else{
@@ -123,18 +119,13 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
                         newcar.vmake = String.valueOf(spCarMake.getSelectedItem());
                         newcar.vmodel = String.valueOf(spCarModel.getSelectedItem());
                         newcar.vyear = String.valueOf(spCarYear.getSelectedItem());
-                        //final ProgressDialog mDialog = new ProgressDialog(AddCarForm.this);
-                        //mDialog.setMessage("Please wait");
-                        //mDialog.show();
 
                         table_user.child(UserName).child("vehicle").child(textCarPlate.getText().toString()).setValue(newcar);
-                        //mDialog.dismiss();
+
                         Intent home = new Intent(AddCarForm.this, home.class);
-                        //Intent intent=getIntent();
-                        //ArrayList<String> cars= intent.getStringArrayListExtra("cars");
+
                         home.putExtra("extra", UserName);
-                        //home.putExtra("addcar", textCarPlate.getText().toString());
-                        //home.putExtra("cars",cars);
+
                         home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
                         finish();

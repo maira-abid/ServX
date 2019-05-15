@@ -71,7 +71,6 @@ public class home extends AppCompatActivity{
                     REQUEST_LOCATION_PERMISSION);
         }
 
-        //stat_text= (TextView) findViewById(R.id.stat_text);
         sp = (Spinner) findViewById(R.id.spinner);
         FirebaseDatabase database= FirebaseDatabase.getInstance();
         DatabaseReference db= database.getReference("User/"+user_name);
@@ -100,22 +99,7 @@ public class home extends AppCompatActivity{
         cars.add("Select Car");
 
         mDialog.show();
-//        Log.i("carlist", car_list.cars.size()+"");
-//        //Log.i("addcar", car_list.Addcar);
-//
-//
-//        if (car_list.rmcar.length()!=0){
-//            for (int i=0; i<car_list.cars.size(); i++){
-//                if (car_list.cars.get(i).equals(car_list.rmcar)){
-//                    car_list.cars.remove(i);
-//                    break;
-//                }
-//            }
-//        }
-//        cars= car_list.cars;
-//        if (intent.getStringExtra("addcar")!=null){
-//            cars.add(intent.getStringExtra("addcar"));
-//        }
+
         adapt = new ArrayAdapter<String>(this,
                 R.layout.simple_spinner_item, cars);
 
@@ -193,23 +177,27 @@ public class home extends AppCompatActivity{
                 alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        //car_list.rmcar=spinner_item;
                         FirebaseDatabase database= FirebaseDatabase.getInstance();
 
                         DatabaseReference db= database.getReference("User").child(user).child("vehicle");
-                        db.child(spinner_item).removeValue();
-//                        db.addValueEventListener(new ValueEventListener() {
-//                            @Override
-//                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                                dataSnapshot.getRef().child(spinner_item).removeValue();
-//
-//                            }
-//
-//                            @Override
-//                            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//                            }
-//                        });
+//                        try{
+//                        db.child(spinner_item).removeValue();}
+//                        catch (Exception e) {
+//                            e.printStackTrace();
+//                        }
+
+                        db.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                dataSnapshot.getRef().child(spinner_item).removeValue();
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
 
                         cars.clear();
                         cars.add("Select Car");

@@ -23,16 +23,7 @@ public class SharePref {
         editor.apply();
     }
 
-//    public  void  save_list(Context context, ArrayList<String> car){
-//        SharedPreferences sharePref;
-//        SharedPreferences.Editor editor;
-//        sharePref = context.getSharedPreferences(PREF_NAME,Context.MODE_PRIVATE);
-//        editor = sharePref.edit();
-//        Set<String> set = new HashSet<String>();
-//        set.addAll(car);
-//        editor.putStringSet("car", set);
-//        editor.apply();
-//    }
+
 
     public String getData(Context context) {
         SharedPreferences sharePref;
@@ -42,14 +33,5 @@ public class SharePref {
         return text;
     }
 
-//    public ArrayList<String> get_list (Context context){
-//        SharedPreferences sharePref;
-//        String text;
-//        sharePref = context.getSharedPreferences(PREF_NAME,Context.MODE_PRIVATE);
-//        Set<String> set = sharePref.getStringSet("key", null);
-//        if (set!=null){
-//        ArrayList<String>= new ArrayList<>(set);}
-//
-//
-//    }
+
 }
