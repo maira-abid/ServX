@@ -100,10 +100,6 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
                     Toast.makeText(AddCarForm.this, "Add All Fields", Toast.LENGTH_LONG).show();
                     flag = true;
                 }
-                /*
-                if((make != "Select Make")){
-                    if()
-                }*/
 
                 if (plate.isEmpty()) {
                     textCarPlate.setError("Field is empty");

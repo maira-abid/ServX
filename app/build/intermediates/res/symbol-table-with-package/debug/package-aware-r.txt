@@ -1316,8 +1316,6 @@ layout activity_home
 layout activity_select_location
 layout activity_service_history
 layout activity_services_tabbed
-layout activity_sign_in
-layout activity_sign_up
 layout activity_splash_screen
 layout activity_tabbed__main
 layout cards_layout

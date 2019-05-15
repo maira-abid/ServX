@@ -150,7 +150,7 @@ public class home extends AppCompatActivity{
                     cart_data.car=car;
                 startActivity(services);}
                 else {
-                    Toast.makeText(home.this, "Select a car first!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(home.this, "Select/Add A Car", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -180,7 +180,7 @@ public class home extends AppCompatActivity{
         if(id[1].equals("remove_car")) {
             final String spinner_item = sp.getSelectedItem().toString();
             if (spinner_item.equals("Select Car")) {
-                Toast.makeText(home.this, "Please Select Car to Remove", Toast.LENGTH_LONG).show();
+                Toast.makeText(home.this, "Select The Car You Want To Remove", Toast.LENGTH_LONG).show();
             }
             else{
                 AlertDialog.Builder alert = new AlertDialog.Builder(home.this);
@@ -215,9 +215,6 @@ public class home extends AppCompatActivity{
                         cars.add("Select Car");
                         //sp.setAdapter(adapt);
                         sp.setSelection(0);
-
-
-
                     }
                 });
                 alert.setNegativeButton("No", new DialogInterface.OnClickListener() {

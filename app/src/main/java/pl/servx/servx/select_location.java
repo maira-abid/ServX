@@ -78,7 +78,7 @@ public class select_location extends FragmentActivity implements OnMapReadyCallb
                 x= x+ String.valueOf(latLng.longitude);
                 Geocoder geocoder = new Geocoder(select_location.this);
                 //cart_data.location=geocoder;
-                Toast.makeText(select_location.this,x, Toast.LENGTH_LONG).show();
+                Toast.makeText(select_location.this,x, Toast.LENGTH_SHORT).show();
 
                 Intent home= new Intent(select_location.this, Cart.class);
                 startActivity(home);

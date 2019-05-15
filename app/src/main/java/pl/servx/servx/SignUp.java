@@ -117,7 +117,7 @@ public class SignUp extends Fragment {
                                     mDialog.dismiss();
                                     if (task.isSuccessful()) {
                                         mDialog.dismiss();
-                                        Toast.makeText(getActivity(), "SignUp Successful", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(getActivity(), "SignUp Successful", Toast.LENGTH_SHORT).show();
                                         final User user = new User(edtName.getText().toString(), edtEmail.getText().toString());
 
                                     table_user.child(edtPhone.getText().toString()).setValue(user);
@@ -142,7 +142,7 @@ public class SignUp extends Fragment {
                                     } else {
                                         if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                                             mDialog.dismiss();
-                                            Toast.makeText(getActivity(), "User already exists", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getActivity(), "User Already Exists", Toast.LENGTH_LONG).show();
                                         }
                                     }
                                 }
@@ -150,7 +150,7 @@ public class SignUp extends Fragment {
 
                         } else {
                             mDialog.dismiss();
-                            Toast.makeText(getActivity(), "Passwords Do Not Match", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(), "Passwords Do Not Match", Toast.LENGTH_SHORT).show();
                         }
                     }else {
                         mDialog.dismiss();

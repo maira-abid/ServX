@@ -91,21 +91,25 @@ public class Cart extends AppCompatActivity {
         });
 
         Button btnConfirm = (Button) findViewById(R.id.btnConfirm);
+        final TextView datetext = (TextView) findViewById(R.id.date_btn);
+        final TextView timetext = (TextView) findViewById(R.id.time_btn);
+
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(Cart.this);
-                builder.setCancelable(true);
-                builder.setTitle("Confirm Order");
-                //builder.setMessage("Confirm Order");
-                builder.setPositiveButton("Confirm",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
+                if(!cart_data.date.equals("") && !cart_data.time.equals("")&& !cart_data.location.equals("")) {
 
-                                if(!cart_data.date.equals("") && !cart_data.time.equals("")&& !cart_data.location.equals("")) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Cart.this);
+                    builder.setCancelable(true);
+                    builder.setTitle("Confirm Order");
+                    //builder.setMessage("Confirm Order");
+                    builder.setPositiveButton("Confirm",
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+
                                     request req = new request();
                                     req.location = cart_data.location;
                                     req.wash = cart_data.CarWash;
@@ -114,8 +118,8 @@ public class Cart extends AppCompatActivity {
                                     req.date = cart_data.date;
                                     req.time = cart_data.time;
                                     req.car = cart_data.car;
-                                    Toast.makeText(Cart.this, cart_data.reqid, Toast.LENGTH_LONG).show();
-                                    String lol = '"' + cart_data.reqid + '"';
+                                    Toast.makeText(Cart.this, cart_data.reqid, Toast.LENGTH_SHORT).show();
+                                    String lol = "Request ID: " + cart_data.reqid;
                                     table_user1.child(UserName).child(lol).setValue(req);
                                     Integer newreq = Integer.parseInt(cart_data.reqid);
                                     newreq = newreq + 1;
@@ -129,33 +133,37 @@ public class Cart extends AppCompatActivity {
                                     gohome.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     finish();
                                     startActivity(gohome);
-                                }
-                                else{
-                                    if(cart_data.location.equals("")){
-                                        Toast.makeText(Cart.this, "Please Add The Location", Toast.LENGTH_LONG).show();
-                                    }
-
-                                    if(cart_data.date.equals("")){
-                                        Toast.makeText(Cart.this, "Please Add The Date For The Service", Toast.LENGTH_LONG).show();
-                                    }
-                                    if(cart_data.time.equals("")){
-                                        Toast.makeText(Cart.this, "Please Add The Time For The Service", Toast.LENGTH_LONG).show();
-                                    }
-
-                                }
                             }
                         });
-                builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
+
+
+                    builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
 
                 AlertDialog dialog = builder.create();
                 dialog.show();
 
+                }
+                else{
 
+                    if(cart_data.location.equals("")){
+                        Toast.makeText(Cart.this, "Location Not Added", Toast.LENGTH_SHORT).show();
+                    }
+
+                    if(cart_data.date.equals("")){
+                        //Toast.makeText(Cart.this, "Date Not Added", Toast.LENGTH_SHORT).show();
+                        datetext.setError("Date Not Added");
+                    }
+                    if(cart_data.time.equals("")){
+                        //Toast.makeText(Cart.this, "Time Not Added", Toast.LENGTH_SHORT).show();
+                        timetext.setError("Time Not Added");
+                    }
+
+                }
             }
         });
 
@@ -252,8 +260,6 @@ public class Cart extends AppCompatActivity {
 
             else { texts.get(i).setText(msg);
                 costs.get(i).setText(cost);}
-
-
             i++;
         }
 
