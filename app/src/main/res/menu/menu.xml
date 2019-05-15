@@ -3,17 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <item
-        android:id= "@+id/remove_car"
-        android:orderInCategory="100"
-        android:title="Delete Selected Car"
-        app:showAsAction="never"
-        />
-
-    <item
         android:id="@+id/logout"
         android:orderInCategory="100"
         android:title="Logout"
         app:showAsAction="never" />
-
 
 </menu>
