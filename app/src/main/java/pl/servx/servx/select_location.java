@@ -10,9 +10,9 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,11 +24,11 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-import pl.servx.servx.Model.cart_data;
 
 import java.io.IOException;
 import java.util.List;
+
+import pl.servx.servx.Model.cart_data;
 
 public class select_location extends FragmentActivity implements OnMapReadyCallback, LocationListener {
 
@@ -77,7 +77,7 @@ public class select_location extends FragmentActivity implements OnMapReadyCallb
                 x= x+ " ";
                 x= x+ String.valueOf(latLng.longitude);
                 Geocoder geocoder = new Geocoder(select_location.this);
-
+                //cart_data.location=geocoder;
                 Toast.makeText(select_location.this,x, Toast.LENGTH_LONG).show();
 
                 Intent home= new Intent(select_location.this, Cart.class);

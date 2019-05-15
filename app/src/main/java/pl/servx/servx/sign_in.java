@@ -46,19 +46,24 @@ public class sign_in extends Fragment{
 //                    .setDisplayName("03369696969").build();
 //
 //            check.updateProfile(profileUpdates);
-            final String email= check.getEmail();
-            Intent home = new Intent(getActivity(), home.class);
             final String number= check.getDisplayName();
 
+            //final ArrayList<String> cars= new ArrayList<>();
+            //cars.add("Select Car");
+            final ProgressDialog mDialog = new ProgressDialog(getActivity());
+            mDialog.setMessage("Please Wait");
+            mDialog.show();
+            //FirebaseDatabase db= FirebaseDatabase.getInstance();
+            final String email= check.getEmail();
 
-            home.putExtra("extra", number);
-            //edtphone.setText(number);
-            //FirebaseUser user = mAuth.getCurrentUser();
+            mDialog.dismiss();
+                    Intent home = new Intent(getActivity(), home.class);
 
 
-            home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            getActivity().finish();
-            startActivity(home);
+                    home.putExtra("extra", number);
+                    home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    getActivity().finish();
+                    startActivity(home);
             //return rootView;
 
         }
@@ -104,6 +109,7 @@ public class sign_in extends Fragment{
 
                                 String email= dataSnapshot.child(edtphone.getText().toString()).child("email").getValue(String.class);
 
+
                                 //User user = dataSnapshot.child(edtphone.getText().toString()).getValue(User.class);
                                 mAuth.signInWithEmailAndPassword(email, edtpass.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                     @Override
@@ -116,8 +122,11 @@ public class sign_in extends Fragment{
                                                     .setDisplayName(edtphone.getText().toString()).build();
 
                                             user.updateProfile(profileUpdates);
+                                            //cart_data.cars=cars;
+                                            //car_list.cars=cars;
                                             Intent home = new Intent(getActivity(), home.class);
                                             home.putExtra("extra", edtphone.getText().toString());
+                                            //home.putStringArrayListExtra("cars",cars);
                                             home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
                                             startActivity(home);
