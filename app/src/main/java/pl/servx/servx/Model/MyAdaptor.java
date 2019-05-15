@@ -32,6 +32,7 @@ public class MyAdaptor extends RecyclerView.Adapter<MyAdaptor.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        holder.car.setText(items.get(position).getCar());
         holder.package_oil.setText(items.get(position).getOil());
         holder.package_car_wash.setText(items.get(position).getWash());
         holder.date.setText(items.get(position).getDate());
@@ -45,14 +46,15 @@ public class MyAdaptor extends RecyclerView.Adapter<MyAdaptor.MyViewHolder> {
     }
     class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView package_oil,package_car_wash,date,time,status;
+        TextView package_oil,package_car_wash,date,time,status, car;
         public MyViewHolder(View itemView) {
             super(itemView);
+            car = itemView.findViewById(R.id.car);
             package_car_wash = itemView.findViewById(R.id.package_car_wash);
             package_oil = itemView.findViewById(R.id.package_oil);
             date = itemView.findViewById(R.id.date);
             time = itemView.findViewById(R.id.time);
-            status=itemView.findViewById(R.id.status);
+            status = itemView.findViewById(R.id.status);
         }
 
     }

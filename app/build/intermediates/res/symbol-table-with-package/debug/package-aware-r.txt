@@ -1054,6 +1054,8 @@ id btnSignUp
 id btn_cart
 id buttonPanel
 id cancel_action
+id car
+id car_head
 id cart
 id cart_bar
 id center

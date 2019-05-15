@@ -1,7 +1,9 @@
 package pl.servx.servx;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -93,43 +95,67 @@ public class Cart extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(!cart_data.date.equals("") && !cart_data.time.equals("")&& !cart_data.location.equals("")) {
-                    request req = new request();
-                    req.location = cart_data.location;
-                    req.wash = cart_data.CarWash;
-                    req.oil = cart_data.OilChange;
-                    req.status = "pending";
-                    req.date = cart_data.date;
-                    req.time = cart_data.time;
-                    Toast.makeText(Cart.this, cart_data.reqid, Toast.LENGTH_LONG).show();
-                    String lol = '"' + cart_data.reqid + '"';
-                    table_user1.child(UserName).child(lol).setValue(req);
-                    Integer newreq = Integer.parseInt(cart_data.reqid);
-                    newreq = newreq + 1;
-                    lol = valueOf(newreq);
-                    requestID.setValue(lol);
+                AlertDialog.Builder builder = new AlertDialog.Builder(Cart.this);
+                builder.setCancelable(true);
+                builder.setTitle("Confirm Order");
+                //builder.setMessage("Confirm Order");
+                builder.setPositiveButton("Confirm",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
 
-                    Intent gohome = new Intent(Cart.this, home.class);
-                    gohome.putExtra("extra", UserName);
-                    //cart_data.dict.clear();
-                    cart_data.clear();
-                    gohome.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    finish();
-                    startActivity(gohome);
-                }
-                else{
-                    if(cart_data.location.equals("")){
-                        Toast.makeText(Cart.this, "Please give us a location", Toast.LENGTH_LONG).show();
-                    }
+                                if(!cart_data.date.equals("") && !cart_data.time.equals("")&& !cart_data.location.equals("")) {
+                                    request req = new request();
+                                    req.location = cart_data.location;
+                                    req.wash = cart_data.CarWash;
+                                    req.oil = cart_data.OilChange;
+                                    req.status = "Pending";
+                                    req.date = cart_data.date;
+                                    req.time = cart_data.time;
+                                    req.car = cart_data.car;
+                                    Toast.makeText(Cart.this, cart_data.reqid, Toast.LENGTH_LONG).show();
+                                    String lol = '"' + cart_data.reqid + '"';
+                                    table_user1.child(UserName).child(lol).setValue(req);
+                                    Integer newreq = Integer.parseInt(cart_data.reqid);
+                                    newreq = newreq + 1;
+                                    lol = valueOf(newreq);
+                                    requestID.setValue(lol);
 
-                    if(cart_data.date.equals("")){
-                        Toast.makeText(Cart.this, "Please give us a date", Toast.LENGTH_LONG).show();
-                    }
-                    if(cart_data.time.equals("")){
-                        Toast.makeText(Cart.this, "Please give us a time", Toast.LENGTH_LONG).show();
-                    }
+                                    Intent gohome = new Intent(Cart.this, home.class);
+                                    gohome.putExtra("extra", UserName);
+                                    //cart_data.dict.clear();
+                                    cart_data.clear();
+                                    gohome.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                    finish();
+                                    startActivity(gohome);
+                                }
+                                else{
+                                    if(cart_data.location.equals("")){
+                                        Toast.makeText(Cart.this, "Please Add The Location", Toast.LENGTH_LONG).show();
+                                    }
 
-                }
+                                    if(cart_data.date.equals("")){
+                                        Toast.makeText(Cart.this, "Please Add The Date For The Service", Toast.LENGTH_LONG).show();
+                                    }
+                                    if(cart_data.time.equals("")){
+                                        Toast.makeText(Cart.this, "Please Add The Time For The Service", Toast.LENGTH_LONG).show();
+                                    }
+
+                                }
+                            }
+                        });
+                builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+
             }
         });
 

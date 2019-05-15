@@ -94,14 +94,18 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
                 boolean flag = false;
 
                 String make = spCarMake.getSelectedItem().toString();
-                String mod = spCarModel.getSelectedItem().toString();
+                Object mod = spCarModel.getSelectedItem();
                 String year = spCarYear.getSelectedItem().toString();
 
-                if ((make == "Select Make") || (mod == "Select Model") || (year == "Select Year")) {
-                    Toast.makeText(AddCarForm.this, "Select All Fields", Toast.LENGTH_LONG).show();
+                if ((make == "Select Make")  || (year == "Select Year") || (mod == null || mod.toString() == "Select Model")) {
+                    Toast.makeText(AddCarForm.this, "Add All Fields", Toast.LENGTH_LONG).show();
                     flag = true;
                     //car_list.Addcar="";
                 }
+                /*
+                if((make != "Select Make")){
+                    if()
+                }*/
 
                 if (plate.isEmpty()) {
                     textCarPlate.setError("Field is empty");
