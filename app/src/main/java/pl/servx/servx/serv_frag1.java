@@ -179,8 +179,6 @@ public class serv_frag1 extends Fragment {
                     }
                     String to_disp3=prepare_string(bronze_list);
 
-
-
                     p_info.setText(Html.fromHtml(to_disp));
                     p_info2.setText(Html.fromHtml(to_disp2));
                     p_info3.setText(Html.fromHtml(to_disp3));
@@ -192,10 +190,6 @@ public class serv_frag1 extends Fragment {
                     p_cost.setText(cart_data.CarGold+"");
                     p_cost2.setText(cart_data.CarSilver+"");
                     p_cost3.setText(cart_data.CarBronze+"");
-
-
-
-
                 }
                 else {
                     for (DataSnapshot servSnapshot : dataSnapshot.child("OilChange").child("Gold").child("Services").getChildren()) {
@@ -253,7 +247,7 @@ public class serv_frag1 extends Fragment {
     private void add_to_cart(final String key, final String value, final int cost){
         if (cart_data.dict.get(key)!=null) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-            alert.setMessage("This will overwrite the current Package you already have in cart! Proceed?");
+            alert.setMessage("Overwrite The Current Package Already In The Cart! Proceed?");
             alert.setCancelable(true);
             alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                 @Override
@@ -280,7 +274,7 @@ public class serv_frag1 extends Fragment {
             if (key=="Oil"){cart_data.costOil=cost;}
             else {cart_data.costWash=cost;}
             cart_data.dict.put(key, value);
-            Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Added To Cart", Toast.LENGTH_SHORT).show();
         }
     }
 

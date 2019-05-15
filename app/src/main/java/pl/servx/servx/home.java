@@ -120,8 +120,6 @@ public class home extends AppCompatActivity{
             }
         });*/
 
-
-
         btnServices= (Button) findViewById(R.id.btnServices);
         btnServices.setOnClickListener(new View.OnClickListener() {
             @Override
