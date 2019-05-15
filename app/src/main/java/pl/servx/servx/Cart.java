@@ -113,6 +113,7 @@ public class Cart extends AppCompatActivity {
                                     req.status = "Pending";
                                     req.date = cart_data.date;
                                     req.time = cart_data.time;
+                                    req.car = cart_data.car;
                                     Toast.makeText(Cart.this, cart_data.reqid, Toast.LENGTH_LONG).show();
                                     String lol = '"' + cart_data.reqid + '"';
                                     table_user1.child(UserName).child(lol).setValue(req);

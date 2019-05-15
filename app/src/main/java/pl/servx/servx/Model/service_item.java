@@ -3,6 +3,7 @@ package pl.servx.servx.Model;
 import android.support.annotation.NonNull;
 
 public class service_item implements Comparable<service_item> {
+    public String car;
     public String oil;
     public String wash;
     public String location;
@@ -15,7 +16,8 @@ public class service_item implements Comparable<service_item> {
     public service_item() {
     }
 
-    public service_item(String oil, String wash, String location, String date, String time, String status) {
+    public service_item(String car, String oil, String wash, String location, String date, String time, String status) {
+        this.car = car;
         this.oil = oil;
         this.wash = wash;
         this.location = location;
@@ -23,6 +25,10 @@ public class service_item implements Comparable<service_item> {
         this.time = time;
         this.status = status;
     }
+
+    public String getCar() {return car;}
+
+    public void setCar(String car) {this.car = car;}
 
     public String getOil() {
         return oil;

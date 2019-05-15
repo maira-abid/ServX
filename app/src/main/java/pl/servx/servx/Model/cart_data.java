@@ -35,6 +35,8 @@ public class cart_data {
         time = loc;
     }
 
+    public void setCar(String loc){car = loc;}
+
     public static void clear(){
         OilChange=""; CarWash=""; dict.clear(); time="";
         date=""; car=""; location=""; reqid="";
