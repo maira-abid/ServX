@@ -1,6 +1,7 @@
 package pl.servx.servx;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -74,7 +75,8 @@ public class home extends AppCompatActivity{
         sp = (Spinner) findViewById(R.id.spinner);
         FirebaseDatabase database= FirebaseDatabase.getInstance();
         DatabaseReference db= database.getReference("User/"+user_name);
-
+        final ProgressDialog mDialog = new ProgressDialog(this);
+        mDialog.setMessage("Please Wait");
 
 
         db.addValueEventListener(new ValueEventListener() {
@@ -87,6 +89,7 @@ public class home extends AppCompatActivity{
                     String name= String.valueOf(ds.getKey());
                     cars.add(name);
                 }
+                mDialog.dismiss();
 
             }
             @Override
@@ -96,6 +99,23 @@ public class home extends AppCompatActivity{
 
         cars.add("Select Car");
 
+        mDialog.show();
+//        Log.i("carlist", car_list.cars.size()+"");
+//        //Log.i("addcar", car_list.Addcar);
+//
+//
+//        if (car_list.rmcar.length()!=0){
+//            for (int i=0; i<car_list.cars.size(); i++){
+//                if (car_list.cars.get(i).equals(car_list.rmcar)){
+//                    car_list.cars.remove(i);
+//                    break;
+//                }
+//            }
+//        }
+//        cars= car_list.cars;
+//        if (intent.getStringExtra("addcar")!=null){
+//            cars.add(intent.getStringExtra("addcar"));
+//        }
         adapt = new ArrayAdapter<String>(this,
                 R.layout.simple_spinner_item, cars);
 
@@ -110,7 +130,7 @@ public class home extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 Intent form = new Intent( home.this, AddCarForm.class );
-                form.putStringArrayListExtra("cars",cars);
+                //form.putStringArrayListExtra("cars",cars);
                 startActivity(form);
             }
         });
@@ -175,22 +195,23 @@ public class home extends AppCompatActivity{
                 alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        //car_list.rmcar=spinner_item;
                         FirebaseDatabase database= FirebaseDatabase.getInstance();
 
                         DatabaseReference db= database.getReference("User").child(user).child("vehicle");
-
-                        db.addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                dataSnapshot.getRef().child(spinner_item).removeValue();
-
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                            }
-                        });
+                        db.child(spinner_item).removeValue();
+//                        db.addValueEventListener(new ValueEventListener() {
+//                            @Override
+//                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                                dataSnapshot.getRef().child(spinner_item).removeValue();
+//
+//                            }
+//
+//                            @Override
+//                            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                            }
+//                        });
 
                         cars.clear();
                         cars.add("Select Car");
