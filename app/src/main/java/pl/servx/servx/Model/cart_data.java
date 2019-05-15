@@ -1,9 +1,13 @@
 package pl.servx.servx.Model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class cart_data {
+
+    //public static ArrayAdapter<String> adapt;
+    public static ArrayList<String> cars= new ArrayList<>();
 
     public static String OilChange="";
     public static String CarWash="";
