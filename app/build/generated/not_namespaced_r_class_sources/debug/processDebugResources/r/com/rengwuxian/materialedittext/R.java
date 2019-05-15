@@ -524,23 +524,23 @@ public final class R {
         public static final int showHome = 0x7f0900dc;
         public static final int showTitle = 0x7f0900dd;
         public static final int split_action_bar = 0x7f0900e7;
-        public static final int src_atop = 0x7f0900ea;
-        public static final int src_in = 0x7f0900eb;
-        public static final int src_over = 0x7f0900ec;
-        public static final int status_bar_latest_event_content = 0x7f0900f1;
-        public static final int submit_area = 0x7f0900f3;
-        public static final int tabMode = 0x7f0900f7;
-        public static final int text = 0x7f0900fc;
-        public static final int text2 = 0x7f0900fd;
-        public static final int textSpacerNoButtons = 0x7f0900ff;
-        public static final int time = 0x7f090104;
-        public static final int title = 0x7f090106;
-        public static final int title_template = 0x7f090108;
-        public static final int topPanel = 0x7f09010b;
-        public static final int up = 0x7f090115;
-        public static final int useLogo = 0x7f090116;
-        public static final int withText = 0x7f09011a;
-        public static final int wrap_content = 0x7f09011c;
+        public static final int src_atop = 0x7f0900ec;
+        public static final int src_in = 0x7f0900ed;
+        public static final int src_over = 0x7f0900ee;
+        public static final int status_bar_latest_event_content = 0x7f0900f3;
+        public static final int submit_area = 0x7f0900f5;
+        public static final int tabMode = 0x7f0900f9;
+        public static final int text = 0x7f0900fe;
+        public static final int text2 = 0x7f0900ff;
+        public static final int textSpacerNoButtons = 0x7f090101;
+        public static final int time = 0x7f090106;
+        public static final int title = 0x7f090108;
+        public static final int title_template = 0x7f09010a;
+        public static final int topPanel = 0x7f09010d;
+        public static final int up = 0x7f090117;
+        public static final int useLogo = 0x7f090118;
+        public static final int withText = 0x7f09011c;
+        public static final int wrap_content = 0x7f09011e;
     }
     public static final class integer {
         private integer() {}
@@ -586,7 +586,7 @@ public final class R {
         public static final int select_dialog_item_material = 0x7f0b0046;
         public static final int select_dialog_multichoice_material = 0x7f0b0047;
         public static final int select_dialog_singlechoice_material = 0x7f0b0048;
-        public static final int support_simple_spinner_dropdown_item = 0x7f0b004b;
+        public static final int support_simple_spinner_dropdown_item = 0x7f0b004c;
     }
     public static final class string {
         private string() {}

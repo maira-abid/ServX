@@ -30,6 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 import pl.servx.servx.Model.SharePref;
+import pl.servx.servx.Model.Spinner_Adapter;
 import pl.servx.servx.Model.cart_data;
 
 public class home extends AppCompatActivity{
@@ -37,6 +38,7 @@ public class home extends AppCompatActivity{
     Spinner sp;
     static String user;
     ArrayList<String> cars;
+    int flag=0;
     //TextView stat_text;
     ArrayAdapter<String> adapt;
     private static final int REQUEST_LOCATION_PERMISSION = 1;
@@ -77,18 +79,22 @@ public class home extends AppCompatActivity{
         final ProgressDialog mDialog = new ProgressDialog(this);
         mDialog.setMessage("Please Wait");
 
-
         db.addValueEventListener(new ValueEventListener() {
             @Override
 
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+
+
                 for (DataSnapshot ds:dataSnapshot.child("vehicle").getChildren())
                 {
                     String name= String.valueOf(ds.getKey());
+                    if (cars.contains(name)){continue;}
                     cars.add(name);
                 }
-                mDialog.dismiss();
+
+                if (flag-1==0){mDialog.dismiss();}
+
 
             }
             @Override
@@ -97,13 +103,19 @@ public class home extends AppCompatActivity{
         });
 
         cars.add("Select Car");
+        if (flag==0)
+        {mDialog.show();}
+        flag++;
+        //String addcar="";
+//        if (intent.getStringExtra("addcar")!=null){
+//            addcar=
+//        }
 
-        mDialog.show();
-
-        adapt = new ArrayAdapter<String>(this,
-                R.layout.simple_spinner_item, cars);
+        adapt = new Spinner_Adapter(this,
+                R.layout.spinner_row, cars,cars);
 
         adapt.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
+
 
         sp.setAdapter(adapt);
 

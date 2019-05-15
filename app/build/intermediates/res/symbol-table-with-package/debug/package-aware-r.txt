@@ -1217,6 +1217,8 @@ id spCarYear
 id spacer
 id spinner
 id split_action_bar
+id spnItemDel
+id spnItemName
 id spread
 id spread_inside
 id src_atop
@@ -1356,6 +1358,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout simple_spinner_dropdown_item
 layout simple_spinner_item
+layout spinner_row
 layout support_simple_spinner_dropdown_item
 layout tabbed_login
 layout tabbed_signup
