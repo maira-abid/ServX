@@ -116,7 +116,7 @@ public class sign_in extends Fragment{
                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                         if (task.isSuccessful()) {
                                             mDialog.dismiss();
-                                            Toast.makeText(getActivity(), "Sign In Successful", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getActivity(), "Sign In Successful", Toast.LENGTH_SHORT).show();
                                             FirebaseUser user= mAuth.getCurrentUser();
                                             UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                                                     .setDisplayName(edtphone.getText().toString()).build();
@@ -131,7 +131,7 @@ public class sign_in extends Fragment{
 
                                             startActivity(home);
                                         } else {
-                                            Toast.makeText(getActivity(), "Sign-in Failed", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getActivity(), "Sign-in Failed", Toast.LENGTH_SHORT).show();
                                             mDialog.dismiss();
                                         }
                                     }
@@ -140,7 +140,7 @@ public class sign_in extends Fragment{
 
                             } else {
                                 mDialog.dismiss();
-                                Toast.makeText(getActivity(), "This user Does Not Exist", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), "User Does Not Exist", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }

@@ -238,7 +238,7 @@ public class serv_frag1 extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(getActivity(),"error fetching from DB", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(),"Error Fetching From DataBase", Toast.LENGTH_LONG).show();
 
             }
         });
@@ -260,7 +260,7 @@ public class serv_frag1 extends Fragment {
     private void add_to_cart(final String key, final String value, final int cost){
         if (cart_data.dict.get(key)!=null) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-            alert.setMessage("Overwrite The Current Package Already In The Cart! Proceed?");
+            alert.setMessage("Do You Want To Overwrite The Current Package In The Cart?");
             alert.setCancelable(true);
             alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                 @Override
@@ -268,7 +268,7 @@ public class serv_frag1 extends Fragment {
                     cart_data.dict.put(key, value);
                     if (key=="Oil"){cart_data.costOil=cost;}
                     else {cart_data.costWash=cost;}
-                    Toast.makeText(getActivity(), "Added to cart", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Package Added", Toast.LENGTH_SHORT).show();
 
                 }
             });
@@ -287,7 +287,7 @@ public class serv_frag1 extends Fragment {
             if (key=="Oil"){cart_data.costOil=cost;}
             else {cart_data.costWash=cost;}
             cart_data.dict.put(key, value);
-            Toast.makeText(getActivity(), "Added To Cart", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Package Added", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -308,12 +308,11 @@ public class serv_frag1 extends Fragment {
                     cart_data.costWash = 0;
                     cart_data.dict.remove(key);
                     Toast.makeText(getActivity(),
-                        "Removed from cart", Toast.LENGTH_SHORT).show();
-
+                        "Package Removed", Toast.LENGTH_SHORT).show();
                 }
 
                 else{
-                    Toast.makeText(getActivity(), "Package not in cart!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Package Is Not In The Cart", Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -328,18 +327,18 @@ public class serv_frag1 extends Fragment {
                     cart_data.costOil = 0;
                     cart_data.dict.remove(key);
                     Toast.makeText(getActivity(),
-                            "Removed from cart", Toast.LENGTH_SHORT).show();
+                            "Package Removed", Toast.LENGTH_SHORT).show();
 
                 }
 
                 else{
-                    Toast.makeText(getActivity(), "Package not in cart!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Package Is Not In The Cart", Toast.LENGTH_SHORT).show();
 
                 }
             }
 
         }
-        else{                    Toast.makeText(getActivity(), "Package not in cart!", Toast.LENGTH_SHORT).show();
+        else{                    Toast.makeText(getActivity(), "Package Is Not In The Cart", Toast.LENGTH_SHORT).show();
         }
 
     }
