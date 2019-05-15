@@ -108,7 +108,13 @@ public class sign_in extends Fragment{
                             if (dataSnapshot.child((edtphone.getText().toString())).exists()) {
 
                                 String email= dataSnapshot.child(edtphone.getText().toString()).child("email").getValue(String.class);
-
+//                                final ArrayList<String> cars= new ArrayList<>();
+//                                cars.add("Select Car");
+//                                for (DataSnapshot ds:dataSnapshot.child(edtphone.getText().toString()).child("vehicle").getChildren())
+//                                {
+//                                    String name= String.valueOf(ds.getKey());
+//                                    cars.add(name);
+//                                }
 
                                 //User user = dataSnapshot.child(edtphone.getText().toString()).getValue(User.class);
                                 mAuth.signInWithEmailAndPassword(email, edtpass.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

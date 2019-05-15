@@ -3,10 +3,13 @@ package pl.servx.servx.Model;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import java.util.ArrayList;
+
 public class SharePref {
 
     public static final String PREF_NAME = "userinfo";
     public static final String PREF_KEY = "username";
+    public static final ArrayList<String> PREF_CAR=new ArrayList<>();
 
     public SharePref() {
     }
@@ -20,6 +23,8 @@ public class SharePref {
         editor.apply();
     }
 
+
+
     public String getData(Context context) {
         SharedPreferences sharePref;
         String text;
@@ -27,4 +32,6 @@ public class SharePref {
         text = sharePref.getString(PREF_KEY,null);
         return text;
     }
+
+
 }

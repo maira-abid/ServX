@@ -89,6 +89,7 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
             public void onClick(View view) {
                 final String plate = textCarPlate.getText().toString().trim();
 
+
                 boolean flag = false;
 
                 String make = spCarMake.getSelectedItem().toString();
@@ -114,14 +115,15 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
                         newcar.vmake = String.valueOf(spCarMake.getSelectedItem());
                         newcar.vmodel = String.valueOf(spCarModel.getSelectedItem());
                         newcar.vyear = String.valueOf(spCarYear.getSelectedItem());
-                        //final ProgressDialog mDialog = new ProgressDialog(AddCarForm.this);
-                        //mDialog.setMessage("Please wait");
-                        //mDialog.show();
+
                         table_user.child(UserName).child("vehicle").child(textCarPlate.getText().toString()).setValue(newcar);
-                        //mDialog.dismiss();
+
                         Intent home = new Intent(AddCarForm.this, home.class);
+
                         home.putExtra("extra", UserName);
+
                         home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
                         finish();
                         startActivity(home);
 

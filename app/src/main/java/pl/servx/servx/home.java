@@ -1,6 +1,7 @@
 package pl.servx.servx;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -70,11 +71,11 @@ public class home extends AppCompatActivity{
                     REQUEST_LOCATION_PERMISSION);
         }
 
-        //stat_text= (TextView) findViewById(R.id.stat_text);
         sp = (Spinner) findViewById(R.id.spinner);
         FirebaseDatabase database= FirebaseDatabase.getInstance();
         DatabaseReference db= database.getReference("User/"+user_name);
-
+        final ProgressDialog mDialog = new ProgressDialog(this);
+        mDialog.setMessage("Please Wait");
 
 
         db.addValueEventListener(new ValueEventListener() {
@@ -87,6 +88,7 @@ public class home extends AppCompatActivity{
                     String name= String.valueOf(ds.getKey());
                     cars.add(name);
                 }
+                mDialog.dismiss();
 
             }
             @Override
@@ -95,6 +97,8 @@ public class home extends AppCompatActivity{
         });
 
         cars.add("Select Car");
+
+        mDialog.show();
 
         adapt = new ArrayAdapter<String>(this,
                 R.layout.simple_spinner_item, cars);
@@ -110,7 +114,7 @@ public class home extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 Intent form = new Intent( home.this, AddCarForm.class );
-                form.putStringArrayListExtra("cars",cars);
+                //form.putStringArrayListExtra("cars",cars);
                 startActivity(form);
             }
         });
@@ -176,6 +180,11 @@ public class home extends AppCompatActivity{
                         FirebaseDatabase database= FirebaseDatabase.getInstance();
 
                         DatabaseReference db= database.getReference("User").child(user).child("vehicle");
+//                        try{
+//                        db.child(spinner_item).removeValue();}
+//                        catch (Exception e) {
+//                            e.printStackTrace();
+//                        }
 
                         db.addValueEventListener(new ValueEventListener() {
                             @Override
