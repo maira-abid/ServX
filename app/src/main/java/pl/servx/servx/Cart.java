@@ -160,7 +160,7 @@ public class Cart extends AppCompatActivity {
                     }
                     if(cart_data.time.equals("")){
                         //Toast.makeText(Cart.this, "Time Not Added", Toast.LENGTH_SHORT).show();
-                        timetext.setError("Date Not Added");
+                        timetext.setError("Time Not Added");
                     }
 
                 }
