@@ -9,6 +9,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -88,31 +89,43 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
             public void onClick(View view) {
                 final String plate = textCarPlate.getText().toString().trim();
 
-                if (plate.isEmpty()) {
-                    textCarPlate.setError("Field is empty");
+                boolean flag = false;
+
+                String make = spCarMake.getSelectedItem().toString();
+                String mod = spCarModel.getSelectedItem().toString();
+                String year = spCarYear.getSelectedItem().toString();
+
+                if ((make == "Select Make") || (mod == "Select Model") || (year == "Select Year")) {
+                    Toast.makeText(AddCarForm.this, "Select All Fields", Toast.LENGTH_LONG).show();
+                    flag = true;
                 }
 
-                else if (!Regi_Pat.matcher(plate).matches()) {
+                if (plate.isEmpty()) {
+                    textCarPlate.setError("Field is empty");
+                    flag = true;
+                }else if (!Regi_Pat.matcher(plate).matches()) {
                     textCarPlate.setError("Invalid Registration Plate");
+                    flag = true;
                 }
 
                 else{
-                    vehicle newcar = new vehicle();
-                    newcar.vmake = String.valueOf(spCarMake.getSelectedItem());
-                    newcar.vmodel = String.valueOf(spCarModel.getSelectedItem());
-                    newcar.vyear = String.valueOf(spCarYear.getSelectedItem());
-                    //final ProgressDialog mDialog = new ProgressDialog(AddCarForm.this);
-                    //mDialog.setMessage("Please wait");
-                    //mDialog.show();
-                    table_user.child(UserName).child("vehicle").child(textCarPlate.getText().toString()).setValue(newcar);
-                    //mDialog.dismiss();
-                    //car_list.cars.add(textCarPlate.getText().toString());
-                    Intent home= new Intent(AddCarForm.this, home.class);
-                    home.putExtra("extra", UserName);
-                    home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    finish();
-                    startActivity(home);
-                    //finish();
+                    if (!flag) {
+                        vehicle newcar = new vehicle();
+                        newcar.vmake = String.valueOf(spCarMake.getSelectedItem());
+                        newcar.vmodel = String.valueOf(spCarModel.getSelectedItem());
+                        newcar.vyear = String.valueOf(spCarYear.getSelectedItem());
+                        //final ProgressDialog mDialog = new ProgressDialog(AddCarForm.this);
+                        //mDialog.setMessage("Please wait");
+                        //mDialog.show();
+                        table_user.child(UserName).child("vehicle").child(textCarPlate.getText().toString()).setValue(newcar);
+                        //mDialog.dismiss();
+                        Intent home = new Intent(AddCarForm.this, home.class);
+                        home.putExtra("extra", UserName);
+                        home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+                        startActivity(home);
+                        finish();
+                    }
                 }
             }
         });

@@ -92,7 +92,6 @@ public class sign_in extends Fragment{
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                         //user info
-                        mDialog.dismiss();
 
                         if (num.isEmpty() || passs.isEmpty()) {
                             Toast.makeText(getActivity(), "Can Not Log-in With Empty Field", Toast.LENGTH_LONG).show();

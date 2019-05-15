@@ -172,7 +172,7 @@ public class home extends AppCompatActivity{
             }
             else{
                 AlertDialog.Builder alert = new AlertDialog.Builder(home.this);
-                alert.setMessage("This will overwrite the car named: "+spinner_item+ " do you want toProceed?");
+                alert.setMessage("Do You Want To Remove '" + spinner_item + "' From The List?");
                 alert.setCancelable(true);
                 alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
