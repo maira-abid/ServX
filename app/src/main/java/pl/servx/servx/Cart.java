@@ -254,7 +254,7 @@ public class Cart extends AppCompatActivity {
             if (i==0) {
                 msg= "Car: "+cart_data.car+" <br/> <br/>"+msg;
                 texts.get(i).setText(Html.fromHtml(msg));
-                cost= " <br/> <br/>"+cost;
+                cost= "<br/><br/>"+cost;
                 costs.get(i).setText(Html.fromHtml(cost));
             }
 
