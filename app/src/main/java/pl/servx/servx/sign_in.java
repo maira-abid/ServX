@@ -121,7 +121,7 @@ public class sign_in extends Fragment{
                                     @Override
                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                         if (task.isSuccessful()) {
-                                            mDialog.dismiss();
+
                                             Toast.makeText(getActivity(), "Sign In Successful", Toast.LENGTH_SHORT).show();
                                             FirebaseUser user= mAuth.getCurrentUser();
                                             UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
@@ -134,7 +134,7 @@ public class sign_in extends Fragment{
                                             home.putExtra("extra", edtphone.getText().toString());
                                             //home.putStringArrayListExtra("cars",cars);
                                             home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-
+                                            mDialog.dismiss();
                                             startActivity(home);
                                         } else {
                                             Toast.makeText(getActivity(), "Sign-in Failed", Toast.LENGTH_SHORT).show();

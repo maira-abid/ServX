@@ -2,13 +2,11 @@ package pl.servx.servx;
 
 import android.Manifest;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -60,6 +58,9 @@ public class home extends AppCompatActivity{
         Intent intent = getIntent();
         user_name = intent.getStringExtra("extra");
         //User.Number=user_name;
+//        final FirebaseAuth mAuth= FirebaseAuth.getInstance();
+//        final FirebaseUser check= mAuth.getCurrentUser();
+        //user_name=check.getDisplayName();
         user = user_name;
         SharePref sharePref = new SharePref();
         PushNotifications.start(getApplicationContext(), "ea347389-aee7-4445-9b14-15cd0fe885f4");
@@ -88,15 +89,22 @@ public class home extends AppCompatActivity{
             @Override
 
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.child("vehicle").exists()) {
+                    for (DataSnapshot ds : dataSnapshot.child("vehicle").getChildren()) {
+                        String name = String.valueOf(ds.getKey());
+                        if (cars.contains(name)) {
+                            continue;
+                        }
+                        cars.add(name);
+                    }
 
-                for (DataSnapshot ds:dataSnapshot.child("vehicle").getChildren())
-                {
-                    String name= String.valueOf(ds.getKey());
-                    if (cars.contains(name)){continue;}
-                    cars.add(name);
+                    if (flag - 1 == 0) {
+                        mDialog.dismiss();
+                    }
                 }
-
-                if (flag-1==0){mDialog.dismiss();}
+                else{
+                    mDialog.dismiss();
+                }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
