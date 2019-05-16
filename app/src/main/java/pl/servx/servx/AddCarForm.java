@@ -115,17 +115,32 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
                         newcar.vmake = String.valueOf(spCarMake.getSelectedItem());
                         newcar.vmodel = String.valueOf(spCarModel.getSelectedItem());
                         newcar.vyear = String.valueOf(spCarYear.getSelectedItem());
+                        try {
+                            table_user.child(UserName).child("vehicle").child(textCarPlate.getText().toString()).setValue(newcar);
+                            Intent home = new Intent(AddCarForm.this, home.class);
 
-                        table_user.child(UserName).child("vehicle").child(textCarPlate.getText().toString()).setValue(newcar);
+                            home.putExtra("extra", UserName);
+                            //home.putExtra("addcar",textCarPlate.getText().toString());
+                            home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-                        Intent home = new Intent(AddCarForm.this, home.class);
+                            finish();
+                            startActivity(home);
+                        }
+                        catch (Exception e) {
 
-                        home.putExtra("extra", UserName);
-                        home.putExtra("addcar",textCarPlate.getText().toString());
-                        home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            e.printStackTrace();
+                        }
 
-                        finish();
-                        startActivity(home);
+//                        table_user.child(UserName).child("vehicle").child(textCarPlate.getText().toString()).setValue(newcar);
+
+//                        Intent home = new Intent(AddCarForm.this, home.class);
+//
+//                        home.putExtra("extra", UserName);
+//                        //home.putExtra("addcar",textCarPlate.getText().toString());
+//                        home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//
+//                        finish();
+//                        startActivity(home);
 
                     }
                 }

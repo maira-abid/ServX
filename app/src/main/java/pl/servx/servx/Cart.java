@@ -118,7 +118,7 @@ public class Cart extends AppCompatActivity {
                                     req.date = cart_data.date;
                                     req.time = cart_data.time;
                                     req.car = cart_data.car;
-                                    Toast.makeText(Cart.this, cart_data.reqid, Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Cart.this, "Order Successful!", Toast.LENGTH_SHORT).show();
                                     String lol = cart_data.reqid;
                                     table_user1.child(UserName).child(lol).setValue(req);
                                     Integer newreq = Integer.parseInt(cart_data.reqid);
