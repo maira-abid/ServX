@@ -576,17 +576,17 @@ public final class R {
         public static final int abc_search_dropdown_item_icons_2line = 0x7f0b0017;
         public static final int abc_search_view = 0x7f0b0018;
         public static final int abc_select_dialog_material = 0x7f0b0019;
-        public static final int notification_media_action = 0x7f0b0039;
-        public static final int notification_media_cancel_action = 0x7f0b003a;
-        public static final int notification_template_big_media = 0x7f0b003b;
-        public static final int notification_template_big_media_narrow = 0x7f0b003d;
-        public static final int notification_template_media = 0x7f0b0042;
-        public static final int notification_template_part_chronometer = 0x7f0b0044;
-        public static final int notification_template_part_time = 0x7f0b0045;
-        public static final int select_dialog_item_material = 0x7f0b0046;
-        public static final int select_dialog_multichoice_material = 0x7f0b0047;
-        public static final int select_dialog_singlechoice_material = 0x7f0b0048;
-        public static final int support_simple_spinner_dropdown_item = 0x7f0b004c;
+        public static final int notification_media_action = 0x7f0b0037;
+        public static final int notification_media_cancel_action = 0x7f0b0038;
+        public static final int notification_template_big_media = 0x7f0b0039;
+        public static final int notification_template_big_media_narrow = 0x7f0b003b;
+        public static final int notification_template_media = 0x7f0b0040;
+        public static final int notification_template_part_chronometer = 0x7f0b0042;
+        public static final int notification_template_part_time = 0x7f0b0043;
+        public static final int select_dialog_item_material = 0x7f0b0044;
+        public static final int select_dialog_multichoice_material = 0x7f0b0045;
+        public static final int select_dialog_singlechoice_material = 0x7f0b0046;
+        public static final int support_simple_spinner_dropdown_item = 0x7f0b004a;
     }
     public static final class string {
         private string() {}
@@ -606,7 +606,7 @@ public final class R {
         public static final int abc_shareactionprovider_share_with = 0x7f0e001a;
         public static final int abc_shareactionprovider_share_with_application = 0x7f0e001b;
         public static final int abc_toolbar_collapse_description = 0x7f0e001c;
-        public static final int status_bar_notification_info_overflow = 0x7f0e0052;
+        public static final int status_bar_notification_info_overflow = 0x7f0e0053;
     }
     public static final class style {
         private style() {}

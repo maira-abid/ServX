@@ -26,6 +26,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.pusher.pushnotifications.PushNotifications;
 
 import java.util.ArrayList;
 
@@ -41,6 +42,7 @@ public class home extends AppCompatActivity{
     int flag=0;
     //TextView stat_text;
     ArrayAdapter<String> adapt;
+    String user_name;
     private static final int REQUEST_LOCATION_PERMISSION = 1;
 
     @Override
@@ -56,10 +58,13 @@ public class home extends AppCompatActivity{
 
 
         Intent intent = getIntent();
-        final String user_name = intent.getStringExtra("extra");
+        user_name = intent.getStringExtra("extra");
         //User.Number=user_name;
         user = user_name;
         SharePref sharePref = new SharePref();
+        PushNotifications.start(getApplicationContext(), "ea347389-aee7-4445-9b14-15cd0fe885f4");
+        PushNotifications.addDeviceInterest(user_name);
+        //PushNotifications.removeDeviceInterest(user_name);
 
 
 
@@ -231,6 +236,10 @@ public class home extends AppCompatActivity{
         }
         else{
             FirebaseAuth.getInstance().signOut();
+            PushNotifications.start(getApplicationContext(), "ea347389-aee7-4445-9b14-15cd0fe885f4");
+            //PushNotifications.addDeviceInterest(user_name);
+            PushNotifications.removeDeviceInterest(user_name);
+
             finish();
             Intent out = new Intent(home.this, Tabbed_Main.class);
             startActivity(out);
