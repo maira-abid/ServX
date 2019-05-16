@@ -61,7 +61,8 @@ public class service_history extends AppCompatActivity {
                     compare = '"'+compare+'"';
 
                     if (!compare.equals(ds.getKey())){
-                        String req = ds.getKey().substring(1,ds.getKey().length()-1);
+
+                        String req = ds.getKey();
                         Integer x = Integer.parseInt(req);
                         s.reqid = x;
                         list.add(s);
