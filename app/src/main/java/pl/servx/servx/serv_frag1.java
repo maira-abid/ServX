@@ -145,8 +145,13 @@ public class serv_frag1 extends Fragment {
                     else{cart_data.CarWash=value;}
 
                 }
-                Intent Cart= new Intent(getActivity(),Cart.class);
-                startActivity(Cart);
+                if(cart_data.CarWash.equals("") && cart_data.OilChange.equals("")){
+                    Toast.makeText(getActivity(),"Your cart is empty!", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Intent Cart = new Intent(getActivity(), Cart.class);
+                    startActivity(Cart);
+                }
             }
         });
 
