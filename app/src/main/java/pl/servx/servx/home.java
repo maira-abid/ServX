@@ -243,7 +243,9 @@ public class home extends AppCompatActivity{
 
             finish();
             Intent out = new Intent(home.this, Tabbed_Main.class);
-            startActivity(out);
+       // out.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+        startActivity(out);
         //}
         return true;
     }

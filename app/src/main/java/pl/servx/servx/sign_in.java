@@ -2,6 +2,7 @@ package pl.servx.servx;
 
 //import android.app.Fragment;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,12 +28,19 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class sign_in extends Fragment{
+public class sign_in extends Fragment {
+    Activity activity;
+    ProgressDialog mDialog;
+
     @Nullable
     @Override
 
+
+
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstancesState){
         View rootView = inflater.inflate(R.layout.tabbed_login, container, false);
+         activity= getActivity();
+         mDialog=new ProgressDialog(activity);
 
         final EditText edtphone, edtpass;
         Button btnSignIn;
@@ -50,7 +58,6 @@ public class sign_in extends Fragment{
 
             //final ArrayList<String> cars= new ArrayList<>();
             //cars.add("Select Car");
-            final ProgressDialog mDialog = new ProgressDialog(getActivity());
             mDialog.setMessage("Please Wait");
             mDialog.show();
             //FirebaseDatabase db= FirebaseDatabase.getInstance();
@@ -62,9 +69,10 @@ public class sign_in extends Fragment{
 
                     home.putExtra("extra", number);
                     home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    getActivity().finish();
+                    //getActivity().finish();
                     startActivity(home);
             //return rootView;
+//            final Activity activity= getActivity();
 
         }
 
@@ -78,8 +86,7 @@ public class sign_in extends Fragment{
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final ProgressDialog mDialog = new ProgressDialog(getActivity());
-
+                //final ProgressDialog mDialog = new ProgressDialog(activity);
                 final String passs = edtpass.getText().toString().trim();
                 final String num = edtphone.getText().toString().trim();
 
@@ -91,7 +98,7 @@ public class sign_in extends Fragment{
                     edtpass.setError("Field is empty");
                 }
 
-                table_user.addValueEventListener(new ValueEventListener() {
+                table_user.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
 
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -99,7 +106,7 @@ public class sign_in extends Fragment{
                         //user info
 
                         if (num.isEmpty() || passs.isEmpty()) {
-                            Toast.makeText(getActivity(), "Can Not Log-in With Empty Field", Toast.LENGTH_LONG).show();
+                            Toast.makeText(activity, "Can Not Log-in With Empty Field", Toast.LENGTH_LONG).show();
                         }
                         else {
                             mDialog.setMessage("Please Wait");
@@ -122,7 +129,7 @@ public class sign_in extends Fragment{
                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                         if (task.isSuccessful()) {
 
-                                            Toast.makeText(getActivity(), "Sign In Successful", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(activity, "Sign In Successful", Toast.LENGTH_SHORT).show();
                                             FirebaseUser user= mAuth.getCurrentUser();
                                             UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                                                     .setDisplayName(edtphone.getText().toString()).build();
@@ -130,14 +137,26 @@ public class sign_in extends Fragment{
                                             user.updateProfile(profileUpdates);
                                             //cart_data.cars=cars;
                                             //car_list.cars=cars;
-                                            Intent home = new Intent(getActivity(), home.class);
+                                            Intent home = new Intent(activity, home.class);
                                             home.putExtra("extra", edtphone.getText().toString());
+
                                             //home.putStringArrayListExtra("cars",cars);
+                                            //activity.finish();
+                                            //getFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+//                                            FragmentManager fm = getActivity().getSupportFragmentManager();
+//                                            for(int i = 0; i < fm.getBackStackEntryCount(); ++i) {
+//                                                fm.popBackStack();
+//                                            }
+
                                             home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                             mDialog.dismiss();
+                                            //table_user.removeEventListener(ValueEventListener);
+                                            //getActivity().finish();
+
                                             startActivity(home);
+                                            activity.finish();
                                         } else {
-                                            Toast.makeText(getActivity(), "Sign-in Failed", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(activity, "Sign-in Failed", Toast.LENGTH_SHORT).show();
                                             mDialog.dismiss();
                                         }
                                     }
@@ -146,7 +165,7 @@ public class sign_in extends Fragment{
 
                             } else {
                                 mDialog.dismiss();
-                                Toast.makeText(getActivity(), "User Does Not Exist", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(activity, "User Does Not Exist", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }

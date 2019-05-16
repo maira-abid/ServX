@@ -1,6 +1,5 @@
 package pl.servx.servx;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -46,6 +45,7 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
 
                 home.putExtra("extra", UserName);
                 home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                finish();
                 //home.putExtra("extra", UserName);
                 startActivity(home);
             }
@@ -84,8 +84,6 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
                 R.layout.simple_spinner_item, makes);
         adaptador1.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
         spCarMake.setAdapter(adaptador1);
-        final ProgressDialog mDialog = new ProgressDialog(this);
-        mDialog.setMessage("Please Wait");
 
         ConfirmCar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +93,6 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
 
                 boolean flag = false;
 
-                mDialog.show();
 
                 String make = spCarMake.getSelectedItem().toString();
                 Object mod = spCarModel.getSelectedItem();
@@ -104,18 +101,15 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
                 if ((make == "Select Make")  || (year == "Select Year") || (mod == null || mod.toString() == "Select Model")) {
                     Toast.makeText(AddCarForm.this, "Add All Fields", Toast.LENGTH_LONG).show();
                     flag = true;
-                    mDialog.dismiss();
 
                 }
 
                 if (plate.isEmpty()) {
                     textCarPlate.setError("Field is empty");
                     flag = true;
-                    mDialog.dismiss();
                 }else if (!Regi_Pat.matcher(plate).matches()) {
                     textCarPlate.setError("Invalid Registration Plate");
                     flag = true;
-                    mDialog.dismiss();
                 }
 
                 else{
@@ -130,17 +124,15 @@ public class AddCarForm extends AppCompatActivity implements OnItemSelectedListe
                             Intent home = new Intent(AddCarForm.this, home.class);
 
                             home.putExtra("extra", UserName);
-                            mDialog.dismiss();
                             //home.putExtra("addcar",textCarPlate.getText().toString());
                             home.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-                            //finish();
+                            finish();
                             startActivity(home);
                         }
                         catch (Exception e) {
 
                             e.printStackTrace();
-                            mDialog.dismiss();
                         }
 
 //                        table_user.child(UserName).child("vehicle").child(textCarPlate.getText().toString()).setValue(newcar);
