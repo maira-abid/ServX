@@ -89,8 +89,6 @@ public class home extends AppCompatActivity{
 
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-
-
                 for (DataSnapshot ds:dataSnapshot.child("vehicle").getChildren())
                 {
                     String name= String.valueOf(ds.getKey());
@@ -99,8 +97,6 @@ public class home extends AppCompatActivity{
                 }
 
                 if (flag-1==0){mDialog.dismiss();}
-
-
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -121,10 +117,7 @@ public class home extends AppCompatActivity{
 
         adapt.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
 
-
         sp.setAdapter(adapt);
-
-
 
         btnAddCar= (Button) findViewById(R.id.btnAddCar);
         btnAddCar.setOnClickListener(new View.OnClickListener() {
@@ -180,7 +173,7 @@ public class home extends AppCompatActivity{
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        String[] id = getResources().getResourceName(item.getItemId()).split("\\/");
+        /*String[] id = getResources().getResourceName(item.getItemId()).split("\\/");
 
         if(id[1].equals("remove_car")) {
             final String spinner_item = sp.getSelectedItem().toString();
@@ -234,7 +227,7 @@ public class home extends AppCompatActivity{
             }
 
         }
-        else{
+        else{*/
             FirebaseAuth.getInstance().signOut();
             PushNotifications.start(getApplicationContext(), "ea347389-aee7-4445-9b14-15cd0fe885f4");
             //PushNotifications.addDeviceInterest(user_name);
@@ -243,7 +236,7 @@ public class home extends AppCompatActivity{
             finish();
             Intent out = new Intent(home.this, Tabbed_Main.class);
             startActivity(out);
-        }
+        //}
         return true;
     }
 
@@ -252,8 +245,4 @@ public class home extends AppCompatActivity{
         finish();
         super.onBackPressed();
     }
-
-
-
-
 }

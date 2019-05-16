@@ -1175,7 +1175,6 @@ id progress_circular
 id progress_horizontal
 id radio
 id refresh
-id remove_car
 id reply_text
 id reqs
 id right
